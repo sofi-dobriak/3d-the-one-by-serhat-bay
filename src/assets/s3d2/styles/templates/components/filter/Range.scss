@@ -1,0 +1,99 @@
+@use "../../../globals/fonts";
+
+.Range {
+  .irs {
+    --irs-point: 15px;
+    --irs-color-text: var(--s3d2-color-surface-gray-900);
+    --irs-color-bg-line: var(--s3d2-color-surface-gray-900);
+    --irs-color-bar: var(--s3d2-color-surface-gray-900);
+    --irs-color-point: var(--s3d2-color-surface-gray-200);
+    --irs-color-point-stroke: var(--s3d2-color-surface-gray-900);
+    margin-bottom: -20px;
+
+    @media screen and (min-width: 1441px) {
+      margin-bottom: -25px;
+    }
+  }
+
+  .irs--flat .irs-bar {
+    height: 1px;
+  }
+
+  --input-width: 80px;
+
+  @media screen and (max-width: 1360px) and (min-width: 1024px) {
+    --input-width: 88px;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+
+  &__title {
+    width: 100%;
+    @include fonts.text-style-3-d-fonts-1920-super-tiny;
+    font-weight: 400;
+    margin-bottom: var(--space-1);
+    color: var(--s3d2-color-text-gray-900);
+  }
+
+  &__item {
+    flex-grow: 1;
+    margin: 0 var(--space-2);
+  }
+
+  &__input {
+    width: var(--input-width);
+    border-radius: var(--border-space-2);
+    background-color: transparent;
+    color: var(--s3d2-color-text-gray-900);
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--s3d2-color-border-gray-900-transparent-10);
+    @include fonts.text-style-3-d-fonts-1920-tiny;
+    font-weight: 400;
+    // text-align: center;
+    transition: 0.25s ease-out;
+
+    &:hover {
+      background-color: var(--color-surface-gray-300);
+      border-color: var(--s3d2-color-border-gray-600);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.mobile {
+  .Range {
+    display: grid;
+    grid-template-areas:
+      'title input1 input2'
+      'range range range';
+    gap: var(--space-2);
+
+    grid-template-columns: 74px 1fr 1fr;
+
+    &__title {
+      grid-area: title;
+    }
+
+    &__item {
+      grid-area: range;
+    }
+
+    &__input:first-of-type {
+      grid-area: input1;
+    }
+
+    &__input:last-of-type {
+      grid-area: input2;
+    }
+
+    &__input {
+      width: 100%;
+    }
+  }
+}

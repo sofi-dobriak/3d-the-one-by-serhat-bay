@@ -1,0 +1,199 @@
+@use "sass:color";
+@use "../../../s3d/styles/assets/vars";
+
+@mixin font-face($font-family, $url, $weight: normal, $style: normal, $asset-pipeline: false) {
+  @font-face {
+    font-family: '#{$font-family}';
+    font-style: '#{$style}';
+    font-weight: #{$weight};
+
+    src: url('#{$url}.eot');
+    src: url('#{$url}.eot?#iefix') format('embedded-opentype'), url('#{$url}.woff') format('woff'),
+      url('#{$url}.ttf') format('truetype');
+  }
+}
+
+@mixin font-default {
+  font-family: vars.$default-font;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+@mixin scrollbar-v {
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: thin; /* Firefox 64+ */
+  scrollbar-color: var(--color-surface-gray-600) transparent; /* Firefox 64+ */
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-surface-gray-600);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: var(--color-surface-gray-600);
+    cursor: pointer;
+    border-radius: 4px;
+  }
+}
+
+@mixin scrollbar-h {
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: thin; /* Firefox 64+ */
+  scrollbar-color: red transparent; /* Firefox 64+ */
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    box-shadow: inset 0 0 6px #e2e3e4;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 4px;
+    box-shadow: inset 0 0 6px #e2e3e4;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: gray;
+    cursor: pointer;
+  }
+}
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: color.mix($foreground-color, white, 50%)
+) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: var(--border-space-2);
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin onHover {
+  .mouseOnly,
+  .hybrid {
+    @content;
+  }
+}
+
+@mixin elementHidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@mixin elementVisible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+@mixin scrollbar-h {
+  -ms-overflow-style: none; /* IE 11 */
+  // scrollbar-width: none; /* Firefox 64 */
+  &::-webkit-scrollbar {
+    height: 8px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 6px #e2e3e4;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-surface-gray-600);
+    border-radius: 4px;
+    // -webkit-box-shadow: inset 0 0 6px #e2e3e4;
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-thumb:active {
+    background-color: gray;
+    cursor: pointer;
+  }
+}
+
+@mixin scrollbar-h {
+  -ms-overflow-style: none; /* IE 11 */
+  // scrollbar-width: none; /* Firefox 64 */
+  &::-webkit-scrollbar {
+    height: 8px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 6px #e2e3e4;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-surface-gray-600);
+    border-radius: 4px;
+    // -webkit-box-shadow: inset 0 0 6px #e2e3e4;
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-thumb:active {
+    background-color: gray;
+    cursor: pointer;
+  }
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-uppercase-important {
+  text-transform: uppercase !important;
+  span {
+    text-transform: uppercase !important;
+  }
+}
+
+@function calculate-vw($baseSize, $baseWidth) {
+  @return calc((#{$baseSize} / #{$baseWidth}) * 100vw);
+}
+
+@mixin responsive-padding($baseWidth, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+  $padding-top: calculate-vw($top, $baseWidth);
+  $padding-right: calculate-vw($right, $baseWidth);
+  $padding-bottom: calculate-vw($bottom, $baseWidth);
+  $padding-left: calculate-vw($left, $baseWidth);
+
+  padding: $padding-top $padding-right $padding-bottom $padding-left;
+}

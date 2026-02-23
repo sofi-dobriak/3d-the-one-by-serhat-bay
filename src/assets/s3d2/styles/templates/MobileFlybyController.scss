@@ -1,0 +1,45 @@
+.MobileFlybyController {
+  display: none;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: var(--space-2);
+  width: 100%;
+  height: var(--mobile-controller-height);
+  z-index: 101;
+  // transition: .25s ease-out;
+  pointer-events: all;
+  &>:nth-child(n+2) {
+    margin-left: var(--space-05);
+  }
+
+  &.open-some-modal > *:not(.me-open-some-element) {
+    opacity: 0.5;
+  }
+}
+
+.desktop {
+  .MobileFlybyController {
+    display: none;
+  }
+}
+
+.mobile {
+  [data-type='flat'] {
+    .MobileFlybyController {
+      width: 295px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: none;
+      [data-open-form] {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.mobile.landscape {
+  .MobileFlybyController {
+    justify-content: flex-start;
+  }
+}

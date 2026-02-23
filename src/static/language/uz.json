@@ -1,0 +1,428 @@
+{
+    "currency_label": "$",
+    "currency_label_m2": "$t(currency_label) per $t(area_unit)",
+    "area_unit": "m²",
+    "unit_statuses": {
+        "0": "Sotilgan",
+        "1": "Mavjud",
+        "2": "Zaxira qilmoq",
+        "3": "Bron qilingan",
+        "4": "Kirish qiyin",
+        "6": "To'silgan",
+        "1_tooltip": "Tizimda mavjudligi tasdiqlandi"
+    },
+    "error": {
+        "pdf": "To view the content of the PDF, please change your privacy settings: Go to Settings -> Safari -> Block Pop-ups and turn it off.",
+        "open_pdf": "Ochiq PDF"
+    },
+    "floor_list": {
+        "build": "Qurmoq {{build}}",
+        "section": "Qism {{section}}"
+    },
+    "infoBox": {
+        "sold": "Barcha kvartira sotiladi",
+        "sold_short": "Sotilgan",
+        "flatSold": "Kvartira sotildi",
+        "flatClosed": "Sotish ochiq emas",
+        "freeObjects": "Mavjud",
+        "price_m2_from": "Har bir narx $t(area_unit):",
+        "from_price": "dan {{currency}} {{text}}",
+        "price_from": "Narx:",
+        "reviewFlat": "Mulkni o'rganing",
+        "buildReview": "Uyni ko'rish",
+        "review": "Ko'rib chiqmoq",
+        "finishDate": "Yetkazib berish vaqti:",
+        "filter_results": "Filtrlangan {{count}} kvartira",
+        "infrastructure_button_iframe": "Turni ko'rish",
+        "infrastructure_button_image": "Fotosuratni ko'rish",
+        "infrastructure_button_video": "Videoni ko'rish",
+        "general": {
+            "button_titles": {
+                "queue": "Navbatni o'rganing",
+                "villa": "Villa o'rganing",
+                "house": "Uyni o'rganing"
+            }
+        }
+    },
+    "title": {
+        "genplan": "Usta rejasi",
+        "flyby_1_outside": "Qurmoq 1",
+        "favourites": "Sevimlilar",
+        "plannings": "Jadvallar"
+    },
+    "load": {
+        "loading-text": "Yuklamoq",
+        "loading-text-wait": "Bir oz kuting..."
+    },
+    "menu": {
+        "menu-title": "Menu",
+        "nav": {
+            "1": {
+                "nav-title": "Name",
+                "nav-subtitle": {
+                    "1": "Name",
+                    "2": "Name",
+                    "3": "Name",
+                    "4": "Name",
+                    "5": "Name"
+                }
+            },
+            "2": {
+                "nav-title": "Name",
+                "nav-subtitle": {
+                    "1": "Name",
+                    "2": "Name",
+                    "3": "Name",
+                    "4": "Name",
+                    "5": "Name"
+                }
+            }
+        }
+    },
+    "ctr": {
+        "nav": {
+            "title": "Menyu 3D",
+            "genplan": "Usta rejasi",
+            "navigation": "Navigatsiya",
+            "flyby": "Qurmoq",
+            "flyby_1_outside": "Hills Blue A",
+            "flyby_1_inside": "Hills Blue B",
+            "flyby_2_outside": "Hills Blue D",
+            "flyby_2_inside": "Hills Blue C",
+            "flyby_3_outside": "Build 3",
+            "flyby_3_inside": "Hills Blue E",
+            "flyby_4_outside": "Build 4",
+            "flyby_4_inside": "Build 4 inside",
+            "flyby_5_outside": "Build 5",
+            "flyby_5_inside": "Build 5 inside",
+            "plannings": "Jadvallar",
+            "floor": "Zamin rejasi",
+            "floor_plans": "Zamin rejalari",
+            "flat": "Kvartira",
+            "functions": "Vazifalar",
+            "property": "Mulk",
+            "flat_shot": "Kvartira",
+            "back": "Orqaga qaytish",
+            "menu": "Menyu",
+            "callback": "Qo'ng'iroqni qaytaring"
+        },
+        "share": {
+            "link-copied": "Nusxa ko'chirilgan havola"
+        },
+        "flybysidechooser": {
+            "outside": "External facade",
+            "inside": "Internal facade"
+        },
+        "menu": {
+            "compass": {
+                "south": "S",
+                "west": "W",
+                "east": "E",
+                "north": "N"
+            },
+            "btn": {
+                "infrastructure": "Infratuzilma",
+                "filter": "Filtrlamoq",
+                "chooseOfApartment": "Kvartira",
+                "chooseOfFloor": "Zamin",
+                "repeatHelp": "?"
+            },
+            "hightlightInfrastructure": "Qopqoqni yashirish",
+            "build_progress": "Qurilish ishlari",
+            "on_the_map": "Xaritada joylashgan joy",
+            "callbackFormCall": "Menejerga murojaat qiling"
+        }
+    },
+    "Helper": {
+        "slide-0--title": "Hold and rotate",
+        "slide-1--title": "Filter",
+        "slide-2--title": "Floors or apartments",
+        "slide-3--title": "Use navigation",
+        "title1": "Navigatsiya",
+        "description1": "Siz 3D modelini aylantirishingiz mumkin",
+        "title2": "Asboblar",
+        "description2": "3D modeli bilan o'zaro aloqada bo'lish uchun vositalar",
+        "title3": "Filtrlamoq",
+        "description3": "Siz parametrlaringiz uchun filtrlashingiz mumkin",
+        "title4": "Solishtirmoq",
+        "description5": "Taqqoslash uchun siz rejalashtirasiz",
+        "close": "O'tkazib yuborish"
+    },
+    "Filter": {
+        "title": "Parametrlar bo'yicha tanlov",
+        "data_changed": "Parametrlar o'zgartirildi",
+        "list": {
+            "type": "Tur",
+            "rooms": "Xonalar",
+            "area": "Maydoni",
+            "area_unit": "$t(area_unit)",
+            "price": "Narx",
+            "status": "Holat",
+            "floor": "Zamin",
+            "favourite--add": "Tanlamoq"
+        },
+        "range": {
+            "floor": "Zamin",
+            "area": "O'lcham",
+            "area_unit": "$t(area_unit)"
+        },
+        "checkboxes": {
+            "rooms": "Yotoq xonalari",
+            "build": "Qurmoq",
+            "type": "Tur"
+        },
+        "reset": "Tozalash",
+        "apply": "Qo'llamoq",
+        "hide": "Yashirin filtrlar",
+        "show": "Filtrlarni ko'rsatish",
+        "found": "Topilgan",
+        "from": "bilan",
+        "to": "ga",
+        "not-marked-message": "Ushbu xonani belgilab bo'lmaydi",
+        "openFilter": "Ochiq filtr",
+        "enterUnitNumber": "Birlik raqamini kiriting",
+        "Search by number": "Raqam bo'yicha qidirish"
+    },
+    "Flat": {
+        "name": "Birlik",
+        "explication": "Tushuntirib berish",
+        "gallery": "Galereya",
+        "floor_plan": "Zamin rejasi",
+        "other_flats_title": "Bu kvartira, lekin boshqa qavatlarda",
+        "doc_title": "Hujjat",
+        "financial_terms_title": "Moliyaviy atamalar",
+        "construction_title": "Qurilish ishlari",
+        "video": "Video taqdimot",
+        "discount": "Chegirma",
+        "from_window_view": "360 Ko'rishlar",
+        "scroll": "Scroll",
+        "explication_data": {
+            "floor_1": "1-qavat",
+            "floor_2": "2-qavat",
+            "floor_3": "3-qavat",
+            "floor_4": "4-qavat",
+            "floor_5": "5-qavat"
+        },
+        "buttons": {
+            "with": "3D",
+            "without": "2D",
+            "gallery_btn": "Galereya",
+            "showIn3d": "3D-da",
+            "view": "Qarash",
+            "windowView": "Derazadan",
+            "compare": "Solishtirmoq",
+            "addedToCompare": "Taqqoslashga qo'shildi",
+            "addedToCompare_mob": "Taqqoslaganda",
+            "pdf": "PDF",
+            "3dTour": "Tendentsiya",
+            "callback--1": "Menejerga murojaat qiling",
+            "callback--2": "Kvartira kitobi",
+            "planning2d": "2D rejalashtirish",
+            "planning3d": "3D rejalashtirish",
+            "furnished": "Jihozlangan",
+            "video": "Video hisobotini tomosha qiling"
+        },
+        "timer": {
+            "timer-text": "There is still time to book at this price"
+        },
+        "information": {
+            "title": "Ma'lumot",
+            "sale": "Holat",
+            "build": "Qurmoq",
+            "number": "Raqam",
+            "area": "Maydoni",
+            "allArea": "Umumiy maydoni",
+            "life_area": "Yashash maydoni",
+            "area_unit": "$t(area_unit)",
+            "rooms": "Xonalar",
+            "floor": "Zamin",
+            "price": "Narx",
+            "priceText": " $t(currency_label)",
+            "type": "Tur",
+            "section": "Qism",
+            "price_m2": "Narx $t(area_unit)",
+            "per": "har bir",
+            "priceHistory": "Narx dinamikasi",
+            "floor_n_desktop": "Zamin raqami",
+            "floor_n_mobile": "Zamin №",
+            "viewPlanning": "Ro'yxatdan o'tish"
+        },
+        "goToFloor": "Zamin rejasi",
+        "goToFlat": "Mulkni o'rganing"
+    },
+    "Floor": {
+        "title-1": "",
+        "changeFloor--": "Chamlagichni o'zgartiring:",
+        "title-2": "zamin rejasi",
+        "number_rooms": "Xonalar soni",
+        "apps_from": "Kvartiradan",
+        "information": {
+            "title": "Ma'lumot",
+            "build": "Qurmoq",
+            "floor": "Zamin",
+            "section": "Qism",
+            "price_m2_from": "Dan $t(currency_label) har bir $t(area_unit)",
+            "all-flats": "TOtal kvartira",
+            "free-flats": "Mavjud",
+            "free-flats--": "Mavjud:",
+            "from": "Dan",
+            "per_m2": "har bir $t(area_unit)",
+            "reviewFloor": "Qavat rejasini o'rganing"
+        },
+        "filter": {
+            "1": "1 xonali",
+            "2": "2 xona",
+            "3": "3 xona",
+            "4": "4 ta xona",
+            "5": "5 Xona",
+            "all": "Barcha xonalar",
+            "title-mob": "Yotoq xonalari"
+        },
+        "floor-list": "qavatlar",
+        "goToFloor": "Polga boring"
+    },
+    "Plannings": {
+        "found": "Topilgan",
+        "found--with": "bilan",
+        "found--from": "dan",
+        "found-flats": "Kvartiralar",
+        "notFound": "Ammo bu kvartiralarga qarang"
+    },
+    "favourite--title": "Solishtirmoq",
+    "favourite--added": "Solishtirmoq (qo'shilgan <span class=\"js-s3d__fv-count\"></span> kvartira)",
+    "favourite--apartments": "kvartira",
+    "favourite--add": "Tanlamoq",
+    "favourite--empty-title": "Taqqoslamagan narsa topilmadi",
+    "favourite--empty-text": "Saralashlarni tanlang va ularni taqqoslash ro'yxatiga qo'shing",
+    "favourite--empty-button": "Rejalashtirish",
+    "favourite--show-differences": "Faqat farqlarni ko'rsatish",
+    "card--link": "Ko'proq o'qish",
+    "card--add_to_compare": "Taqqoslash uchun qo'shing",
+    "PopupFlyby": {
+        "title": "Kvartira ",
+        "description": "Rejalashtirish boshqa binoda.Uni 3D modelida ko'rish uchun siz boshqa blokka o'tishingiz kerak.",
+        "btn": "Burchakni o'zgartiring"
+    },
+    "Error-popup": {
+        "title": "Xato yuz berdi",
+        "translate-info": "Siz 3D Usta rejasiga yo'naltirilasiz",
+        "link": "asosiyga",
+        "messages": {
+            "not-find-data": "Kutilayotgan ma'lumotlar olinmadi",
+            "not-all-required-data-received": "not received all the necessary data",
+            "invalid-url": "incorrect data in url",
+            "failed-request": "failed to load data",
+            "network-error": "network error",
+            "application-error": "application error",
+            "unknown-error": "Unknown error"
+        }
+    },
+    "Send-error-popup": {
+        "success": "error data successfully sent to technical support specialists",
+        "failed": "error data not saved, please notify technical support"
+    },
+    "slider_popup": {
+        "default": "Villa"
+    },
+    "builds": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D",
+        "5": "E"
+    },
+    "rooms": {
+        "1": "1 yotoqxona",
+        "2": "2 yotoq xonalari",
+        "3": "3 yotoq xonalari",
+        "4": "4 yotoq xonalari",
+        "5": "5 yotoq xonalari"
+    },
+    "rooms-abbreviation": {
+        "1": "1 BR",
+        "2": "2 BR",
+        "3": "3 BR",
+        "4": "4 BR",
+        "5": "5 BR"
+    },
+    "sales": {
+        "0": "sotilgan",
+        "1": "mavjud",
+        "2": "zaxira qilmoq",
+        "3": "mavjud emas"
+    },
+    "pins": {
+        "park_trc": "Shop"
+    },
+    "loader": {
+        "load": "Yuklanmoqda",
+        "wait_a_little": "Bir oz kuting...",
+        "rotate_warning": "Iltimos, telefonni tik bajaring."
+    },
+    "currencies": {
+        "USD": "$",
+        "UAH": "₴",
+        "EUR": "€"
+    },
+    "Dropdown": {
+        "title": "Navigatsiya"
+    },
+    "tutorial": {
+        "step_nav": "Navigatsiya",
+        "step_nav_description": "Siz 3D modelini aylantirishingiz mumkin",
+        "step_interact": "Asboblar",
+        "step_interact_description": "3D modeli bilan o'zaro aloqada bo'lish uchun vositalar",
+        "ster_filter": "Filtrlamoq",
+        "ster_filter_description": "Siz parametrlaringiz uchun filtrlashingiz mumkin",
+        "step_compare": "Solishtirmoq",
+        "step_compare_description": "Taqqoslash uchun siz rejalashtirasiz",
+        "step_share": "Baham ko'rmoq",
+        "step_share_description": "Siz havolani modelga nusxalashingiz mumkin",
+        "step_fullscreen": "To'liq ekranli rejim",
+        "step_fullscreen_description": "Ushbu rejimdan foydalanib, siz to'liq ekranli tajribaga ega bo'lishingiz mumkin"
+    },
+    "monthes": {
+        "January": "Yanvar",
+        "February": "Fevral",
+        "March": "Mart oyi",
+        "April": "Aprel",
+        "May": "Mayl",
+        "June": "Iyun",
+        "July": "Iyul",
+        "August": "Avgust",
+        "September": "Sentyabr",
+        "October": "Oktyabr",
+        "November": "Noyabr",
+        "December": "Dekabr"
+    },
+    "from": "dan",
+    "touchModePopup": {
+        "title": "Qurilmangizda sensorli ekran aniqlandi.Iltimos, modul bilan o'zaro aloqada bo'lish usulini tanlang:",
+        "mouse": "Ayiq",
+        "touch": "Sensorli ekran",
+        "changeMode": "Rejim o'zgartirildi: {{mode}}"
+    },
+    "pdf_error": "Xato",
+    "pdf_download": "Yuklab olish",
+    "pdf_ready": "Sizning PDF tayyor",
+    "pdf_preparing": "Tayyorgarlik...",
+    "SuccessFormPopup": {
+        "title": "Ha, sizning so'rovingiz qabul qilindi! ",
+        "button": "Men oldim",
+        "text": "Biz allaqachon yangi makonga sayohat qilish uchun har bir narsani tayyorlashni boshladik."
+    },
+    "SmartoTours": {
+        "title": "Virtual tour",
+        "floor": "Floor",
+        "Go to": "Go to",
+        "fullscreen": "Fullscreen",
+        "floor_show_or_hide": "Show/Hide floor plan",
+        "menu": "Menu",
+        "use_gyroscope": "Use accelerometer",
+        "toggle_accelerometer": "Toggle accelerometer",
+        "disable_gyroscope": "Disable accelerometer",
+        "use_camera": "Use camera",
+        "motion_view": "Motion view",
+        "use_phone_motion": "Move your phone to explore"
+    }
+}

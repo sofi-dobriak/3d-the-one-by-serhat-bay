@@ -1,0 +1,81 @@
+.IconButton {
+  // border: 1px solid var(--s3d2-color-border-gray-400);
+  border: 1px solid var(--s3d2-color-border-gray-600-transparent-40);
+  // background-color: var(--color-surface-gray-200);
+  background-color: var(--color-surface-gray-200-transperent-88);
+  border-radius: var(--border-space-2);
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease-out;
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--s3d2-color-icon-gray-900);
+  }
+  &.s3d_audioAssistantState-active {
+    background-color: var(--color-brand-900) !important;
+    svg {
+      fill: var(--s3d2-color-icon-gray-200);
+    }
+  }
+  &.active {
+    background-color: var(--color-brand-800);
+    border-color: var(--border-brand-900);
+    svg {
+      fill: var(--s3d2-color-icon-gray-200);
+    }
+  }
+
+  &--alert {
+    border-color: var(--border-accent-800);
+    background-color: var(--color-special-accent-sold-overlays-transparent-72);
+    svg {
+      fill: var(--s3d2-color-icon-gray-200);
+    }
+  }
+
+  &--dark {
+    border-radius: var(--border-space-2);
+    background: var(--colors-gray-900-transparent-60, rgba(26, 30, 33, 0.6));
+    backdrop-filter: blur(20px);
+    border-color: transparent;
+    svg {
+      fill: var(--s3d2-color-icon-gray-200);
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    border-color: var(--s3d2-color-border-gray-400);
+    background-color: var(--color-surface-gray-200);
+    svg {
+      fill: var(--s3d2-color-icon-gray-400);
+    }
+  }
+}
+
+.mouseOnly,
+.hybrid {
+  .IconButton:hover {
+    border-color: var(--border-gray-600-transparent-88);
+    background-color: var(--color-surface-gray-400-transperent-88);
+  }
+  .IconButton.active {
+    border-color: var(--border-brand-900);
+    background-color: var(--s3d2-color-surface-gray-900);
+    svg {
+      fill: var(--s3d2-color-icon-gray-200);
+    }
+  }
+  .IconButton--dark.active,
+  .IconButton--dark:hover {
+    border-color: transparent;
+    background: var(--colors-surface-gray-surface-gray-900-transparent-80, rgba(26, 30, 33, 0.8));
+  }
+}

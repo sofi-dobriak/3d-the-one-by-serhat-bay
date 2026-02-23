@@ -1,0 +1,210 @@
+[
+    {
+        "currency_label": "USD",
+        "id": "26220",
+        "gallery": [
+            "/wp-content/themes/3d/assets/s3d/images/examples/gallery/project-img.jpg",
+            "/wp-content/themes/3d/assets/s3d/images/examples/gallery/project-img.jpg"
+        ],
+        "exterior": [
+            "/wp-content/themes/3d/assets/s3d/images/examples/gallery/project-img.jpg",
+            "/wp-content/themes/3d/assets/s3d/images/examples/gallery/project-img.jpg",
+            "/wp-content/themes/3d/assets/s3d/images/examples/gallery/project-img.jpg"
+        ],
+        "build": "2",
+        "project_image": "/wp-content/themes/3d/assets/s3d/images/project-img.jpg",
+        "project_image_detailed": "/wp-content/themes/3d/assets/s3d/images/project-detailed.jpg",
+        "section": "8",
+        "sec_id": "8",
+        "floor": "2",
+        "rooms": "1",
+        "type": "1\u0412",
+        "_type": "1\u0412",
+        "number": "35964",
+        "sale": "1",
+        "img": "section_7-9_kv1V.png",
+        "compas": "50",
+        "action_price": "0",
+        "visible": "1",
+        "area": "43.99",
+        "life_room": "16.81",
+        "price": "350000",
+        "_price": 350000,
+        "type_object": "1",
+        "price_m2": 0,
+        "img_big": "https://grand-byrze-wp.smarto.agency/wp-content/themes/grand-byrze/assets/img/projects/36/2/section_7-9_kv1V.png",
+        "img_small": "/wp-content/themes/grand-byrze/assets/img/projects/36/2/section_7-9_kv1V-400x85-100307.png",
+        "images": {
+            "without": {
+                "2d": "/img/projects/36/2/section_7-9_kv1V.png"
+            }
+        },
+        "properties": {
+            "3": {
+                "id": "82",
+                "property_id": "3",
+                "property_flat": "14.5",
+                "property_level": "4",
+                "properties_order": "0",
+                "property_name": "Bedroom 2",
+                "property_type": "1",
+                "properties_field_order": "0"
+            },
+            "4": {
+                "id": "82",
+                "property_id": "4",
+                "property_flat": "14.5",
+                "property_level": "4",
+                "properties_order": "0",
+                "property_name": "Bedroom 3",
+                "property_type": "1",
+                "properties_field_order": "0"
+            },
+            "6": {
+                "id": "82",
+                "property_id": "6",
+                "property_flat": "3",
+                "property_level": "1",
+                "properties_order": "0",
+                "property_name": "Bathroom 1",
+                "property_type": "1",
+                "properties_field_order": "0"
+            },
+            "188": {
+                "id": "82",
+                "property_id": "188",
+                "property_flat": "16",
+                "property_level": "1",
+                "properties_order": "0",
+                "property_name": "Hall 1st level",
+                "property_type": "1",
+                "properties_field_order": "0"
+            }
+        },
+        "option": {
+            "corner": true,
+            "terrace": false,
+            "two-level": true,
+            "atrium": false,
+            "panoramic": false
+        },
+        "3d_tour": null,
+        "sorts": "300,0,600,0,600,300,300,300"
+    },
+    {
+        "currency_label": "USD",
+        "id": "26219",
+        "gallery": [
+            "/wp-content/themes/3d/assets/s3d/images/examples/gallery/project-img.jpg",
+            "/wp-content/themes/3d/assets/s3d/images/examples/gallery/project-img.jpg"
+        ],
+        "exterior": [
+            "/wp-content/themes/3d/assets/s3d/images/examples/gallery/project-img.jpg",
+            "/wp-content/themes/3d/assets/s3d/images/examples/gallery/project-img.jpg"
+        ],
+        "build": "2",
+        "project_image": "/wp-content/themes/3d/assets/s3d/images/project-img.jpg",
+        "project_image_detailed": "/wp-content/themes/3d/assets/s3d/images/project-detailed.jpg",
+        "section": "8",
+        "sec_id": "8",
+        "floor": "2",
+        "rooms": "1",
+        "level": "4",
+        "type": "1\u0412",
+        "_type": "1\u0412",
+        "number": "26637",
+        "sale": "1",
+        "img": "section_7-9_kv1V.png",
+        "compas": "50",
+        "action_price": "0",
+        "visible": "1",
+        "area": "43.99",
+        "life_room": "16.81",
+        "price": "350000",
+        "_price": 350000,
+        "type_object": "1",
+        "price_m2": 0,
+        "img_big": "https://dev-3d-version3.smarto.agency/wp-content/themes/3d/assets/img/projects/62/1/N5-A_73_m2-1737465238.png",
+        "img_small": "/wp-content/themes/grand-byrze/assets/img/projects/36/2/section_7-9_kv1V-400x85-100307.png",
+        "video": "https://apartment-tours.smartorange.com.ua/tsentral-hills/?scene=0",
+        "view_from_window_link": "https://apartment-tours.smartorange.com.ua/tsentral-hills/?scene=0",
+        "flat_levels_photo": {
+            "1": {
+                "without": "https://terra-rossa.devbase.pro/img/projects/2/1/136_-_22_____3_LÜ_VİLLA_2_2-1700139470.png",
+                "with": "https://terra-rossa.devbase.pro/img/projects/2/1/1_ZODİAC__136_22___-2_BODRUM_KAT_PLANI-1700139429.png"
+            },
+            "2": {
+                "without": "https://terra-rossa.devbase.pro/img/projects/2/1/136_-_22_____3_LÜ_VİLLA_2_3-1700139475.png",
+                "with": "https://terra-rossa.devbase.pro/img/projects/2/1/2_ZODİAC_136_22_-1_BODRUM_KAT_PLANI-1700139448.png"
+            },
+            "3": {
+                "without": "https://terra-rossa.devbase.pro/img/projects/2/1/136_-_22_____3_LÜ_VİLLA_2_4-1700139480.png",
+                "with": "https://terra-rossa.devbase.pro/img/projects/2/1/3_ZODİAC_136__22__ZEMİN_KAT_PLANI-1700139452.png"
+            },
+            "4": {
+                "without": "https://terra-rossa.devbase.pro/img/projects/2/1/136_-_22_____3_LÜ_VİLLA_2_5-1700139484.png",
+                "with": "https://terra-rossa.devbase.pro/img/projects/2/1/4_ZODİAC_136__22__1_KAT_PLANI-1700139455.png"
+            },
+            "5": {
+                "without": "https://terra-rossa.devbase.pro/img/projects/2/1/136_-_22_____3_LÜ_VİLLA_2_6-1700139488.png",
+                "with": "https://terra-rossa.devbase.pro/img/projects/2/1/5_ZODİAC_136__22_ÇATI_KAT_PLANI-1700139459.png"
+            }
+        },
+        "properties": {
+            "3": {
+                "id": "82",
+                "property_id": "3",
+                "property_flat": "14.5",
+                "property_level": "4",
+                "properties_order": "0",
+                "property_name": "Bedroom 2",
+                "property_type": "1",
+                "properties_field_order": "0"
+            },
+            "4": {
+                "id": "82",
+                "property_id": "4",
+                "property_flat": "14.5",
+                "property_level": "4",
+                "properties_order": "0",
+                "property_name": "Bedroom 3",
+                "property_type": "1",
+                "properties_field_order": "0"
+            },
+            "6": {
+                "id": "82",
+                "property_id": "6",
+                "property_flat": "3",
+                "property_level": "1",
+                "properties_order": "0",
+                "property_name": "Bathroom 1",
+                "property_type": "1",
+                "properties_field_order": "0"
+            },
+            "188": {
+                "id": "82",
+                "property_id": "188",
+                "property_flat": "16",
+                "property_level": "1",
+                "properties_order": "0",
+                "property_name": "Hall 1st level",
+                "property_type": "1",
+                "properties_field_order": "0"
+            }
+        },
+        "images": {
+            "without": {
+                "2d": "/img/projects/36/2/section_7-9_kv1V.png"
+            }
+        },
+        "option": {
+            "corner": true,
+            "terrace": false,
+            "two-level": true,
+            "atrium": false,
+            "panoramic": false
+        },
+        "3d_tour": "https://apartment-tours.smartorange.com.ua/tsentral-hills/?scene=0",
+        "sorts": "309,573,662,574,660,968,599,1012,546,1013,502,976,303,976"
+    }
+]

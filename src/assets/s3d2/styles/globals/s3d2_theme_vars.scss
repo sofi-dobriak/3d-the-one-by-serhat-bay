@@ -1,0 +1,158 @@
+/* ======== EDITABLE PART START ======== */
+
+/* COLOR PRIMITIVES */
+
+$bg-image: url('../images/backgrounds/bg-dark.png');
+
+/*Accent*/
+$s3d2-color-accent-700: #292e32;
+$s3d2-color-accent-800: #1a1e21;
+$s3d2-color-accent-900: #090b0c;
+$s3d2-color-accent-800-hover-overlays-transparent-16: rgba($s3d2-color-accent-800, 0.16);
+$s3d2-color-accent-800-hover-overlays-transparent-72: rgba($s3d2-color-accent-800, 0.72);
+$s3d2-color-brand-700: #ffffff;
+$s3d2-color-brand-800: #fafbfe;
+$s3d2-color-brand-900: #d1d9e1;
+/*Gray*/
+$s3d2-color-gray-100: #ffffff;
+$s3d2-color-gray-200: #1a1e21;
+$s3d2-color-gray-300: #4b535b;
+$s3d2-color-gray-400: #6c7a88;
+$s3d2-color-gray-500: #939ea8;
+$s3d2-color-gray-600: #d1d9e1;
+$s3d2-color-gray-700: #dbe4ec;
+$s3d2-color-gray-800: #ecf2f8;
+$s3d2-color-gray-900: #fafbfe;
+$s3d2-color-gray-independent-900: #fafbfe;
+$s3d2-color-gray-independent-200: #1a1e21;
+
+$s3d2-hover-color-to-dark-bg-button: #919298;
+$s3d2-hover-color-to-menu-dropdown: #1d2225;
+
+/*Special*/
+$s3d2-color-special-200-transparent-72: rgba($s3d2-color-gray-900, 0.72);
+$s3d2-color-special-200-transparent-80: rgba($s3d2-color-gray-900, 0.8);
+$s3d2-color-special-200-transparent-88: rgba($s3d2-color-gray-900, 0.88);
+$s3d2-color-special-400-transparent-88: rgba($s3d2-color-gray-700, 0.88);
+$s3d2-color-special-600-transparent-40: rgba(174, 190, 204, 0.4);
+$s3d2-color-special-900-transparent-40: rgba($s3d2-color-accent-800, 0.4);
+$s3d2-color-special-bg-overlays-transparent-80: rgba($s3d2-color-accent-800, 0.8);
+
+/*Effect*/
+$s3d2-color-effect-900-transparent-24: rgba(32, 35, 38, 0.24);
+$s3d2-color-effect-900-transparent-40: rgba(32, 35, 38, 0.4);
+
+/*Semantic*/
+$s3d2-color-semantic-success: #83af8d;
+$s3d2-color-semantic-success-transparent-20: rgba($s3d2-color-semantic-success, 0.2);
+$s3d2-color-semantic-success-transparent-40: rgba($s3d2-color-semantic-success, 0.4);
+$s3d2-color-semantic-warning: #f1b161;
+$s3d2-color-semantic-danger: #e7473a;
+
+/*COLOR TOKENS: Surface*/
+
+/*Gray*/
+$s3d2-color-surface-gray-100: $s3d2-color-gray-100;
+$s3d2-color-surface-gray-200: $s3d2-color-gray-200;
+$s3d2-color-surface-gray-200-transparent-72: rgba($s3d2-color-surface-gray-200, 0.72);
+$s3d2-color-surface-gray-200-transparent-80: rgba($s3d2-color-surface-gray-200, 0.8);
+$s3d2-color-surface-gray-200-transparent-88: rgba($s3d2-color-surface-gray-200, 0.88);
+$s3d2-color-surface-gray-300: $s3d2-color-gray-300;
+$s3d2-color-surface-gray-400: $s3d2-color-gray-400;
+$s3d2-color-surface-gray-400-transparent-88: rgba($s3d2-color-surface-gray-400, 0.88);
+$s3d2-color-surface-gray-500: $s3d2-color-gray-500;
+$s3d2-color-surface-gray-600: $s3d2-color-gray-600;
+$s3d2-color-surface-gray-700: $s3d2-color-gray-700;
+$s3d2-color-surface-gray-900: $s3d2-color-gray-900;
+$s3d2-color-surface-gray-200-transparent-10: rgba($s3d2-color-surface-gray-900, 0.2);
+$s3d2-color-surface-gray-900-transparent-10: rgba($s3d2-color-surface-gray-900, 0.1);
+$s3d2-color-surface-gray-900-transparent-20: rgba($s3d2-color-surface-gray-900, 0.2);
+$s3d2-color-surface-gray-900-transparent-60: rgba($s3d2-color-surface-gray-900, 0.6);
+$s3d2-color-surface-gray-900-transparent-80: rgba($s3d2-color-surface-gray-200, 0.8);
+
+/*Accent*/
+$s3d2-color-surface-accent-700: $s3d2-color-accent-700;
+$s3d2-color-surface-accent-800: $s3d2-color-accent-800;
+
+/*Semantic*/
+$s3d2-color-surface-semantic-success: $s3d2-color-semantic-success;
+$s3d2-color-surface-semantic-success-transparent-20: rgba($s3d2-color-semantic-success, 0.2);
+$s3d2-color-surface-semantic-success-transparent-60: rgba($s3d2-color-semantic-success, 0.6);
+$s3d2-color-surface-semantic-warning-transparent-16: rgba($s3d2-color-semantic-warning, 0.16);
+
+/*COLOR TOKENS: Border*/
+
+/*Gray*/
+$s3d2-color-border-gray-200: $s3d2-color-gray-200;
+$s3d2-color-border-gray-200-transparent-10: rgba($s3d2-color-gray-200, 0.1);
+$s3d2-color-border-gray-400: $s3d2-color-gray-400;
+$s3d2-color-border-gray-500: $s3d2-color-gray-500;
+$s3d2-color-border-gray-600: $s3d2-color-gray-600;
+$s3d2-color-border-gray-600-transparent-40: rgba(174, 190, 204, 0.4);
+$s3d2-color-border-gray-700: $s3d2-color-gray-700;
+$s3d2-color-border-gray-900: $s3d2-color-gray-900;
+$s3d2-color-border-gray-900-transparent-10: rgba($s3d2-color-gray-900, 0.1);
+$s3d2-color-border-gray-200-transparent-20: rgba($s3d2-color-gray-200, 0.2);
+/*Accent*/
+$s3d2-color-border-accent-800: $s3d2-color-accent-800;
+$s3d2-color-border-accent-900: $s3d2-color-accent-900;
+
+/*Semantic*/
+$s3d2-color-border-semantic-warning: $s3d2-color-semantic-warning;
+$s3d2-color-border-semantic-danger: $s3d2-color-semantic-danger;
+
+/*COLOR TOKENS: Text*/
+
+/*Gray*/
+
+$s3d2-color-text-gray-200: $s3d2-color-gray-200;
+$s3d2-color-text-gray-400: #6c7a88;
+$s3d2-color-text-gray-500: $s3d2-color-gray-300;
+$s3d2-color-text-gray-600: $s3d2-color-gray-600;
+$s3d2-color-text-gray-700: $s3d2-color-gray-700;
+$s3d2-color-text-gray-800: $s3d2-color-gray-800;
+$s3d2-color-text-gray-900: $s3d2-color-gray-900;
+
+/*Accent*/
+$s3d2-color-text-accent-800: $s3d2-color-accent-800;
+
+/*Semantic*/
+$s3d2-color-text-semantic-warning: $s3d2-color-semantic-warning;
+$s3d2-color-text-semantic-danger: $s3d2-color-semantic-danger;
+
+/*COLOR TOKENS: Icon*/
+
+/*Gray*/
+$s3d2-color-icon-gray-200: $s3d2-color-gray-200;
+$s3d2-color-icon-gray-400: $s3d2-color-gray-400;
+$s3d2-color-icon-gray-600: $s3d2-color-gray-600;
+$s3d2-color-icon-gray-700: $s3d2-color-gray-700;
+$s3d2-color-icon-gray-900: $s3d2-color-gray-900;
+
+/*Brand*/
+
+$s3d2-color-icon-brand-800: $s3d2-color-accent-800;
+
+/*Semantic*/
+$s3d2-color-icon-semantic-warning: $s3d2-color-semantic-warning;
+$s3d2-color-icon-semantic-danger: $s3d2-color-semantic-danger;
+
+/*COLOR TOKENS: Effects*/
+$s3d2-color-shadow-gray-900: rgb(213, 221, 228);
+$s3d2-color-shadow-gray-900-transparent-24: rgba($s3d2-color-shadow-gray-900, 0.24);
+$s3d2-color-shadow-gray-900-transparent-40: rgba($s3d2-color-shadow-gray-900, 0.4);
+
+/*COLOR TOKENS: Special*/
+
+/*Accent*/
+$s3d2-color-special-sold-overlays: $s3d2-color-accent-800;
+$s3d2-color-special-sold-overlays-transparent-16: rgba($s3d2-color-special-sold-overlays, 0.16);
+$s3d2-color-special-sold-overlays-transparent-72: rgba($s3d2-color-special-sold-overlays, 0.72);
+
+/*Gray*/
+$s3d2-color-special: #1a1d21;
+$s3d2-color-special-bg-overlay: rgba($s3d2-color-special, 0.8);
+$s3d2-color-special-surface-gray-900-transparent-20: rgba($s3d2-color-special, 0.2);
+$s3d2-color-special-surface-gray-900-transparent-40: rgba($s3d2-color-special, 0.4);
+
+/* ======== EDITABLE PART END======== */

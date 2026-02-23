@@ -1,0 +1,48 @@
+@use "../../globals/fonts";
+
+.Link {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &__text {
+    @include fonts.text-style-3-d-fonts-1920-tiny;
+    font-weight: 400;
+    color: var(--s3d2-color-text-gray-700);
+    transition: 0.25s ease-out;
+  }
+
+  svg {
+    width: var(--space-6);
+    height: var(--space-6);
+    margin-right: var(--space-1);
+    fill: var(--icon-gray-700);
+    transition: 0.25s ease-out;
+  }
+
+  &:hover {
+    .Link__text {
+      color: var(--s3d2-color-text-gray-900);
+    }
+
+    svg {
+      fill: var(--s3d2-color-icon-gray-900);
+    }
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    .Link__text {
+      color: var(--s3d2-color-text-gray-400);
+    }
+
+    svg {
+      fill: var(--s3d2-color-icon-gray-400);
+    }
+  }
+}

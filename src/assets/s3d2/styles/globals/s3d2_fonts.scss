@@ -1,0 +1,184 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/wp-content/themes/3d/assets/fonts/Inter_Tight/inter-tight-v9-cyrillic_latin-regular.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/wp-content/themes/3d/assets/fonts/Inter_Tight/inter-tight-v9-cyrillic_latin-500.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/wp-content/themes/3d/assets/fonts/Inter_Tight/inter-tight-v9-cyrillic_latin-600.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/wp-content/themes/3d/assets/fonts/Inter_Tight/inter-tight-v9-cyrillic_latin-700.woff2')
+    format('woff2');
+}
+
+@mixin fonts-3d-h1 {
+  font-family: 'Inter Tight';
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 38.4px */
+  text-transform: uppercase;
+}
+
+@mixin fonts-3d-h2 {
+  font-family: 'Inter Tight';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 24px */
+  text-transform: uppercase;
+}
+
+@mixin fonts-3d-h3-semibold {
+  font-family: 'Inter Tight';
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 20.4px */
+}
+
+@mixin fonts-3d-body {
+  font-family: 'Inter Tight';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+}
+
+@mixin fonts-3d-body-uppercase {
+  font-family: 'Inter Tight';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 18.2px */
+  text-transform: uppercase;
+}
+
+@mixin fonts-3d-small-uppercase {
+  font-family: 'Inter Tight';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 15.6px */
+  text-transform: uppercase;
+}
+
+@mixin fonts-3d-small-medium {
+  font-family: 'Inter Tight';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 15.6px */
+}
+
+@mixin fonts-3d-small-bold {
+  font-family: 'Inter Tight';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 15.6px */
+}
+
+@mixin fonts-3d-small-strikeshrought {
+  font-family: 'Inter Tight';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 15.6px */
+  text-decoration-line: line-through;
+}
+
+@mixin fonts-3d-tiny {
+  font-family: 'Inter Tight';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 10px */
+}
+
+@mixin fonts-3d-tiny-strikeshrought {
+  font-family: 'Inter Tight';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 13px */
+  text-decoration-line: line-through;
+}
+
+.fonts-3d-h1 {
+  @include fonts-3d-h1;
+  color: var(--s3d2-color-text-gray-900);
+}
+
+.fonts-3d-h2 {
+  @include fonts-3d-h2;
+  color: var(--s3d2-color-text-gray-900);
+}
+
+.fonts-3d-h3-semibold {
+  @include fonts-3d-h3-semibold;
+  color: var(--s3d2-color-text-gray-500);
+}
+
+.fonts-3d-body {
+  @include fonts-3d-body;
+  color: var(--s3d2-color-text-gray-900);
+}
+
+.fonts-3d-body-uppercase {
+  @include fonts-3d-body-uppercase;
+  color: var(--s3d2-color-text-gray-900);
+}
+
+.fonts-3d-small-uppercase {
+  @include fonts-3d-small-uppercase;
+  color: var(--s3d2-color-text-gray-900);
+}
+
+.fonts-3d-small-medium {
+  @include fonts-3d-small-medium;
+  color: var(--s3d2-color-text-gray-900);
+}
+
+.fonts-3d-small-bold {
+  @include fonts-3d-small-bold;
+  color: var(--s3d2-color-text-gray-900);
+}
+
+.fonts-3d-small-strikeshrought {
+  @include fonts-3d-small-strikeshrought;
+  color: var(--s3d2-color-text-gray-900);
+}
+
+.fonts-3d-tiny {
+  @include fonts-3d-tiny;
+  color: var(--s3d2-color-text-gray-900);
+}
+
+.fonts-3d-tiny-strikeshrought {
+  @include fonts-3d-tiny-strikeshrought;
+  color: var(--s3d2-color-text-gray-900);
+}

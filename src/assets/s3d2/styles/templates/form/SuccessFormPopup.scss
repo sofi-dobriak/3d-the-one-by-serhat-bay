@@ -1,0 +1,204 @@
+@use "../../globals/fonts";
+@use "../../globals/s3d2_fonts";
+
+.SuccessFormPopup {
+  background-color: var(--color-900-trancperent-40);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+
+  &__content {
+    padding: var(--space-12);
+    background-color: var(--color-surface-gray-200);
+    // max-width: 920px;
+    max-width: 550px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: var(--space-16);
+    max-height: 100vh;
+    overflow-y: auto;
+
+    @media screen and (max-width: 1024px) {
+      width: calc(100% - var(--space-5) - var(--space-5));
+      margin: auto;
+      max-width: none;
+      padding: var(--space-8) var(--space-7);
+    }
+
+    @media screen and (max-width: 600px) {
+      // padding-bottom: 150px;
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
+      padding-top: var(--space-8);
+      width: calc(100% - var(--space-2) - var(--space-2));
+    }
+  }
+
+  &__button {
+    @media screen and (max-width: 1024px) {
+      align-self: flex-end;
+    }
+    @media screen and (max-width: 600px) {
+      order: 6;
+      margin-top: var(--space-8);
+    }
+  }
+
+  &__close {
+    width: var(--space-6);
+    height: var(--space-6);
+    position: absolute;
+    right: var(--space-5);
+    top: var(--space-5);
+    cursor: pointer;
+    z-index: 3;
+    transform-origin: center;
+    transition: 0.3s ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: rotate(180deg);
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      right: var(--space-2);
+      top: var(--space-2);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--s3d2-color-text-gray-900);
+      stroke: var(--s3d2-color-text-gray-900);
+    }
+  }
+
+  &__title {
+    @include s3d2_fonts.fonts-3d-h1;
+    margin-bottom: 100px;
+    width: 100%;
+    color: var(--s3d2-color-text-gray-900);
+
+    @media screen and (max-width: 1024px) {
+      font-size: 64px;
+      width: 80%;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 40px;
+      width: 100%;
+      margin-bottom: var(--space-8);
+    }
+  }
+
+  &__text {
+    @include s3d2_fonts.fonts-3d-body;
+    color: var(--s3d2-color-text-gray-800);
+    max-width: 274px;
+
+    @media screen and (max-width: 1024px) {
+      max-width: 225px;
+    }
+  }
+
+  &__bg {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 35%;
+    height: auto;
+    pointer-events: none;
+    overflow: hidden;
+
+    @media screen and (max-width: 600px) {
+      width: 75%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      transform: scaleX(-1) translate3d(-15%, 10%, 10px);
+    }
+  }
+}
+
+@keyframes confetti-slow {
+  0% {
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+  }
+
+  100% {
+    transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg);
+  }
+}
+
+@keyframes confetti-medium {
+  0% {
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+  }
+
+  100% {
+    transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg);
+  }
+}
+
+@keyframes confetti-fast {
+  0% {
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+  }
+
+  100% {
+    transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg);
+  }
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: #f0f0f0;
+}
+
+.confetti-container {
+  perspective: 700px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  border-radius: 0%;
+
+  &--animation-slow {
+    animation: confetti-slow 3s linear 1 forwards;
+  }
+
+  &--animation-medium {
+    animation: confetti-medium 2.5s linear 1 forwards;
+  }
+
+  &--animation-fast {
+    animation: confetti-fast 2s linear 1 forwards;
+  }
+}

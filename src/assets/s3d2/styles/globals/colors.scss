@@ -1,0 +1,207 @@
+@use "theme_vars";
+
+@use 'sass:color';
+
+:root {
+  /*Accent*/
+  --color-accent-700: #{theme_vars.$color-accent-700};
+  --color-accent-800: #{theme_vars.$color-accent-800};
+  --color-accent-900: #{theme_vars.$color-accent-900};
+
+  /*Gray*/
+
+  --color-gray-100: #{theme_vars.$color-gray-100};
+  --color-gray-200: #{theme_vars.$color-gray-200};
+  --color-surface-gray-200-transperent-88: #{theme_vars.$color-surface-gray-200-transperent-88};
+  --color-surface-gray-400-transperent-88: #{theme_vars.$color-surface-gray-400-transperent-88};
+  --color-gray-300: #{theme_vars.$color-gray-300};
+  --color-gray-400: #{theme_vars.$color-gray-400};
+  --color-gray-500: #{theme_vars.$color-gray-500};
+  --color-gray-600: #{theme_vars.$color-gray-600};
+  --color-gray-700: #{theme_vars.$color-gray-700};
+  --color-gray-800: #{theme_vars.$color-gray-800};
+  --color-gray-900: #{theme_vars.$color-gray-900};
+
+  /*Special*/
+
+  --color-200-trancperent-88: #{theme_vars.$color-200-trancperent-88};
+  --color-900-trancperent-40: #{theme_vars.$color-900-trancperent-40};
+  --color-bg-overlays-transparent-80: #{theme_vars.$color-bg-overlays-transparent-80};
+
+  /*Brand*/
+
+  --color-brand-700: #{theme_vars.$color-brand-700};
+  --color-brand-800: #{theme_vars.$color-brand-800};
+  --color-brand-900: #{theme_vars.$color-brand-900};
+  --color-brand-hover-overlays-transparent-32: #{theme_vars.$color-brand-hover-overlays-transparent-32};
+  --color-brand-hover-overlays-transparent-48: #{theme_vars.$color-brand-hover-overlays-transparent-48};
+  --color-brand-active-element-transparent-72: #{theme_vars.$color-brand-active-element-transparent-72};
+
+  /*Effect*/
+
+  --color-effect-900-transparent-24: #{theme_vars.$color-effect-900-transparent-24};
+  --color-effect-900-transparent-40: #{theme_vars.$color-effect-900-transparent-40};
+
+  /*Semantic*/
+
+  --color-semantic-success: #{theme_vars.$color-semantic-success};
+  --color-semantic-warning: #{theme_vars.$color-semantic-warning};
+  --color-semantic-warning-transparent-16: #{theme_vars.$color-semantic-warning-transparent-16};
+  --color-semantic-info: #{theme_vars.$color-semantic-info};
+  --color-semantic-danger: #{theme_vars.$color-semantic-danger};
+
+  --color-surface-success: #{theme_vars.$color-surface-success};
+  --color-surface-warning-transparent-16: #{theme_vars.$color-surface-warning-transparent-16};
+  --color-surface-success-available-transparent-20: #{theme_vars.$color-surface-success-available-transparent-20};
+  --color-surface-success-available-hover-transparent-60: #{theme_vars.$color-surface-success-available-hover-transparent-60};
+
+  /*Colour tokens (front)*/
+
+  /*Colour tokens (front)*/
+  /*Surface*/
+
+  /*Gray*/
+  --color-surface-gray-100: var(--s3d2-color-gray-100);
+  --color-surface-gray-200: var(--s3d2-color-gray-200);
+  --color-surface-gray-300: var(--s3d2-color-gray-300);
+  --color-surface-gray-400: var(--s3d2-color-gray-400);
+  --color-surface-gray-500: var(--s3d2-color-gray-500);
+  --color-surface-gray-600: var(--s3d2-color-gray-600);
+  --color-surface-gray-700: var(--s3d2-color-gray-700);
+  --color-surface-gray-800: var(--s3d2-color-gray-800);
+  --color-surface-gray-900: var(--s3d2-color-gray-900);
+  // --color-surface-gray-900-transperent-40: #1A1D2166;
+  --color-surface-gray-900-transparent-10: #{theme_vars.$color-surface-gray-900-transperent-10};
+  --color-surface-gray-900-transperent-40: #{theme_vars.$color-surface-gray-900-transperent-40};
+  --color-shadow-gray-900-transperent-40: #{theme_vars.$color-shadow-gray-900-transperent-40};
+  --surface-gray-700: var(--s3d2-color-gray-700);
+  --surface-gray-900: var(--s3d2-color-gray-900);
+  --surface-gray-900-transperent-40: #{theme_vars.$color-surface-gray-900-transperent-40};
+
+  --color-surface-gray-900: var(--s3d2-color-gray-900);
+
+  /*Accent*/
+
+  --color-surface-accent-700: var(--color-accent-700);
+  --color-surface-accent-800: var(--color-accent-800);
+
+  /*Brand*/
+  --s3d2-color-surface-gray-900: var(--color-brand-700);
+  --s3d2-color-surface-gray-900: var(--color-brand-800);
+  --s3d2-color-surface-gray-900: var(--color-brand-900);
+
+  /*Semantic*/
+
+  --color-surface-semantic-success: var(--color-semantic-success);
+  --color-surface-semantic-warning-transparent-16: var(--color-semantic-warning-transparent-16);
+
+  /*Colour tokens (front)*/
+  /*Border*/
+
+  /*Gray*/
+
+  --border-gray-200: var(--s3d2-color-gray-200);
+  --border-gray-400: var(--s3d2-color-gray-400);
+  --border-gray-500: var(--s3d2-color-gray-500);
+  --border-gray-600: var(--s3d2-color-gray-600);
+  --border-gray-600-transparent-40: #{theme_vars.$color-gray-600-transparent-40};
+  --border-gray-600-transparent-88: #{theme_vars.$color-gray-600-transparent-88};
+  --border-gray-900: var(--s3d2-color-gray-900);
+
+  /*Accent*/
+  --border-accent-800: var(--color-accent-800);
+  --border-accent-900: var(--color-accent-900);
+
+  /*Brand*/
+
+  --border-brand-700: var(--color-brand-700);
+  --border-brand-800: var(--color-brand-800);
+  --border-brand-900: var(--color-brand-900);
+
+  /*Semantic*/
+  --border-semantic-warning: var(--color-semantic-warning);
+  --border-semantic-danger: var(--color-semantic-danger);
+
+  /* Colour tokens (front) text */
+  /*Gray*/
+
+  --s3d2-color-text-gray-200: var(--s3d2-color-gray-200);
+  --text-gray-400: var(--s3d2-color-gray-400);
+  --text-gray-600: var(--s3d2-color-gray-600);
+  --text-gray-700: var(--s3d2-color-gray-700);
+  --text-gray-800: var(--s3d2-color-gray-800);
+  --s3d2-color-text-gray-900: var(--s3d2-color-gray-900);
+
+  /*Semantic*/
+
+  --text-danger: var(--color-semantic-danger);
+  --text-warning: var(--color-semantic-warning);
+  --not-found-color: var(--not-found-color);
+
+  /* Colour tokens (front) Icon */
+  /*Gray*/
+  --s3d2-color-icon-gray-200: var(--s3d2-color-gray-200);
+  --icon-gray-400: var(--s3d2-color-gray-400);
+  --icon-gray-600: var(--s3d2-color-gray-600);
+  --icon-gray-700: var(--s3d2-color-gray-700);
+  --s3d2-color-icon-gray-900: var(--s3d2-color-gray-900);
+
+  /*Semantic*/
+
+  --icon-warning: var(--color-semantic-warning);
+  --icon-danger: var(--color-semantic-danger);
+
+  /* Colour tokens (front) Effects */
+
+  --shadow-gray-900-transparent-24: #{theme_vars.$shadow-gray-900-transparent-24};
+  --shadow-gray-900-transparent-40: #{theme_vars.$shadow-gray-900-transparent-40};
+
+  /* Colour tokens (front) Special */
+
+  --bg-overlay: #{theme_vars.$bg-overlay};
+  --hover-overlays-transparent-32: #{theme_vars.$hover-overlays-transparent-32};
+  --hover-overlays-transparent-48: #{theme_vars.$hover-overlays-transparent-48};
+  --active-element-transparent-72: #{theme_vars.$active-element-transparent-72};
+
+  --color-special-accent-sold-overlays-transparent-16: #{theme_vars.$color-special-accent-sold-overlays-transparent-16};
+  --color-special-accent-sold-overlays-transparent-72: #{theme_vars.$color-special-accent-sold-overlays-transparent-72};
+  --color-special-200-transparent-88: #{theme_vars.$color-special-200-transparent-88};
+
+  --surface-accent-800: var(--color-accent-800);
+  --border-accent-900: var(--color-accent-900);
+
+  --surface-gray-700: var(--s3d2-color-gray-700);
+  --surface-gray-900: var(--s3d2-color-gray-900);
+}
+
+.text-gray-200 {
+  color: var(--s3d2-color-text-gray-200);
+}
+
+.text-gray-400 {
+  color: var(--s3d2-color-text-gray-400);
+}
+
+.text-gray-600 {
+  color: var(--s3d2-color-text-gray-600);
+}
+
+.text-gray-700 {
+  color: var(--s3d2-color-text-gray-700);
+}
+
+.text-gray-800 {
+  color: var(--s3d2-color-text-gray-800);
+}
+
+.text-gray-900 {
+  color: var(--s3d2-color-text-gray-900);
+}
+
+.text-danger {
+  color: var(--text-danger);
+}
+
+.text-warning {
+  color: var(--text-warning);
+}

@@ -1,0 +1,29 @@
+@use "../../../globals/fonts";
+
+.Textarea {
+  padding: var(--space-5);
+  @include fonts.text-style-3-d-fonts-1920-body-regular;
+  background-color: var(--color-surface-gray-100);
+  border: 1px solid var(--s3d2-color-border-gray-600-transparent-40);
+  border-radius: var(--border-space-1);
+
+  color: var(--s3d2-color-text-gray-900);
+  flex-grow: 1;
+  width: 100%;
+  min-height: 60px;
+  max-width: 100%;
+  max-height: 250px;
+  @media screen and (max-width: 768px) {
+    padding: var(--space-4);
+  }
+
+  &::placeholder {
+    color: var(--s3d2-color-text-gray-600);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--s3d2-color-border-gray-600);
+    background-color: var(--s3d2-color-gray-100);
+  }
+}

@@ -1,0 +1,104 @@
+@use "../../../../s3d2/styles/globals/s3d2_fonts.scss";
+
+:root {
+  --text-heading: #151515;
+  /* заголовки */
+  --text-body: #2b2b2b;
+  /* основний текст */
+  --text-muted: #5f5f5f;
+  /* опис/другорядний текст */
+  --bg-light: #f6f7f9;
+  /* світлий фон секції */
+  --card-border: #e6e8eb;
+}
+
+.s3d2-brands {
+  position: relative;
+  padding: var(--space-32) var(--space-10) 0 var(--space-10);
+  padding-top: var(--space-16);
+  background-color: #fafbfe;
+}
+
+/* Малий верхній заголовок як на прикладі ("BRANDS INCLUDED IN YOUR HOME") */
+.section-eyebrow {
+  margin: 0 0 24px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-heading);
+  font-weight: 700;
+}
+
+/* Сітка: три підблоки в ряд */
+.s3d2-brands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 16px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Карточка бренду */
+.s3d2-brand-card {
+  // padding: 0 var(--space-4);
+  // border-radius: var(--border-space-2);
+  // border: 1px solid var(--card-border);
+  // background: #fff;
+}
+
+/* Верхня частина: логотип/назва бренду + категорія */
+.s3d2-brand-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  height: 56px;
+
+  h3 {
+    font-size: 20px;
+  }
+}
+
+.s3d2-brand-mark {
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  color: var(--text-heading);
+  white-space: nowrap;
+}
+
+/* Якщо є зображення логотипу */
+.s3d2-brand-logo {
+  height: auto;
+  max-width: 78px;
+  object-fit: contain;
+  display: block;
+}
+
+.s3d2-brand-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+/* Опис */
+.s3d2-brand-desc {
+  @include s3d2_fonts.fonts-3d-small-uppercase;
+  text-transform: none;
+  color: var(--s3d2-color-text-gray-400);
+}
+
+/* Адаптивність: на вузьких екранах можна скласти в 1–2 колонки */
+@media (max-width: 992px) {
+  .s3d2-brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .s3d2-brands-grid {
+    grid-template-columns: 1fr;
+  }
+}

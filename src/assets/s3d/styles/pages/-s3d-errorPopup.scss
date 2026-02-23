@@ -1,0 +1,137 @@
+@use "../assets/vars";
+
+$error-popup-width: 425px;
+$color-error: vars.$mc;
+$color-success: #2f9930;
+
+.errorPopup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 23px;
+  // max-width: 70%;
+  // width: $error-popup-width;
+  z-index: 2;
+  // background: $wc;
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: var(--color-surface-gray-200);
+  }
+  &__head {
+    // width: 100%;
+    padding: 0;
+  }
+  &__body {
+    // width: 100%;
+    flex: 1 1 100%;
+    padding: 0;
+    margin-top: 20px;
+    span {
+      color: var(--color-semantic-danger);
+    }
+  }
+  &__footer {
+    display: flex;
+    // width: 100%;
+    padding: 0;
+    margin-top: 30px;
+  }
+  &__title {
+    font-size: var(--font32);
+    line-height: 1em;
+    text-transform: uppercase;
+    font-family: vars.$default-font;
+    color: var(--s3d2-color-gray-900);
+  }
+  &__description {
+    width: 100%;
+    text-align: center;
+    font-size: var(--font14);
+    line-height: 1.6em;
+    margin-top: 10px;
+    color: var(--s3d2-color-gray-800);
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 220px;
+    text-decoration: none;
+    border-radius: 50px;
+    background: vars.$title-dark;
+    color: vars.$wc;
+    font-size: var(--font14);
+    letter-spacing: 0.1em;
+    font-family: vars.$default-font;
+    text-transform: uppercase;
+  }
+  &__time {
+    color: vars.$mc;
+  }
+  @media screen and (max-width: 680px) {
+    padding: 30px;
+    max-width: 100%;
+    &__body {
+      margin-top: 15px;
+    }
+    &__footer {
+      margin-top: 15px;
+    }
+    &__link {
+      height: 40px;
+      width: 155px;
+    }
+  }
+}
+
+.send-error-popup {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(-100%);
+  z-index: -1;
+  &__wrap {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    overflow: hidden;
+  }
+  &__message {
+    color: var(--color-semantic-danger);
+    font-size: var(--font13);
+    line-height: 1.3em;
+  }
+  &__icon {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    fill: var(--color-semantic-danger);
+  }
+}
+
+.error-progress {
+  width: 100%;
+  height: 2px;
+  background: vars.$description-text-color;
+  overflow: hidden;
+}
+
+.bg--success {
+  // background-color: $color-success;
+}
+.bg--error {
+  // background-color: $color-error;
+}

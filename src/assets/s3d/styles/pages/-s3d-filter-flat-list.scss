@@ -1,0 +1,307 @@
+@use "../../../s3d2/styles/assets/mixins";
+@use "../../../s3d2/styles/globals/fonts";
+@use "../../../s3d2/styles/globals/s3d2_fonts";
+@use "../assets/vars";
+
+.s3d-filter__table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  // background-color: var(--color-surface-gray-200);
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    background: vars.$wc;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: vars.$filter-bg;
+    -webkit-box-shadow: none;
+  }
+
+  &::-webkit-scrollbar-thumb:window-inactive {
+    background: vars.$filter-bg;
+  }
+
+  .s3d-filter__head {
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+    @at-root [data-view-type='card'] .s3d-filter__head {
+      display: none;
+    }
+
+    .s3d-filter__tr:not(.hide) {
+      height: calc(var(--table-row-height) + var(--filter-table-offset-top));
+      background-color: var(--color-surface-gray-200);
+    }
+  }
+
+  [data-view-type='card'],
+  .card-view {
+    --gap: var(--space-4);
+    padding: var(--gap);
+    padding-top: calc(var(--gap) * 1.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+
+    & > * {
+      width: calc(50% - (var(--gap) / 4));
+    }
+
+    @media screen and (max-width: 680px) {
+      & > * {
+        width: calc(100% - (var(--gap) / 4));
+      }
+
+      padding: calc(var(--gap) * 1.5) 20px 20px;
+    }
+  }
+
+  .s3d-filter__tr {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: var(--table-row-height);
+    transition: background-color 0.4s ease-in-out;
+    cursor: pointer;
+
+    &:nth-child(2n) {
+      background-color: var(--s3d2-color-surface-gray-200);
+
+      @media screen and (min-width: 1023px) {
+        &:hover {
+          background-color: var(--s3d2-color-surface-gray-900);
+          transition: background-color 0.4s ease-in-out;
+        }
+      }
+    }
+
+    @media screen and (min-width: 1023px) {
+      &:hover {
+        background-color: var(--s3d2-color-surface-gray-900);
+        transition: background-color 0.4s ease-in-out;
+
+        .s3d-filter__td {
+          color: var(--s3d2-color-text-gray-200);
+
+          svg {
+            fill: var(--s3d2-color-text-gray-200);
+          }
+        }
+      }
+    }
+  }
+
+  .s3d-filter__th {
+    @include s3d2_fonts.fonts-3d-body;
+    color: var(--s3d2-color-text-gray-400);
+    vertical-align: bottom;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4) 0;
+    transition: color 0.4s ease-in-out;
+    text-align: center;
+    width: 90%;
+
+    svg {
+      transform: rotate(180deg);
+    }
+
+    &--offset {
+      width: var(--space-1);
+    }
+
+    .s3d-sort__arrow {
+      // margin-left: 8px;
+      // stroke: none;
+      // fill: $flat-list-text-color;
+      height: var(--icon16);
+      transform-origin: center;
+      transition: transform 0.4s ease-in-out;
+      flex-shrink: 0;
+      width: var(--space-4);
+      height: var(--space-4);
+
+      path {
+        fill: var(--s3d2-color-text-gray-400);
+        transition: fill 0.4s ease-in-out;
+      }
+
+      & {
+        transform: rotate(180deg);
+      }
+    }
+
+    &.s3d-sort-active {
+      svg {
+        transform: rotate(0deg);
+      }
+    }
+
+    &.s3d-sort-inactive {
+      svg {
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      color: var(--s3d2-color-gray-900);
+
+      svg path {
+        fill: var(--s3d2-color-gray-900);
+      }
+    }
+  }
+
+  .s3d-filter__td {
+    font-size: var(--font14);
+    @include mixins.font-default;
+    color: var(--s3d2-color-text-gray-900);
+    align-self: center;
+    vertical-align: middle;
+    transition: color 0.4s ease-in-out;
+    text-align: center;
+    width: 90%;
+    white-space: nowrap;
+
+    &.bold {
+      // font-weight: 700;
+    }
+
+    &-status-label {
+      width: var(--space-2);
+      height: var(--space-2);
+      border-radius: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &--offset {
+      width: 20px;
+    }
+
+    .s3d__favourite {
+      // height: var(--icon24);
+      // width: var(--icon24);
+      border-radius: 0;
+      border: none;
+      background: transparent;
+      margin: 0 auto;
+
+      svg {
+        fill: transparent;
+        // stroke: $fav-icon;
+        fill: var(--s3d2-color-icon-gray-900);
+        transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+      }
+
+      // &:hover input:not(:checked) + svg {
+      //   fill: var(--color-brand-900);
+      // }
+
+      input:checked + svg {
+        // fill: $filter-range-color;
+        fill: var(--color-semantic-success);
+        // stroke: $filter-range-color;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    .s3d-sort__arrow {
+      margin-left: 4px;
+    }
+  }
+}
+
+.s3d-filter__grid {
+  display: none;
+  flex-wrap: center;
+  width: 100%;
+  height: 100%;
+  background-color: vars.$flat-list-bg;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    background: vars.$wc;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: vars.$filter-bg;
+    -webkit-box-shadow: none;
+  }
+
+  &::-webkit-scrollbar-thumb:window-inactive {
+    background: vars.$filter-bg;
+  }
+}
+
+.s3d-filter__table,
+.s3d-filter__grid {
+  .s3d-filter-active {
+  }
+}
+
+.s3d-ctr[data-type='plannings'] ~ .s3d-filter-wrap {
+  .s3d-filter__table {
+    display: none;
+  }
+}
+
+.tablet {
+  .s3d-filter__table {
+    table {
+      width: 100%;
+    }
+  }
+}
+
+.mobile {
+  .s3d-filter__table .s3d-filter__th .s3d-sort__arrow {
+    display: none;
+  }
+
+  .s3d-filter__td {
+    font-size: 12px;
+  }
+
+  .s3d-filter__th:nth-last-child(3),
+  td.s3d-filter__td:nth-last-child(3),
+  .s3d-filter__th:nth-last-child(2),
+  td.s3d-filter__td:nth-last-child(2) {
+    width: 45%;
+  }
+
+  .s3d-filter__th:nth-child(2),
+  .s3d-filter__th:nth-child(3),
+  .s3d-filter__th:nth-child(4),
+  td.s3d-filter__td:nth-child(2),
+  td.s3d-filter__td:nth-child(3),
+  td.s3d-filter__td:nth-child(4) {
+    width: 50%;
+  }
+}
+
+.s3d-filter__th[data-sort='none'] {
+  width: 40%;
+}
+.s3d-filter__tr .s3d-filter__td.favourite {
+  width: 40%;
+}

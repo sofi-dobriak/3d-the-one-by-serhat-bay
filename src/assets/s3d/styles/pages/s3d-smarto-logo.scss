@@ -1,0 +1,87 @@
+.smarto_logo {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  z-index: 1000;
+  pointer-events: all;
+  height: auto;
+
+  img {
+    object-fit: cover;
+    width: var(--smarto-logo-w);
+    height: var(--smarto-logo-h);
+    transform: translate(20px, 20px);
+    transition: transform .4s ease-in-out;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 1023px) {
+    &:hover {
+      img {
+        transform: translate(0,0);
+        transition: transform .4s ease-in-out;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    bottom: 0;
+    // top: calc((-1)*var(--smarto-logo-h));
+    transform: translate(38%, 40%);
+
+    img {
+      transform: translate(0,0);
+    }
+  }
+}
+
+
+.tablet .smarto_logo,
+  .mobile .smarto_logo {
+      bottom: calc(var(--menu-h) + -22px);
+      top: auto;
+      left: auto;
+      right:0;
+      width: 27px;
+      height: 27px;
+      img {
+        transform: none;
+      }
+  }
+  .tablet .smarto_logo {
+      bottom: 0;
+      width: 36px;
+      height: 36px;
+      transform: none;
+  }
+  .tablet.landscape .smarto_logo {
+  }
+
+  .tablet .smarto_logo img,
+  .mobile .smarto_logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+  }
+  // .tablet [data-type="floor"] .smarto_logo,
+  // .tablet [data-type="flat"] .smarto_logo,
+  // .tablet [data-type="plannings"] .smarto_logo,
+  // .mobile [data-type="floor"] .smarto_logo,
+  // .mobile [data-type="flat"] .smarto_logo,
+  // .mobile [data-type="plannings"] .smarto_logo {
+  //     bottom: calc(var(--menu-h) + -22px);
+  // }
+
+  .tablet [data-type="genplan"] .smarto_logo,
+  .tablet [data-type="plannings"] .smarto_logo {
+    z-index: 500;
+  }
+
+  .mobile .smarto_logo {
+      bottom: 0;
+      transform: none;
+      img {
+        transform: none;
+      }
+  }

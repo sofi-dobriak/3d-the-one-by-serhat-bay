@@ -1,0 +1,31 @@
+@use "../../../globals/fonts";
+@use "../../../globals/s3d2_fonts.scss";
+
+.TextInput {
+  padding: var(--space-4);
+  background-color: transparent;
+  border: 1px solid var(--s3d2-color-surface-gray-900);
+  border-radius: var(--border-space-1);
+  -webkit-appearance: none;
+  appearance: none;
+  color: var(--s3d2-color-text-gray-900);
+  @include s3d2_fonts.fonts-3d-body;
+  transition: 0.25s ease-out;
+
+  @media screen and (min-width: 769px) {
+    padding: calc(var(--space-5) + 2px) var(--space-5);
+  }
+
+  &::placeholder {
+    color: var(--s3d2-color-text-gray-900);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: var(--s3d2-color-gray-300);
+  }
+
+  &:hover {
+    background-color: var(--s3d2-color-gray-300);
+  }
+}

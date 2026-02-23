@@ -1,0 +1,74 @@
+@use "../../assets/mixins";
+@use "../../globals/fonts";
+@use "../../globals/s3d2_fonts";
+
+.s3d2-BigButton {
+  @include s3d2_fonts.fonts-3d-small-medium;
+  line-height: 120%;
+  padding: var(--space-3) var(--space-4);
+  color: var(--s3d2-color-text-gray-900);
+  cursor: pointer;
+  border-radius: var(--space-2);
+  background-color: var(--s3d2-color-surface-gray-900);
+  border-color: transparent;
+  height: 40px;
+  transition: 0.25s ease-out;
+  text-align: left;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--s3d2-color-surface-gray-900);
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    &::after {
+      transform: translate3d(100%, 0, 0) skew(25deg);
+    }
+  }
+
+  &::after {
+    content: '';
+    width: 209%;
+    height: 200%;
+    position: absolute;
+    top: -20%;
+    left: -215%;
+    -webkit-transform: skew(30deg);
+    -ms-transform: skew(30deg);
+    transform: skew(30deg);
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1),
+      -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    background: var(--s3d2-hover-color-to-dark-bg-button) !important;
+  }
+
+  span,
+  svg {
+    position: relative;
+    z-index: 3;
+  }
+
+  span {
+    color: var(--s3d2-color-text-gray-200);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--s3d2-color-icon-gray-200);
+  }
+
+  &:disabled {
+    background-color: var(--color-surface-gray-100);
+    border: 1px solid var(--s3d2-color-border-gray-400);
+    color: var(--s3d2-color-text-gray-600);
+    cursor: not-allowed;
+
+    svg {
+      fill: var(--s3d2-color-icon-gray-600);
+    }
+  }
+}

@@ -1,0 +1,139 @@
+@use "../assets/vars";
+
+.flat-gallery-popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 103;
+  width: 100%;
+  height: 100%;
+  background-color: vars.$popup-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInPopup 0.4s ease-in-out;
+  --offset: 20px;
+
+  @media screen and (max-width: 1024px) {
+    --offset: 10px;
+  }
+
+  &__content {
+    width: calc(100% - var(--offset) * 2);
+    height: calc(100% - var(--offset) * 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: vars.$popup-content-color;
+    position: relative;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .flat-gallery-popup__buttons {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: var(--offset);
+      padding-right: var(--offset);
+      z-index: 2;
+
+      .flat-gallery-popup__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--size-btn-circle);
+        height: var(--size-btn-circle);
+        border-radius: 50%;
+        border: 1px solid vars.$popup-text-color;
+        background-color: transparent;
+        overflow: hidden;
+        padding: 0;
+        transition: background-color 0.3s ease-in, border 0.3s ease-in-out;
+        cursor: pointer;
+
+        svg {
+          display: flex;
+          height: auto;
+          width: 30%;
+          stroke: vars.$popup-text-color;
+          transition: stroke 0.3s ease-in;
+        }
+
+        @media screen and (min-width: 1023px) {
+          &:hover {
+            border: 1px solid vars.$popup-close-btn-bg-hover;
+            background-color: vars.$popup-close-btn-bg-hover;
+
+            svg {
+              stroke: vars.$popup-close-btn-icon-hover;
+            }
+          }
+        }
+
+        &.flat-gallery-popup__button-right {
+          transform: rotate(180deg);
+        }
+
+        &[disabled] {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .swiper-container {
+      width: 85%;
+      height: 85%;
+      overflow: hidden;
+
+      @media screen and (max-width: 680px) {
+        width: 80%;
+      }
+
+      .swiper-slide {
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: calc(var(--offset) * 2);
+    top: calc(var(--offset) * 2);
+    width: var(--size-btn-circle);
+    height: var(--size-btn-circle);
+    cursor: pointer;
+    transition: 0.3s ease-out;
+
+    circle {
+      fill: vars.$popup-close-btn-bg;
+      transition: 0.3s ease-in-out;
+    }
+
+    path {
+      stroke: vars.$popup-close-btn-icon;
+      transition: 0.3s ease-in-out;
+    }
+
+    @media screen and (min-width: 1023px) {
+      &:hover {
+        circle {
+          fill: vars.$popup-close-btn-bg-hover;
+        }
+
+        path {
+          stroke: vars.$popup-close-btn-icon-hover;
+        }
+      }
+    }
+  }
+}

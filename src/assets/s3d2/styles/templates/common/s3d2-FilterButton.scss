@@ -1,0 +1,84 @@
+@use "../../globals/s3d2_fonts";
+
+.s3d2-filter-call-button {
+  @include s3d2_fonts.fonts-3d-small-medium;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-35%, -50%) rotate(-90deg);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: var(--space-2);
+  border-bottom-left-radius: var(--space-2);
+  border-top: 1px solid transparent;
+  border-right: 1px solid (var(--s3d2-color-border-gray-900-transparent-10));
+  border-bottom: 1px solid (var(--s3d2-color-border-gray-900-transparent-10));
+  border-left: 1px solid (var(--s3d2-color-border-gray-900-transparent-10));
+  background: var(--s3d2-color-surface-gray-200-transparent-80);
+  color: var(--s3d2-color-text-gray-900);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  z-index: 10;
+  transition: left 0.3s linear, transform 0.25s linear;
+
+  body:not(.js-s3d-filter-open) & {
+    left: 0;
+
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  body.js-s3d-filter-open & {
+    left: var(--filter-width);
+
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &::after {
+    content: '';
+    width: 209%;
+    height: 340%;
+    position: absolute;
+    top: 150%;
+    left: -100%;
+    -webkit-transform: skew(30deg);
+    -ms-transform: skew(30deg);
+    transform: skew(30deg);
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1),
+      -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    background: var(--s3d2-color-surface-gray-200-transparent-10) !important;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    z-index: 1;
+    transition: 0.25s ease-out;
+  }
+
+  &:hover {
+    border-top: 1px solid transparent !important;
+    border-right: 1px solid (var(--s3d2-color-border-gray-900-transparent-10)) !important;
+    border-bottom: 1px solid (var(--s3d2-color-border-gray-900-transparent-10)) !important;
+    // background: var(--s3d2-color-surface-gray-200-transparent-20) !important;
+
+    &::after {
+      transform: translate3d(0, -92%, 0) skew(25deg);
+    }
+  }
+}

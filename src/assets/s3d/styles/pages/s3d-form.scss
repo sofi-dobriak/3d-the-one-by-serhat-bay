@@ -1,0 +1,563 @@
+@use "../../../s3d2/styles/globals/fonts";
+@use "../../../s3d2/styles/globals/s3d2_fonts";
+
+.form-layout {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001;
+  background: var(--s3d2-color-surface-gray-200-transparent-10);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  justify-content: flex-end;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    visibility 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+
+    .form {
+      &--popup-s3d2 {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    height: calc(var(--vh, 1vh) * 100);
+    background-color: var(--surface-gray-900-transperent-40);
+  }
+
+  .form-overflow {
+    width: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--space-6);
+    max-height: 50vh;
+    // overflow-y: auto;
+  }
+
+  .ButtonWithoutIcon {
+    width: 100%;
+    padding: calc(-1px + var(--space-4)) var(--space-4);
+    cursor: pointer;
+  }
+
+  .form {
+    position: relative;
+    background-color: var(--color-surface-gray-200);
+    padding: var(--space-8);
+    // border-radius: var(--border-space-2);
+    // width: Min(100%, 500px);
+
+    &--popup {
+      display: flex;
+      gap: var(--space-20);
+      padding: var(--space-12);
+      // width: 47.91%;
+      max-width: 920px;
+      overflow: hidden;
+
+      @media screen and (max-width: 768px) {
+        width: calc(100% - var(--space-3) * 2);
+        flex-direction: column;
+        gap: var(--space-5);
+      }
+
+      &__img {
+        position: absolute;
+        left: var(--space-12);
+        top: var(--space-12);
+        width: 33.33%;
+        height: 40%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: left top;
+        }
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      &__intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        // @media screen and (min-width: 769px) {
+        //   width: 39.93%;
+        // }
+      }
+
+      &__title {
+        @include s3d2_fonts.fonts-3d-h1;
+        color: var(--s3d2-color-text-gray-900);
+        text-align: left;
+        margin-bottom: var(--space-2);
+        max-width: 380px;
+      }
+
+      &__description {
+        @include s3d2_fonts.fonts-3d-body;
+        color: var(--s3d2-color-text-gray-900);
+        text-align: left;
+      }
+
+      form {
+        @media screen and (min-width: 769px) {
+          width: 50%;
+        }
+      }
+    }
+
+    &--popup-s3d2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-10);
+      position: absolute;
+      right: 0;
+      height: 100%;
+      max-width: 540px;
+      padding: var(--space-12) var(--space-20);
+      transform: translateX(100%);
+      transition: visibility 0.3s ease-in-out;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      flex-grow: 1;
+      position: relative;
+
+      form {
+        width: 100%;
+      }
+
+      .s3d2-SuccessFormPopup {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--s3d2-color-surface-gray-200);
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        gap: var(--padding);
+        // display: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.25s ease-in-out;
+
+        &__content {
+          padding: var(--space-12) var(--space-20);
+
+          @media screen and (max-width: 768px) {
+            padding: var(--space-8) var(--space-6);
+          }
+        }
+
+        &__title {
+          @include s3d2_fonts.fonts-3d-h1;
+          color: var(--s3d2-color-text-gray-900);
+          text-align: left;
+          max-width: 220px;
+          margin-bottom: var(--space-2);
+        }
+
+        &__subtitle {
+          @include s3d2_fonts.fonts-3d-body;
+          color: var(--s3d2-color-text-gray-500);
+          text-align: left;
+          margin-bottom: var(--space-10);
+        }
+
+        &.active {
+          // display: flex;
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-6);
+
+      .form-field {
+        width: 100%;
+        position: relative;
+
+        &-input__title {
+          color: var(--s3d2-color-text-gray-900);
+          font-family: 'Inter Display';
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%;
+          margin-bottom: var(--space-2);
+        }
+
+        &--s3d2 {
+          input {
+            width: 100%;
+            background-color: var(--color-surface-gray-200);
+            color: var(--s3d2-color-text-gray-900);
+            height: 48px;
+            border-radius: var(--border-space-1);
+
+            &::placeholder {
+              color: var(--s3d2-color-text-gray-600);
+            }
+
+            &:hover,
+            &:focus {
+              background-color: var(--s3d2-color-surface-gray-200-transparent-80);
+            }
+          }
+        }
+
+        // input {
+        //   width: 100%;
+        //   background-color: var(--color-surface-gray-200);
+        //   color: var(--s3d2-color-text-gray-900);
+        //   border-radius: 0;
+
+        //   &::placeholder {
+        //     color: var(--s3d2-color-text-gray-600);
+        //   }
+        //   &:focus {
+        //     background-color: var(--s3d2-color-gray-100);
+        //   }
+        // }
+
+        .Textarea {
+          border-radius: 0;
+          background-color: var(--color-surface-gray-200);
+          &:focus {
+            background-color: var(--s3d2-color-gray-100);
+          }
+        }
+
+        .input-message {
+          @include fonts.text-style-3-d-fonts-1920-tiny;
+          color: var(--s3d2-color-text-gray-900);
+          position: absolute;
+          left: 0;
+          bottom: -15px;
+        }
+        &[data-status='field--error'] .input-message {
+          color: var(--text-danger);
+        }
+      }
+      .submit-wrapper {
+        display: flex;
+        justify-content: center;
+        align-self: flex-start;
+        min-width: 170px;
+      }
+      .ButtonWithoutIcon,
+      .form__submit {
+        align-self: flex-start;
+        width: fit-content;
+        border-radius: var(--border-space-32);
+
+        padding: var(--space-5) var(--space-8);
+        gap: var(--space-3);
+        cursor: pointer;
+
+        @media screen and (max-width: 1920px) {
+          padding: var(--space-5) var(--space-8);
+        }
+
+        @media screen and (max-width: 768px) {
+          padding: var(--space-3) var(--space-8);
+        }
+
+        span {
+          text-transform: uppercase;
+          @media screen and (max-width: 1366px) {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+
+    &-layout-close {
+      position: absolute;
+      right: var(--space-5);
+      top: var(--space-5);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      stroke: var(--s3d2-color-text-gray-900);
+      transition: 0.3s ease-in-out;
+      z-index: 999;
+
+      @media screen and (min-width: 1023px) {
+        &:hover {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+.mobile.landscape {
+  .form-layout {
+    --size-btn-circle: 24px;
+    .form__title {
+      font-size: 18px;
+      text-align: left;
+    }
+    .form-layout-close {
+      right: 10px;
+      top: 10px;
+      left: auto;
+    }
+    .form {
+      padding: 20px;
+      height: 100%;
+      width: 80%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-bottom: 50px;
+      form {
+        justify-content: flex-start;
+        .form-field input {
+          padding: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.desktop {
+  .form-layout {
+    .form {
+      // max-width: 440px;
+    }
+  }
+}
+
+.mobile {
+  .form-layout {
+    &-close {
+      right: var(--space-2);
+      top: var(--space-2);
+    }
+    .form {
+      padding: var(--space-8) var(--space-6);
+      gap: var(--space-6);
+      .form-overflow {
+        max-height: 60vh;
+        overflow-y: auto;
+        gap: var(--space-4);
+        justify-content: flex-start;
+      }
+      &--popup__title {
+        // margin-bottom: var(--space-3);
+        text-align: center;
+      }
+      &--popup__description {
+        text-align: center;
+        // margin-bottom: 0;
+        // @include fonts.text-style-villas-1366-body;
+      }
+      form {
+        gap: var(--space-6);
+      }
+      &__title {
+        // @include fonts.text-style-3-d-fonts-1920-h-2-bold;
+      }
+    }
+  }
+}
+
+/* Button container */
+.form-progress-button {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  // min-width: 250px;
+  cursor: pointer;
+  @media screen and (max-width: 768px) {
+    transform: scale(0.75);
+    transform-origin: top left;
+    margin-bottom: -7px;
+  }
+}
+
+/* Button style */
+.form-progress-button button {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  // width: 250px;
+  height: 70px;
+  text-transform: uppercase;
+  border: 1px solid var(--color-brand-800);
+  border-radius: 40px;
+  background: var(--color-brand-800);
+  color: var(--s3d2-color-text-gray-200);
+  padding: var(--space-6) var(--space-8);
+  font-family: 'Inter Display';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 16.9px */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s,
+    border-color 0.3s;
+  transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+
+.form-progress-button button:hover {
+  border-color: var(--border-brand-800);
+  background-color: var(--s3d2-color-surface-gray-900);
+}
+
+.form-progress-button button:focus {
+  outline: none;
+}
+
+/* Text (transition for when returning to initial state) */
+.form-progress-button button span {
+  -webkit-transition: opacity 0.3s 0.1s;
+  transition: opacity 0.3s 0.1s;
+}
+
+/* Common style of SVGs */
+.form-progress-button svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.form-progress-button svg path {
+  opacity: 0;
+  fill: none;
+}
+
+.form-progress-button svg.form-progress-circle path {
+  stroke: var(--color-brand-800);
+  stroke-width: 5;
+}
+
+.form-progress-button svg.checkmark path,
+.form-progress-button svg.cross path {
+  stroke: var(--color-surface-gray-300);
+  stroke-linecap: round;
+  stroke-width: 4;
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
+}
+
+/* Loading, success and error effects */
+.loading.form-progress-button button {
+  width: 70px; /* make a circle */
+  border-width: 5px;
+  border-color: var(--color-surface-gray-300);
+  background-color: transparent;
+  color: #fff;
+}
+
+.loading.form-progress-button span {
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
+}
+
+.loading.form-progress-button span,
+.success.form-progress-button span,
+.error.form-progress-button span {
+  opacity: 0; /* keep it hidden in all states */
+}
+
+.success.form-progress-button button,
+.error.form-progress-button button {
+  -webkit-transition: background-color 0.3s, width 0.3s, border-width 0.3s;
+  transition: background-color 0.3s, width 0.3s, border-width 0.3s;
+}
+
+.success.form-progress-button button {
+  border-color: var(--color-brand-800);
+  background-color: var(--color-brand-800);
+}
+
+.error.form-progress-button button {
+  border-color: var(--color-semantic-danger);
+  background-color: var(--color-semantic-danger);
+}
+
+.loading.form-progress-button svg.form-progress-circle path {
+  stroke-dasharray: 204.24371337890625;
+  stroke-dashoffset: 204.24371337890625;
+  -webkit-animation: strokeanim 2s linear infinite;
+  animation: strokeanim 2s ease-in-out infinite;
+  animation-direction: alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.loading.form-progress-button svg.form-progress-circle path,
+.success.form-progress-button svg.checkmark path,
+.error.form-progress-button svg.cross path {
+  opacity: 1;
+  -webkit-transition: stroke-dashoffset 0.3s;
+  transition: stroke-dashoffset 0.3s;
+}
+
+/* Optional elastic effect for the width of the button */
+.elastic.form-progress-button button {
+  -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1),
+    border-width 0.3s, border-color 0.3s;
+  -webkit-transition: background-color 0.3s, color 0.3s,
+    width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1.6), border-width 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1.6),
+    border-width 0.3s, border-color 0.3s;
+}
+
+.loading.elastic.form-progress-button button {
+  -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, 0, 0.75, 0.75),
+    border-width 0.3s, border-color 0.3s;
+  -webkit-transition: background-color 0.3s, color 0.3s,
+    width 0.3s cubic-bezier(0.6, -0.6, 0.75, 0.75), border-width 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, -0.6, 0.75, 0.75),
+    border-width 0.3s, border-color 0.3s;
+}
+
+@keyframes strokeanim {
+  50% {
+    transform: rotate(360deg);
+  }
+  to {
+    stroke-dashoffset: 0;
+    transform: rotate(0deg);
+  }
+}

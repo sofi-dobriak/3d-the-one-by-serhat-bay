@@ -1,0 +1,50 @@
+@use "../../assets/mixins";
+@use "../../globals/fonts";
+
+.BigButton {
+  border-radius: var(--border-space-32);
+  padding: var(--space-6) var(--space-8);
+  color: var(--s3d2-color-text-gray-200);
+  background-color: var(--color-brand-800);
+  border: none;
+  cursor: pointer;
+  @include fonts.text-style-3-d-fonts-1920-body-regular;
+  display: flex;
+  align-items: center;
+  transition: 0.25s ease-out;
+  @media screen and (max-width: 1024px) {
+    padding: var(--space-3) var(--space-8);
+  }
+  span {
+    @include fonts.text-style-villas-1920-buttons;
+
+    @media screen and (max-width: 768px) {
+      font-size: 11px;
+    }
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-right: var(--space-1);
+    fill: var(--s3d2-color-icon-gray-200);
+    margin-right: var(--space-3);
+  }
+
+  &:disabled {
+    background-color: var(--color-surface-gray-100);
+    border: 1px solid var(--s3d2-color-border-gray-400);
+    color: var(--s3d2-color-text-gray-600);
+    cursor: not-allowed;
+
+    svg {
+      fill: var(--s3d2-color-icon-gray-600);
+    }
+  }
+}
+
+@include mixins.onHover {
+  .BigButton:hover {
+    background-color: var(--color-brand-900);
+  }
+}

@@ -1,0 +1,332 @@
+@use "../../globals/fonts";
+
+.s3d-villa {
+  &__construction {
+    &-progress {
+      &-screen {
+        display: flex;
+        flex-direction: column;
+        // background: url('/wp-content/themes/3d/assets/s3d/images/background-inside.jpg');
+        gap: var(--space-16);
+        padding: var(--space-40) var(--space-10) 0 var(--space-10);
+        width: 100%;
+        @media screen and (max-width: 1920px) {
+          padding: var(--space-32) var(--space-6) 0 var(--space-6);
+          gap: var(--space-12);
+        }
+        @media screen and (max-width: 768px) {
+          padding: var(--space-32) var(--space-5) 0 var(--space-5);
+          gap: var(--space-10);
+        }
+
+        .s3d-villa__floor__title {
+          @media screen and (max-width: 1366px) {
+            width: fit-content;
+            text-align: center;
+            flex: initial;
+          }
+        }
+      }
+
+      &-screen__list {
+        width: 100%;
+      }
+
+      &-card {
+        position: relative;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        @media screen and (max-width: 768px) {
+          aspect-ratio: 2.45 / 4;
+        }
+        &:hover {
+          .s3d-villa__construction-progress-card__top__button-svg--1 {
+            transform: translate(-350%, -50%);
+          }
+
+          .s3d-villa__construction-progress-card__top__button-svg--2 {
+            transform: translate(-50%, -50%);
+          }
+          .s3d-villa__construction-progress-card__image {
+            img {
+              transform: scale(1.1);
+              filter: grayscale(0);
+            }
+          }
+          .s3d-villa__construction-progress-card__image:before {
+            opacity: 0;
+          }
+        }
+      }
+
+      &-card__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          z-index: 1;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 50%;
+          background: linear-gradient(to top, #1a1e21 0%, rgba(26, 30, 33, 0) 100%);
+          transition: all ease-in-out 0.4s;
+          opacity: 1;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: all ease-in-out 0.4s;
+          filter: grayscale(1);
+        }
+      }
+
+      &-card__content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: var(--space-5);
+        @media screen and (max-width: 768px) {
+          padding: var(--space-3) var(--space-3) var(--space-5) var(--space-3);
+        }
+      }
+
+      &-card__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &__day {
+          @include fonts.text-style-3-d-fonts-1920-body-regular;
+          color: var(--s3d2-color-gray-200);
+          @media screen and (max-width: 768px) {
+            @include fonts.text-style-villas-1366-button;
+          }
+        }
+
+        &__button {
+          width: 80px;
+          height: 80px;
+          display: flex;
+
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          overflow: hidden;
+          background: var(--s3d2-color-gray-200);
+          border-radius: 50%;
+          @media screen and (max-width: 1920px) {
+            width: 64px;
+            height: 64px;
+          }
+          @media screen and (max-width: 768px) {
+            width: var(--space-12);
+            height: var(--space-12);
+          }
+        }
+
+        &__button-svg-wrap {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: rotate(135deg) translate(-50%, -50%);
+          z-index: 10;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        &__button-svg--1 {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          transition: all ease-in-out 0.4s;
+        }
+
+        &__button-svg--2 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(350%, -50%);
+          width: 24px;
+          height: 24px;
+          transition: all ease-in-out 0.4s;
+        }
+      }
+      &-card__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        &__day {
+          @include fonts.text-style-3-d-fonts-1920-h-1();
+          font-size: 96px;
+          line-height: 100%;
+          color: var(--s3d2-color-gray-200);
+
+          @media screen and (max-width: 1920px) {
+            font-size: 64px;
+          }
+          @media screen and (max-width: 768px) {
+            @include fonts.text-style-villas-375-h-2;
+          }
+        }
+
+        &__month {
+          @include fonts.text-style-3-d-fonts-1920-body-regular();
+          color: var(--s3d2-color-gray-200);
+          @media screen and (max-width: 768px) {
+            @include fonts.text-style-villas-1366-button;
+          }
+          @media screen and (min-width: 769px) {
+            margin-bottom: var(--space-2);
+          }
+        }
+      }
+    }
+    &-swiper-nav-wrap {
+      margin-top: var(--space-10);
+      display: flex;
+      justify-content: center;
+      gap: var(--space-2);
+      width: 100%;
+
+      @media screen and (max-width: 1920px) {
+        margin-top: var(--space-6);
+      }
+
+      @media screen and (max-width: 768px) {
+        margin-top: var(--space-5);
+      }
+    }
+
+    &-swiper-button-prev {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+      width: 56px;
+      border-radius: 50%;
+      background: var(--s3d2-color-gray-200);
+      cursor: pointer;
+      transition: 0.25s ease-out;
+      @media screen and (max-width: 1920px) {
+        width: 48px;
+        height: 48px;
+      }
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--gray-900);
+      }
+    }
+
+    &-swiper-button-prev:hover {
+      border-color: var(--border-gray-600-transparent-88);
+      background-color: var(--color-surface-gray-400-transperent-88);
+    }
+
+    &-swiper-button-next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+      width: 56px;
+      border-radius: 50%;
+      background: var(--s3d2-color-gray-200);
+      cursor: pointer;
+      transition: 0.25s ease-out;
+
+      @media screen and (max-width: 1920px) {
+        width: 48px;
+        height: 48px;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--gray-900);
+      }
+    }
+
+    &-swiper-button-next:hover {
+      // border-color: var(--border-gray-600-transparent-88);
+      // background-color: var(--color-surface-gray-400-transperent-88);
+    }
+
+    @media (hover: hover) {
+      &-swiper-button-next,
+      &-swiper-button-prev {
+        position: relative;
+        overflow: hidden;
+        background-color: transparent;
+        background-color: var(--color-surface-gray-400-transperent-88);
+        svg {
+          position: relative;
+          z-index: 2;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          transition: 0.25s ease-in-out;
+          background-color: var(--color-surface-gray-200);
+          border-radius: 50%;
+        }
+        &:hover:after {
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+    }
+
+    // &-swiper-button-next.disabled,
+    // &-swiper-button-prev.disabled {
+    //   display: none;
+    // }
+
+    // &-swiper-button-prev.swiper-button-disabled {
+    //   opacity: 0.1;
+    //   background: rgb(0, 0, 0);
+    //   pointer-events: none;
+    //   svg {
+    //     path {
+    //       fill: white;
+    //     }
+    //   }
+    // }
+    // &-swiper-button-next.swiper-button-disabled {
+    //   opacity: 0.1;
+    //   background: rgb(0, 0, 0);
+    //   pointer-events: none;
+    //   svg {
+    //     path {
+    //       fill: white;
+    //     }
+    //   }
+    // }
+  }
+}

@@ -1,0 +1,219 @@
+@use "../../../globals/theme_vars";
+@use "../../../../../s3d/styles/assets/vars";
+
+.js-s3d-flat__3d-tour[data-id='text'] {
+  pointer-events: none !important;
+}
+
+polygon[data-type='infrastructure'] {
+  // fill: var(--hover-overlays-transparent-32);
+  stroke: var(--s3d2-color-border-gray-200);
+  opacity: 0;
+}
+
+polygon[data-type='flyby'] {
+  stroke: var(--s3d2-color-border-gray-200);
+}
+
+polygon[data-type='flat'],
+polygon[data-type='floor'] {
+  &[data-sale='1'] {
+    stroke: var(--border-gray-200);
+    cursor: pointer;
+    fill: var(--color-surface-semantic-success);
+    fill-opacity: 0.45;
+  }
+
+  &[data-sale='2'] {
+    fill: var(--color-semantic-warning);
+    fill-opacity: 0.55;
+    cursor: pointer;
+  }
+  &[data-sale='3'],
+  &[data-sale='4'],
+  &[data-sale='5'],
+  &[data-sale='6'],
+  &[data-sale='0'] {
+    fill: var(--color-semantic-danger);
+    fill-opacity: 0.55;
+    cursor: auto;
+  }
+
+  &.active,
+  &.polygon__selected {
+    // fill: var(--color-surface-semantic-success) !important;
+    fill: rgba(theme_vars.$color-semantic-success, 0.75) !important;
+    pointer-events: all;
+    stroke: rgb(255, 255, 255) !important;
+  }
+  &.polygon__filter-deselect {
+    fill: transparent;
+    stroke: none;
+  }
+}
+
+polygon[data-type='floor'] {
+  fill: var(--color-surface-success-available-transparent-20);
+
+  stroke: var(--border-gray-200);
+}
+
+.hybrid,
+.mouseOnly {
+  g[data-type='infrastructure']:hover polygon {
+    fill: var(--color-brand-active-element-transparent-72);
+    stroke: var(--s3d2-color-border-gray-200);
+  }
+
+  polygon[data-type='floor']:hover,
+  polygon[data-type='flyby']:hover,
+  polygon[data-type='flat']:hover {
+    fill: var(--color-brand-active-element-transparent-72);
+    stroke: var(--s3d2-color-border-gray-200);
+  }
+  g[data-pin-type='pin']:hover polygon {
+    fill: transparent;
+    stroke: transparent;
+  }
+
+  polygon[data-type='flat']:hover {
+    &[data-sale='0'] {
+      fill: vars.$sale-0 !important;
+      fill-opacity: 0.55;
+      stroke: var(--border-gray-200) !important;
+      opacity: 1;
+    }
+
+    &[data-sale='1'] {
+      fill: vars.$sale-1 !important;
+      fill-opacity: 0.75;
+      stroke: var(--border-gray-200) !important;
+      opacity: 1;
+    }
+
+    &[data-sale='2'] {
+      fill: vars.$sale-2 !important;
+      fill-opacity: 0.55;
+      stroke: var(--border-gray-200) !important;
+      opacity: 1;
+    }
+
+    &[data-sale='3'] {
+      fill: vars.$sale-3 !important;
+      fill-opacity: 0.55;
+      stroke: var(--border-gray-200) !important;
+      opacity: 1;
+    }
+  }
+  polygon[data-type='floor']:hover {
+    fill: vars.$sale-1;
+    fill-opacity: 0.75;
+    stroke: var(--border-gray-200);
+    opacity: 1;
+  }
+}
+
+.s3d-villa__flyby {
+  polygon[data-type='flat'].active {
+    fill: var(--color-surface-success-available-transparent-20);
+    animation: none;
+    stroke-width: 1;
+    &[data-sale='2'],
+    &[data-sale='3'],
+    &[data-sale='4'],
+    &[data-sale='5'],
+    &[data-sale='6'],
+    &[data-sale='0'] {
+      fill: transparent !important;
+      stroke: none !important;
+      cursor: auto;
+      pointer-events: none;
+    }
+  }
+
+  polygon[data-type='flat'].active-flat {
+    fill: rgba(theme_vars.$color-semantic-success, 0.75);
+    animation: stroke-pulsation 1.6s infinite cubic-bezier(0, 0, 0.12, 1.02);
+    &[data-sale='1'] {
+      fill: vars.$sale-1 !important;
+      fill-opacity: 0.55;
+      stroke: var(--border-gray-200) !important;
+    }
+    &[data-sale='0'] {
+      fill: vars.$sale-0 !important;
+      fill-opacity: 0.55;
+      stroke: var(--border-gray-200) !important;
+    }
+
+    &[data-sale='1'] {
+      fill: vars.$sale-1 !important;
+      fill-opacity: 0.55;
+      stroke: var(--border-gray-200) !important;
+    }
+
+    &[data-sale='2'] {
+      fill: vars.$sale-2 !important;
+      fill-opacity: 0.55;
+      stroke: var(--border-gray-200) !important;
+    }
+
+    &[data-sale='3'] {
+      fill: vars.$sale-3 !important;
+      fill-opacity: 0.55;
+      stroke: var(--border-gray-200) !important;
+    }
+  }
+}
+
+/*
+Якщо вказаний тип "pin" то зона має бути невидимою, але має мати хоча б мінімальний колір щоб бути клікабельною
+*/
+[data-pin-type='pin'] polygon {
+  stroke: rgba(0, 0, 0, 0.01);
+  fill: rgba(0, 0, 0, 0.01);
+}
+
+.s3d-svg-flat-tooltip {
+  &__content {
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--s3d2-color-text-gray-200);
+    background-color: var(--color-brand-800);
+    text-align: center;
+    border-radius: var(--border-space-2);
+  }
+  &__inner {
+    width: 15px;
+    height: 24px;
+    margin-right: auto;
+    border-radius: var(--border-space-2);
+    &[data-tooltip-sale='1'] {
+      background-color: var(--color-surface-success);
+      flex-shrink: 0;
+    }
+    &[data-tooltip-sale='0'] {
+      background-color: var(--color-semantic-danger);
+      flex-shrink: 0;
+    }
+    &[data-tooltip-sale='2'] {
+      background-color: var(--color-brand-800);
+      flex-shrink: 0;
+    }
+    &[data-tooltip-sale='3'] {
+      background-color: var(--color-brand-800);
+      flex-shrink: 0;
+    }
+    &[data-tooltip-sale='4'] {
+      background-color: var(--color-semantic-danger);
+      flex-shrink: 0;
+    }
+  }
+  &__title {
+    padding: var(--space-1) var(--space-2);
+    text-align: center;
+    flex-grow: 1;
+  }
+}

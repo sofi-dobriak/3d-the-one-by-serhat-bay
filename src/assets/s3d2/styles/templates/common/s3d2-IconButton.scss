@@ -1,0 +1,106 @@
+@use "../../globals/s3d2_fonts.scss";
+
+.s3d2-IconButton {
+  @include s3d2_fonts.fonts-3d-small-medium;
+  border: 1px solid var(--s3d2-color-border-gray-600-transparent-40);
+  border-radius: var(--border-space-2);
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease-out;
+  // gap: 8px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--s3d2-color-icon-gray-900);
+    transition: 0.25s ease-out;
+  }
+
+  &.s3d_audioAssistantState-active {
+    background-color: var(--color-brand-900) !important;
+    svg {
+      fill: var(--s3d2-color-icon-gray-200);
+    }
+  }
+
+  &:hover {
+    svg {
+      transform: scale(1.25);
+    }
+
+    @media screen and (max-width: 767px) {
+      svg {
+        transform: none;
+      }
+    }
+  }
+
+  // &.active {
+  //   background-color: var(--color-brand-800);
+  //   border-color: var(--border-brand-900);
+  //   svg {
+  //     fill: var(--s3d2-color-icon-gray-200);
+  //   }
+  // }
+
+  &--alert {
+    border-color: var(--border-accent-800);
+    background-color: var(--color-special-accent-sold-overlays-transparent-72);
+    svg {
+      fill: var(--s3d2-color-icon-gray-200);
+    }
+  }
+
+  &--dark {
+    border-radius: var(--space-2, 8px);
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--s3d2-color-gray-900) !important;
+
+    &:hover {
+      color: var(--s3d2-color-gray-900) !important;
+    }
+
+    svg {
+      fill: var(--s3d2-color-icon-gray-900) !important;
+      > path {
+        fill: var(--s3d2-color-icon-gray-900) !important;
+      }
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    border-color: var(--s3d2-color-border-gray-400);
+    background-color: var(--color-surface-gray-200);
+    svg {
+      fill: var(--s3d2-color-icon-gray-400);
+    }
+  }
+}
+
+.mouseOnly,
+.hybrid {
+  .s3d2-IconButton:hover {
+    border-color: var(--border-gray-600-transparent-88);
+    background-color: var(--color-surface-gray-400-transperent-88);
+  }
+  // .s3d2-IconButton.active {
+  //   border-color: var(--border-brand-900);
+  //   background-color: var(--s3d2-color-surface-gray-900);
+  //   svg {
+  //     fill: var(--s3d2-color-icon-gray-200);
+  //   }
+  // }
+  .s3d2-IconButton--dark.active,
+  .s3d2-IconButton--dark:hover {
+    border-color: transparent;
+    background: var(--s3d2-color-surface-gray-900-transparent-10, rgba(250, 251, 254, 0.1));
+  }
+}

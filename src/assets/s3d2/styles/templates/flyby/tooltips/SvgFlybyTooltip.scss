@@ -1,0 +1,155 @@
+@use "../../../globals/fonts";
+
+.s3d2-svg-flyby-tooltip {
+  transform: none !important;
+}
+
+.SvgFlybyTooltip {
+  background-color: var(--color-surface-gray-200);
+  padding: var(--space-1);
+  border-radius: var(--border-space-2);
+
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 4px 12px;
+  grid-template-areas:
+    'title right'
+    'bottom bottom';
+  width: max-content;
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__title {
+    @include fonts.text-style-3-d-fonts-1920-h-2-regular;
+    color: var(--s3d2-color-text-gray-200);
+    border: 1px solid var(--border-brand-900);
+    background-color: var(--s3d2-color-surface-gray-900);
+    border-radius: var(--border-space-1);
+    padding: 2px 12px;
+    grid-area: title;
+    text-align: center;
+    // height: max-content;
+  }
+
+  &__right {
+    grid-area: right;
+    @include fonts.text-style-3-d-fonts-1920-body-regular;
+
+    &-item {
+      white-space: nowrap;
+    }
+  }
+
+  &__bottom {
+    grid-area: bottom;
+    display: flex;
+    align-items: center;
+    @include fonts.text-style-3-d-fonts-1920-body-regular;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      column-gap: var(--space-1);
+      gap: 8px;
+    }
+
+    &-item ~ &-item {
+      margin-left: var(--space-2);
+    }
+  }
+}
+
+.SvgFlybyTooltip-filter-part {
+  background-color: var(--color-surface-semantic-success);
+  color: var(--s3d2-color-text-gray-200);
+  padding: var(--space-2);
+  border-radius: var(--border-space-2);
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: var(--space-05);
+  @include fonts.text-style-3-d-fonts-1920-body-regular;
+  // -webkit-animation: heartbeat 2.5s ease-in-out infinite both;
+  // animation: heartbeatTooltip 2.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes heartbeatTooltip {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes heartbeatTooltip {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}

@@ -1,0 +1,195 @@
+@use "../../assets/mixins";
+@use "../../globals/s3d2_fonts";
+
+.s3d2-ButtonIconLeft {
+  @include s3d2_fonts.fonts-3d-small-medium;
+  border-radius: var(--border-space-2);
+  padding: var(--space-2) var(--space-3);
+  color: var(--s3d2-color-text-gray-900);
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: 0.25s ease-out;
+  gap: var(--space-2);
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 209%;
+    height: 200%;
+    position: absolute;
+    top: -20%;
+    left: -215%;
+    -webkit-transform: skew(30deg);
+    -ms-transform: skew(30deg);
+    transform: skew(30deg);
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1),
+      -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    background: var(--s3d2-color-surface-gray-200-transparent-10) !important;
+  }
+
+  span,
+  svg {
+    position: relative;
+    z-index: 2;
+  }
+
+  span {
+    @include s3d2_fonts.fonts-3d-small-medium;
+
+    @media screen and (max-width: 768px) {
+      font-size: 11px;
+    }
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+
+    &:not(.s3d2-ButtonIconLeft__icon--no-paints) {
+      fill: var(--s3d2-color-icon-gray-900);
+    }
+
+    &:not(.s3d2-ButtonIconLeft__icon--no-paints) {
+      path {
+        fill: var(--s3d2-color-icon-gray-900);
+      }
+    }
+  }
+
+  &--secondary {
+    background-color: var(--s3d2-color-brand-800);
+    border: 1px solid var(--s3d2-color-brand-800);
+    color: var(--s3d2-color-text-gray-200);
+
+    &::after {
+      background: var(--s3d2-color-brand-900) !important;
+    }
+
+    svg:not(.s3d2-ButtonIconLeft__icon--no-paints) {
+      fill: var(--s3d2-color-icon-gray-200);
+      stroke: var(--s3d2-color-icon-gray-200);
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+      color: var(--s3d2-color-text-gray-200);
+    }
+  }
+
+  &--centered {
+    justify-content: center;
+    @media screen and (max-width: 600px) {
+      span {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &--light {
+    background-color: var(--s3d2-color-brand-800);
+    border: 1px solid var(--s3d2-color-brand-800);
+    color: var(--s3d2-color-text-gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      background: var(--s3d2-color-brand-900) !important;
+    }
+
+    span {
+      position: relative;
+      z-index: 3;
+    }
+
+    svg {
+      path {
+        stroke: var(--s3d2-color-text-gray-200);
+      }
+    }
+  }
+
+  &:disabled {
+    background-color: var(--s3d2-color-surface-gray-100);
+    border: 1px solid var(--s3d2-color-border-gray-400);
+    color: var(--s3d2-color-text-gray-600);
+    cursor: not-allowed;
+
+    svg {
+      fill: var(--s3d2-color-icon-gray-600);
+    }
+  }
+
+  &[data-filter-not-empty]::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--s3d2-color-semantic-success);
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  &--filter {
+    path {
+      transform-origin: center;
+      transition: 0.25s ease-out;
+      transform-box: fill-box;
+    }
+  }
+}
+
+@include mixins.onHover {
+  .s3d2-ButtonIconLeft:hover {
+    background: var(--s3d2-color-surface-gray-200-transparent-10);
+    span {
+      color: var(--s3d2-color-text-gray-900);
+    }
+
+    &::after {
+      transform: translate3d(100%, 0, 0) skew(25deg);
+    }
+  }
+
+  .s3d2-ButtonIconLeft--secondary:hover,
+  .swal2-confirm:hover {
+    background-color: var(--s3d2-color-surface-gray-900);
+
+    &::after {
+      transform: translate3d(100%, 0, 0) skew(25deg);
+    }
+
+    span {
+      color: var(--s3d2-color-text-gray-200);
+    }
+  }
+
+  .s3d2-ButtonIconLeft--light:hover {
+    background-color: var(--s3d2-color-surface-gray-900);
+    border: 1px solid var(--s3d2-color-border-gray-900);
+
+    &::after {
+      transform: translate3d(100%, 0, 0) skew(25deg);
+    }
+
+    span {
+      color: var(--s3d2-color-text-gray-200);
+    }
+
+    svg {
+      path {
+        stroke: var(--s3d2-color-text-gray-200);
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+@use "../../globals/fonts";
+
+.s3d-flat-new__details {
+  &-top {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    font-size: 12px;
+    font-family: 'Inter Display', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 130%;
+    text-transform: uppercase;
+  }
+  &-top-left {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    width: 70%;
+    div {
+      padding: 6px 12px;
+      border: 1px solid var(--s3d2-color-gray-400);
+      border-radius: 8px;
+      color: var(--s3d2-color-text-gray-800);
+    }
+  }
+  &-top-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background-color: #83af8d;
+    color: var(--s3d2-color-text-gray-200);
+    span {
+      margin-right: 4px;
+    }
+  }
+  &-area {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    max-width: 400px;
+    @include fonts.text-style-3-d-fonts-1920-h-1();
+    font-size: max(2.5vw, 20px);
+    span:nth-child(2) {
+      color: var(--s3d2-color-gray-600);
+    }
+    @media screen and (max-width: 768px) {
+      span {
+        @include fonts.text-style-1366-h-3;
+      }
+    }
+  }
+  &-price {
+    margin-bottom: 32px;
+    div:first-child {
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-family: 'Inter Display', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 130%;
+      color: var(--s3d2-color-text-gray-800);
+    }
+    div:last-child {
+      @include fonts.text-style-3-d-fonts-1920-h-1();
+      font-size: max(2.5vw, 20px);
+      @media screen and (max-width: 768px) {
+        @include fonts.text-style-1366-h-3;
+      }
+    }
+  }
+  &-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    @media screen and (min-width: 769px) {
+      max-width: 22vw;
+    }
+    margin-bottom: 32px;
+    button:first-child {
+      border-left: 1px solid var(--s3d2-color-gray-400);
+    }
+    button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 33.333%;
+      border: none;
+      border-right: 1px solid var(--s3d2-color-gray-400);
+      margin: 16px 0;
+      background: none;
+      cursor: pointer;
+      svg {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 12px;
+        fill: var(--s3d2-color-icon-gray-900);
+      }
+      span {
+        font-size: 13px;
+        font-family: 'Inter Display', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 130%;
+        text-transform: uppercase;
+        color: var(--s3d2-color-text-gray-900);
+      }
+    }
+  }
+  .ButtonIconLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: var(--space-16);
+    padding: var(--space-3) var(--space-8);
+    border-radius: var(--border-space-32);
+    @media screen and (max-width: 1366px) {
+      height: var(--space-12);
+    }
+  }
+}

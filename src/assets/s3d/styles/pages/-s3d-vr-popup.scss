@@ -1,0 +1,125 @@
+@use "../../../s3d2/styles/globals/fonts";
+
+.vr-popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: var(--bg-overlay);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInPopup 0.3s ease-in-out;
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: var(--border-space-2);
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      margin: auto;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content &__tours-v-3-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__text-wrapper {
+    display: none;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    background-color: var(--color-200-trancperent-88);
+    border-radius: var(--border-space-2);
+    padding: var(--space-4);
+    max-width: 290px;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__title {
+    color: var(--s3d2-color-text-gray-900);
+    @include fonts.text-style-3-d-fonts-1920-h-2-regular;
+  }
+
+  &__text {
+    color: var(--s3d2-color-text-gray-800);
+    margin-top: var(--space-5);
+    @include fonts.text-style-3-d-fonts-1920-body-regular;
+  }
+
+  &__close {
+    position: absolute;
+    z-index: 201;
+    right: 26px;
+    top: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: var(--border-space-2);
+    background-color: var(--s3d2-color-gray-independent-900);
+    border: 1px solid var(--s3d2-color-border-gray-600-transparent-40);
+    cursor: pointer;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      transition: 0.3s ease-in-out;
+      transform-origin: center;
+      transform-box: fill-box;
+      fill: var(--s3d2-color-gray-independent-200);
+      stroke: var(--s3d2-color-gray-independent-200);
+
+      @media screen and (min-width: 1023px) {
+        &:hover {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+.safari-delayed-render {
+  opacity: 1;
+  will-change: transform, opacity;
+  animation: safariRender 0.3s ease-in-out;
+}
+
+@keyframes safariRender {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.mobile {
+  .vr-popup {
+    &__content {
+      padding: 0;
+      // height: calc(var(--vh, 1vh) * 100);
+    }
+  }
+}

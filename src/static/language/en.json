@@ -1,0 +1,662 @@
+{
+  "currency_label": "$",
+  "currency_label_m2": "$t(currency_label) per $t(area_unit)",
+  "area_unit": "sq ft",
+  "unit_statuses": {
+    "0": "Sold",
+    "1": "Available",
+    "2": "Reserved",
+    "3": "Booked",
+    "4": "Inaccessible",
+    "6": "Blocked",
+    "1_tooltip": "Verified as of today. This status may change if another reservation is completed."
+  },
+  "calculator": {
+    "outstanding_balance": "Outstanding balance",
+    "title": "INSTALLMENT PLAN",
+    "area": "Apartment area",
+    "price": "Base price per sq ft",
+    "first": "Down payment",
+    "first_title_amount": "Down payment amount",
+    "term": "Installment period (months)",
+    "info_title": "If an installment term is chosen, a surcharge will be added to the base price:",
+    "info_1": "for 1 year – 6%/m²",
+    "info_2": "for 2 years – 12%/m²",
+    "info_3": "for 3 years – 18%/m²",
+    "month": "Monthly payment",
+    "all": "Total apartment cost (approx.)",
+    "info_4": "Our manager will provide you with more detailed information",
+    "info_5": "+$ 2 000 m²",
+    "info_5_title": "If the down payment is between 30% and 50%, the following is added to the base price:",
+    "form-title": "LET’S TALK",
+    "form-description": "Discover all details at our sales office",
+    "form-ok": "Your message has been sent. The manager will contact you shortly.",
+    "thank-you": "Thank you for your inquiry!",
+    "close": "Close",
+    "name": "Your name:*",
+    "phone": "Your phone:*",
+    "email": "Your email:*",
+    "comment": "Comment:",
+    "button": "Send message",
+    "enter-comment": "Enter your comment",
+    "enter-name": "Enter your name"
+  },
+  "error": {
+    "pdf": "To view the content of the PDF, please change your privacy settings: Go to Settings -> Safari -> Block Pop-ups and turn it off.",
+    "open_pdf": "Open PDF"
+  },
+  "floor_list": {
+    "build": "Build {{build}}",
+    "section": "Section {{section}}"
+  },
+  "infoBox": {
+    "sold": "All residences are sold",
+    "sold_short": "Sold",
+    "flatSold": "Residence sold",
+    "flatClosed": "Sales are not open",
+    "freeObjects": "Available",
+    "notAvailable": "Sold",
+    "price_m2_from": "Price per $t(area_unit):",
+    "from_price": "from {{currency}} {{text}}",
+    "price_from": "Price:",
+    "reviewFlat": "Explore property",
+    "buildReview": "View house",
+    "review": "Review",
+    "finishDate": "Delivery time:",
+    "filter_results": "Filtered {{count}} Residences",
+    "infrastructure_button_iframe": "Explore tour",
+    "infrastructure_button_image": "Explore photo",
+    "infrastructure_button_video": "Explore video",
+    "general": {
+      "button_titles": {
+        "queue": "Explore the Queue",
+        "villa": "Explore villa",
+        "house": "Explore house"
+      }
+    },
+    "freeObjects_short": "AVAIL."
+  },
+  "title": {
+    "genplan": "Eden",
+    "flyby_1_outside": "Build 1",
+    "favourites": "Favourites",
+    "plannings": "Plannings"
+  },
+  "load": {
+    "loading-text": "Loading",
+    "loading-text-wait": "Wait a little..."
+  },
+  "menu": {
+    "menu-title": "Menu",
+    "nav": {
+      "1": {
+        "nav-title": "Name",
+        "nav-subtitle": {
+          "1": "Main",
+          "2": "About us",
+          "3": "Residences",
+          "4": "Gallery",
+          "5": "Name"
+        }
+      },
+      "2": {
+        "nav-title": "Name",
+        "nav-subtitle": {
+          "1": "Parking",
+          "2": "Infrastructure",
+          "3": "Documents",
+          "4": "Construction progress",
+          "5": "News and promotions",
+          "6": "Contacts"
+        }
+      }
+    }
+  },
+  "ctr": {
+    "nav": {
+      "title": "Menu 3D",
+      "genplan": "Eden",
+      "navigation": "Navigation",
+      "tooltip_1": "Build 5",
+      "tooltip_2": "Build 7",
+      "flyby": "Build",
+      "flyby_1_outside": "Build 1",
+      "flyby_2_outside": "Build 2",
+      "flyby_1_inside": "Build 5",
+      "flyby_2_inside": "Build 7",
+      "plannings": "Plannings",
+      "level": "Level",
+      "floor": "Floor plan",
+      "floor_plans": "Floor plans",
+      "flat": "Residence",
+      "functions": "Functions",
+      "property": "Property",
+      "flat_shot": "Apartments",
+      "back": "Back",
+      "menu": "Menu",
+      "callback": "Inquire Now",
+      "intro": "Intro",
+      "plannings_availability": "Availability",
+      "home": "Home",
+      "masterplan": "Building Overview",
+      "360_orbit": "360 Orbit",
+      "availability": "Availability",
+      "fisher_island": "Fisher Island",
+      "mansion": "Mansion"
+    },
+    "share": {
+      "link-copied": "Link copied"
+    },
+    "flybysidechooser": {
+      "outside": "External facade",
+      "inside": "Internal facade"
+    },
+    "menu": {
+      "compass": {
+        "south": "S",
+        "west": "W",
+        "east": "E",
+        "north": "N"
+      },
+      "btn": {
+        "infrastructure": "Infrastructure",
+        "filter": "Filter",
+        "chooseOfApartment": "Unit",
+        "chooseOfFloor": "Level",
+        "repeatHelp": "?"
+      },
+      "hightlightInfrastructure": "Overlay",
+      "build_progress": "Construction progress",
+      "on_the_map": "Location on the map",
+      "on_the_build": "Residences layouts",
+      "callbackFormCall": "Contact the manager"
+    }
+  },
+  "Helper": {
+    "slide-0--title": "Hold and rotate",
+    "slide-1--title": "Filter",
+    "slide-2--title": "Floors or Residences",
+    "slide-3--title": "Use navigation",
+    "title1": "Navigation",
+    "description1": "You can rotate 3D model",
+    "title2": "Instrumens",
+    "description2": "Tools for interacting with the 3D model",
+    "title3": "Filter",
+    "description3": "You can filtered for your parameters",
+    "title4": "Compare",
+    "description5": "You can add plannings to compare",
+    "close": "Skip training",
+    "next": "Next",
+    "gotIt": "Got it!"
+  },
+  "Filter": {
+    "title": "Refine Your Search",
+    "data_changed": "Parameters changed",
+    "list": {
+      "type": "Type",
+      "rooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "area": "Area",
+      "area_unit": "$t(area_unit)",
+      "price": "Price",
+      "status": "Status",
+      "floor": "Floor",
+      "favourite--add": "Select",
+      "parking_spots": "Parking spots"
+    },
+    "range": {
+      "floor": "Floor",
+      "area": "Size",
+      "price": "Price",
+      "price_m2": "Price per $t(area_unit)",
+      "area_unit": "$t(area_unit)",
+      "price_unit": "$t(currency_label)"
+    },
+    "checkboxes": {
+      "rooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "build": "Build",
+      "type": "Type"
+    },
+    "reset": "Reset filters",
+    "apply": "Apply",
+    "hide": "Hidden filters",
+    "show": "Show filters",
+    "found": "Found",
+    "from": "with",
+    "to": "to",
+    "not-marked-message": "This premise is not marked",
+    "openFilter": "Open filter",
+    "enterUnitNumber": "Enter unit number",
+    "Search by number": "Search by number"
+  },
+  "Flat": {
+    "calculator": "Calculator",
+    "name": "Apartment",
+    "explication": "Explication",
+    "gallery": "Gallery",
+    "virtual_tour": "ROOM TOUR",
+    "floor_plan": "FLOOR SELECTOR",
+    "other_flats_title": "This Residence, but on other floors",
+    "doc_title": "Documentation",
+    "financial_terms_title": "financing terms",
+    "construction_title": "Construction progress",
+    "video": "Video presentation",
+    "discount": "Discount",
+    "floor": "floor",
+    "bathroom": "bathroom",
+    "bedrooms": "bedrooms",
+    "garage": "garage",
+    "pools": "pools",
+    "from_window_view": "360 views",
+    "scroll": "Scroll",
+    "explication_data": {
+      "floor_1": "Ground floor",
+      "floor_2": "1st floor",
+      "floor_3": "2nd floor",
+      "floor_4": "Roof",
+      "floor_5": "Top floor",
+      "open_full_plan": "VIEW AS PDF"
+    },
+    "floor_planning": "Floorplan & specs",
+    "change_floor": "Change floor:",
+    "same_apartment_type": "Available residences",
+    "same_apartment_type_subtitle": "Availability and pricing may change based on demand.",
+    "same_apartment_type_tips": "Explore currently available residences with up-to-date pricing and layouts.",
+    "buttons": {
+      "with": "3D",
+      "without": "2D",
+      "gallery_btn": "Gallery",
+      "showIn3d": "On 3D",
+      "view": "View",
+      "windowView": "From window",
+      "compare": "Compare",
+      "addedToCompare": "Added to compare",
+      "addedToCompare_mob": "In compare",
+      "pdf": "PDF",
+      "3dTour": "3D tour",
+      "callback--1": "Contact the manager",
+      "callback--2": "Book an residence",
+      "planning2d": "2D planning",
+      "planning3d": "3D planning",
+      "furnished": "Furnished",
+      "video": "Watch video report"
+    },
+    "timer": {
+      "timer-text": "There is still time to book at this price"
+    },
+    "information": {
+      "title": "Information",
+      "sale": "Status",
+      "build": "House",
+      "number": "Number",
+      "area": "Area",
+      "allArea": "Total area",
+      "life_area": "Living area",
+      "area_unit": "$t(area_unit)",
+      "rooms": "Bedrooms",
+      "rooms_R": "R",
+      "floor": "Floor",
+      "price": "Price",
+      "priceText": " $t(currency_label)",
+      "type": "Type",
+      "section": "Section",
+      "price_m2": "Price $t(area_unit)",
+      "per": "per",
+      "priceHistory": "Price dynamic",
+      "floor_n_desktop": "Floor number",
+      "floor_n_mobile": "Floor №",
+      "viewPlanning": "View Planning",
+      "exterior_area": "Exterior area"
+    },
+    "goToFloor": "Floor plan",
+    "flatPlan": "Residence plan",
+    "goToFlat": "Explore property",
+    "hero": {
+      "title": "ATHOS",
+      "subtitle": "Villa",
+      "description": "OUR NEW PROJECT IS IN THE UPSCALE SOUTH MIAMI AREA, IN THE SCENIC HIGH PINES NEIGHBORHOOD, RIGHT IN THE HEART OF CORAL GABLES. THIS AREA IS KNOWN FOR ITS TOP-RATED SCHOOLS AND EXCEPTIONAL QUALITY OF LIFE. "
+    },
+    "faq": {
+      "faqTitle": "FAQ",
+      "faq_question": {
+        "1": "What is the price of the residence?"
+      },
+      "faq_answer": {
+        "1": "The price of the residence is"
+      }
+    },
+    "exterior": {
+      "exteriorTitle": "EXTERIOR OF THE VILLA",
+      "exteriorItemTitle": {
+        "1": "SUNRISE VIEWS: COASTAL LIVING REDEFINED:",
+        "2": "EXCLUSIVE COASTAL RETREATS: YOUR SANCTUARY AWAITS",
+        "3": "OCEANFRONT ELEGANCE: MASTER SUITES WITH VIEWS"
+      },
+      "exteriorItemDescription": {
+        "1": "Wake up to breathtaking sunrise views from your private terrace. Each villa offers an unparalleled vista of the sea, ensuring every morning is spectacular.",
+        "2": "Find your sanctuary in our exclusive coastal retreats. Villas Dumas offers a unique lifestyle with panoramic terraces, chic interiors, and seamless indoor-outdoor living spaces.",
+        "3": "Wake up to the ocean at your doorstep. Our master suites offer stunning sea views, blending luxury with the beauty of nature for an unmatched living experience."
+      },
+      "exteriorContactButton": "Contact the manager"
+    },
+    "manager": {
+      "call_to_action": "Call or message for quick assistance.",
+      "schedule": "Schedule a private consultation with your sales advisor."
+    },
+    "contactUs": {
+      "form_title": "LET'S TALK",
+      "form_description": "Discover all details at our sales office",
+      "contacts_title": "GET IN TOUCH",
+      "contacts_description": "Stay connected — choose your way",
+      "general_title": "CONTACTS",
+      "phone": "Contact phone:",
+      "email": "Our email:",
+      "social": "SOCIAL MEDIA:",
+      "working_hours": {
+        "title": "WORKING HOURS",
+        "weekdays": "Monday - Friday: 09:00 - 20:00",
+        "weekends": "Saturday - Sunday: Flexible schedule"
+      },
+      "departmentTitle": {
+        "1": "Sales Department",
+        "2": "Construction:"
+      },
+      "departmentAddress": {
+        "1": "Vinnytsia, Magistratska Street, 82",
+        "2": "Vinnytsia, Keletska Street"
+      },
+      "departmentAddressLink": "OPEN ON GOOGLE MAPS",
+      "introTitle": "You Don’t Want to Miss This!",
+      "introDescription": "Get exclusive industry news delivered straight to your inbox.",
+      "contactManagerName": "Alex Smith",
+      "contactManagerPosition": "Sales Manager",
+      "contactManagerEmailTitle": "Email:",
+      "ourAdvantages": "ENVISIONING YOURSELF <br/>IN ONE OF OUR RESIDENCES?",
+      "contactAdvantagesItem": {
+        "1": "Personalized Consultation",
+        "2": "Customization Options",
+        "3": "Financing Solutions",
+        "4": "Interior Design Consultation",
+        "5": "Rental Potential"
+      },
+      "contactButton": "CONTACT US TODAY",
+      "bookButton": "Book a meeting"
+    },
+    "virtual_tour_open": "Explore tour",
+    "virtual_tour_close": "Pause",
+    "share": "Share",
+    "brands": {
+      "title": "Specifications",
+      "subtitle": "BRANDS INCLUDED IN YOUR HOME",
+      "description": "Welcome homes are made by way of classic, tried-and-true, stick-built construction. Our homes are not 'modular' homes, nor are they prefabricated; they're built on site. Below, you can find a general overview of the components of the Katona.",
+      "tips": "All specifications are provided for transparency and reference."
+    },
+    "payment": {
+      "title": "Reservation & construction timeline",
+      "description": "Step-by-step timeline showing how the purchase and construction progress over time.",
+      "end_text": "Your sales agent will guide you through each stage.",
+      "tips": "This timeline illustrates key stages of the purchase and construction progress, including payment milestones."
+    },
+    "materials": {
+      "title": "Features & Materials",
+      "subtitle": "Explore finishes, textures, and materials used throughout the residence.",
+      "tips": "Materials shown here represent selected finishes used across the residence. Specifics applications may vary  by unit.",
+      "card_info": "Images are shown at real scale to help better understand texture and surface feel.",
+      "watch_video": "Watch video",
+      "real_scale": {
+        "title": "See in real scale",
+        "tips": "Images are shown at real scale to help better understand texture and surface feel."
+      },
+      "popup": {
+        "lear_more": "Lear more"
+      }
+    },
+    "location": {
+      "title": "Location",
+      "subtitle": "Everything you need — just minutes away",
+      "tips": "This map highlights key destination and approximate travel times from the residence."
+    },
+    "tour": {
+      "title": "Immersive 3D Walkthrough",
+      "subtitle": "Navigate through the apartment in real scale — move freely between rooms, interiors, and outdoor spaces.",
+      "tips": "This interactive 3D walkthrough allows you to explore the apartment, terrace, and surrounding spaces in real scale before making a decision."
+    }
+  },
+  "Floor": {
+    "title-1": "",
+    "changeFloor--": "Change floor:",
+    "title-2": "floor",
+    "title-3": "level",
+    "number_rooms": "Number of Bedrooms",
+    "apps_from": "Residences from",
+    "information": {
+      "title": "Information",
+      "build": "Build",
+      "floor": "Floor",
+      "section": "Section",
+      "price_m2_from": "From $t(currency_label) per $t(area_unit)",
+      "all-flats": "Total residences",
+      "free-flats": "Available",
+      "free-flats--": "Available:",
+      "from": "From",
+      "per_m2": "per $t(area_unit)",
+      "reviewFloor": "Explore floor plan"
+    },
+    "filter": {
+      "1": "1 bedroom",
+      "2": "2 bedrooms",
+      "3": "3 bedrooms",
+      "4": "4 bedrooms",
+      "5": "5 bedrooms",
+      "all": "All rooms",
+      "title-mob": "Bedrooms"
+    },
+    "floor-list": "floors",
+    "goToFloor": "Go to floor"
+  },
+  "Plannings": {
+    "found": "Found",
+    "found--from": "from",
+    "found--with": "with",
+    "found-flats": "flats",
+    "notFound": "But look at these residences",
+    "toggle-title": "Layouts",
+    "toggle-title-btn-cards": "Cards",
+    "toggle-title-btn-list": "List",
+    "toggle-title222": "tytle"
+  },
+  "favourite--title": "Compare",
+  "favourite--added": "Compare (added <span class=\"js-s3d__fv-count\"></span> residences)",
+  "favourite--added-mobile": "Compare (added <span class=\"js-s3d__fv-count\"></span>)",
+  "favourite--apartments": "Residences",
+  "favourite--add": "Select",
+  "favourite--empty-title": "Nothing found to compare",
+  "favourite--empty-text": "Choose layouts and add them to the comparison list",
+  "favourite--empty-button": "View Residences",
+  "favourite--show-differences": "only differences",
+  "card--link": "Read more",
+  "card--add_to_compare": "Add to compare",
+  "PopupFlyby": {
+    "title": "Residence",
+    "description": "Planning is in another building. To view it on a 3D model, you need to switch to another block.",
+    "btn": "Change the angle"
+  },
+  "Error-popup": {
+    "title": "An error has occurred",
+    "translate-info": "You will be redirected to the 3D Eden via",
+    "link": "To the main",
+    "messages": {
+      "not-find-data": "expected data not received",
+      "not-all-required-data-received": "not received all the necessary data",
+      "invalid-url": "incorrect data in url",
+      "failed-request": "failed to load data",
+      "network-error": "network error",
+      "application-error": "application error",
+      "unknown-error": "Unknown error"
+    }
+  },
+  "Send-error-popup": {
+    "success": "error data successfully sent to technical support specialists",
+    "failed": "error data not saved, please notify technical support"
+  },
+  "slider_popup": {
+    "227": "Type MasterFly",
+    "228": "Type 5BR AB",
+    "229": "Type 4BR AB",
+    "230": "Type 4BR AB",
+    "231": "Type 4BR KS",
+    "232": "Type 4BR KS",
+    "233": "Type 4BR SJ",
+    "234": "Type 4BR SJ",
+    "235": "Type 5BR JM",
+    "236": "Type 5BR JM",
+    "239": "Type 5BR KS",
+    "240": "Type 5BR KS",
+    "241": "Type 5BR SJ",
+    "242": "Type 5BR SJ",
+    "default": "Villa"
+  },
+  "builds": {
+    "1": "A",
+    "2": "B",
+    "3": "C",
+    "4": "D",
+    "5": "E"
+  },
+  "rooms": {
+    "1": "1 bedroom",
+    "2": "2 bedrooms",
+    "3": "3 bedrooms",
+    "4": "4 bedrooms",
+    "5": "5 bedrooms"
+  },
+  "rooms-abbreviation": {
+    "1": "1 BR",
+    "2": "2 BR",
+    "3": "3 BR",
+    "4": "4 BR",
+    "5": "5 BR"
+  },
+  "sales": {
+    "0": "Sold",
+    "1": "Available",
+    "2": "Reserved",
+    "3": "Not available",
+    "4": "Sold"
+  },
+  "pins": {
+    "park_trc": "Shop",
+    "video": "Guest parking",
+    "zone": "Guest parking",
+    "walking_zone": "Walking area",
+    "shop_1": "Food store",
+    "playground_playground1": "Playground",
+    "shop_coffee": "Coffee shop",
+    "parking_underground": "Underground parking",
+    "commercial_zone": "Commercial premises",
+    "street_zamarstynivska": "str. Zamarstynivska",
+    "street_shidna": "str. Shidna",
+    "street_kvitova": "str. Kvitova",
+    "tennis_court_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum ligula at, malesuada magna. Nulla nec purus feugiat, vestibulum ligula at, malesuada magna."
+  },
+  "loader": {
+    "load": "Loading preview",
+    "wait_a_little": "Wait a little...",
+    "rotate_warning": "Please keep the phone upright."
+  },
+  "currencies": {
+    "USD": "$",
+    "UAH": "₴",
+    "EUR": "€"
+  },
+  "Dropdown": {
+    "title": "Navigation"
+  },
+  "tutorial": {
+    "step_nav": "Navigation",
+    "step_nav_description": "You can rotate 3D model",
+    "step_interact": "Instruments",
+    "step_interact_description": "Tools for interacting with the 3D model",
+    "ster_filter": "Filter",
+    "ster_filter_description": "You can filtered for your parameters",
+    "step_compare": "Compare",
+    "step_compare_description": "You can add plannings to compare",
+    "step_share": "Share",
+    "step_share_description": "You can copy link to the model",
+    "step_fullscreen": "Fullscreen mode",
+    "step_fullscreen_description": "You can enjoy fullscreen experience using this mode"
+  },
+  "monthes": {
+    "January": "January",
+    "February": "February",
+    "March": "March",
+    "April": "April",
+    "May": "May",
+    "June": "June",
+    "July": "July",
+    "August": "August",
+    "September": "September",
+    "October": "October",
+    "November": "November",
+    "December": "December"
+  },
+  "from": "from",
+  "touchModePopup": {
+    "title": "A touch screen is detected on your device. Please choose the mode of interaction with the module:",
+    "mouse": "Mouse",
+    "touch": "Touch screen",
+    "changeMode": "Change mode to: {{mode}}"
+  },
+  "pdf_error": "Something went wrong...",
+  "pdf_download": "Download",
+  "pdf_ready": "Your PDF is ready",
+  "pdf_preparing": "Preparing...",
+  "SuccessFormPopup": {
+    "title": "Thank you — we're on it!",
+    "subtitle": {
+      "1": "Your request is in good hands.",
+      "2": "We'll make sure your next space feels just right."
+    },
+    "button": "Close message",
+    "text": "We've already started preparing everything needed to make your journey to a new space smooth and exciting."
+  },
+  "asideMenu": {
+    "home": "Home",
+    "building_overview": "Masterplan",
+    "availability": "Availability",
+    "tours": "Tours",
+    "video": "Video",
+    "brochure": "Brochure",
+    "location": "Location",
+    "contact": "Contact"
+  },
+  "infobox": {
+    "available": "Available"
+  },
+  "audioGuide": {
+    "play": "Play",
+    "repeat": "Repeat",
+    "turn_off": "Turn off"
+  },
+  "SmartoTours": {
+    "title": "Virtual tour",
+    "floor": "Floor",
+    "Go to": "Go to",
+    "fullscreen": "Fullscreen",
+    "floor_show_or_hide": "Show/Hide floor plan",
+    "menu": "Menu",
+    "use_gyroscope": "Use accelerometer",
+    "toggle_accelerometer": "Toggle accelerometer",
+    "disable_gyroscope": "Disable accelerometer",
+    "use_camera": "Use camera",
+    "motion_view": "Motion view",
+    "use_phone_motion": "Move your phone to explore"
+  },
+  "Flyby": {
+    "mobile_scale_title_block": {
+      "title_1": "Welcome to The Spinhouse!",
+      "title_2": "Zoom & Rotate!"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use "assets/vars"; // переменные
+@use '../../s3d2/styles/assets/mixins'; // миксины
+@use "../../s3d2/styles/globals/fonts"; // шрифты
+// @import "./libs";
+@use "../../s3d2/styles/globals/reset"; // сброс
+//@import "./normalize";
+
+@use "pages/s3d-animations";
+
+@use "pages/s3d-filter";
+@use "pages/-s3d-filter-flat-list";
+@use "pages/-s3d-popup-flyby";
+@use "pages/s3d-helper";
+@use "pages/s3d-controller";
+@use "pages/s3d-infoBoxes";
+@use "pages/s3d-preloader";
+@use "pages/s3d-preloader-percent";
+@use "pages/-s3d-errorPopup";
+@use "pages/s3d-flat";
+@use "pages/s3d-flat-dashboard";
+@use "pages/s3d-intro";
+@use "pages/tablet/tablet-s3d-flat";
+@use "pages/mobile/mobile-s3d-flat";
+@use "pages/s3d-floor";
+@use "pages/s3d-plannings";
+@use "pages/-s3d-svg";
+@use "pages/s3d-card";
+@use "pages/s3d";
+@use "pages/s3d-smarto-logo";
+@use "pages/s3d-header";
+@use "pages/s3d-header-menu";
+@use "pages/s3d2-header-menu";
+@use "pages/-s3d-demo-view-styles";
+@use "pages/s3d-form";
+@use "pages/-s3d-vr-popup";
+@use "pages/-s3d-slider-popup";
+@use "pages/s3d-flat-gallery-popup";
+@use 'pages/mob-landscape-s3d-card';
+@use 'pages/mob-landscape-s3d-floor';
+@use 'pages/mob-landscape-s3d-flat';
+@use 'pages/mob-landscape-s3d-controller';
+@use 'pages/mob-landscape-s3d-plannings';
+@use 'pages/mob-landscape-s3d-filter';
+@use 'pages/mob-landscape-s3d-header';
+@use 'pages/mob-landscape-s3d-infoBoxes';
+@use 'pages/s3dFlybySideChooser';
+@use 'pages/mobile-s3d-controller';
+@use 'pages/s3d2FlatFloor';
+@use "pages/s3d2-controller";
+
+@use 'components/common/checkbox';
+@use 'components/common/button-desktop-text-mobile-icon';
+@use '../scripts/modules/form/toster/toster';
+
+@import './pages/flat/$brandsList.scss';
+@import './pages/flat/$s3d2_brandsList.scss';

@@ -1,0 +1,8 @@
+.s3d-flat-new__floor-plan {
+  padding-bottom: max(10.83vw, 80px);
+  // display: none;
+  @media screen and (min-width: 769px) {
+    padding-bottom: calc(var(--space-10) * 0.75);
+  }
+  // background: url('/wp-content/themes/3d/assets/s3d/images/background-inside.jpg');
+}

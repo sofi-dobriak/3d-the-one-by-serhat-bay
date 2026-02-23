@@ -1,0 +1,54 @@
+@use "../../assets/mixins";
+@use "../../globals/fonts";
+
+.s3d2-ButtonIconRight {
+  border-radius: var(--border-space-2);
+  color: var(--s3d2-color-text-gray-900);
+  border: 1px solid var(--s3d2-color-border-gray-400);
+  cursor: pointer;
+  transition: 0.25s ease-out;
+  @include fonts.text-style-3-d-fonts-1920-body-regular;
+  display: flex;
+  align-items: center;
+  height: 40px;
+
+  svg {
+    fill: var(--s3d2-color-icon-gray-900);
+    width: 24px;
+    height: 24px;
+    transition: 0.25s ease-out;
+  }
+
+  &:hover {
+    svg {
+      transform: scale(1.1);
+    }
+  }
+  &--dark {
+    border-radius: var(--space-2, 8px);
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--s3d2-color-text-gray-900);
+    svg {
+      fill: var(--s3d2-color-icon-gray-900);
+    }
+  }
+}
+
+@include mixins.onHover {
+  .s3d2-ButtonIconRight:hover {
+    border-color: var(--border-gray-600-transparent-88);
+    background-color: var(--color-surface-gray-400-transperent-88);
+  }
+  .s3d2-ButtonIconRight--dark:hover {
+    border-color: transparent;
+    background: var(--s3d2-color-surface-gray-900-transparent-10, rgba(250, 251, 254, 0.1));
+  }
+}
+
+.mobile {
+  .s3d2-ButtonIconRight {
+    padding-top: calc(var(--space-2) - 1px);
+    padding-bottom: calc(var(--space-2) - 1px);
+  }
+}

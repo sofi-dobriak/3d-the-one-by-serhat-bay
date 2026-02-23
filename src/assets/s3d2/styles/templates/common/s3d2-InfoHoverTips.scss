@@ -1,0 +1,80 @@
+@use "../../assets/mixins.scss";
+@use "../../globals/fonts.scss";
+@use "../../globals/s3d2_fonts.scss";
+
+.icon-info-block {
+  position: relative;
+  display: inline-block;
+
+  @media screen and (max-width: 400px) {
+    right: -40px;
+  }
+
+  svg {
+    path {
+      fill: var(--s3d2-color-surface-gray-400-transparent-88);
+    }
+  }
+
+  &__icon-text-block {
+    svg {
+      path {
+        fill: var(--s3d2-color-surface-gray-200);
+      }
+    }
+  }
+
+  &:hover {
+    .icon-info-block__icon-text-block {
+      opacity: 1;
+    }
+
+    & > svg path {
+      fill: var(--s3d2-color-surface-gray-200-transparent-10);
+    }
+  }
+
+  &__icon-text-block {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+
+    @media screen and (max-width: 767px) {
+      transform: translateX(-95%);
+    }
+
+    &__text {
+      @include s3d2_fonts.fonts-3d-small-uppercase;
+      text-transform: none;
+      margin: 0;
+      width: 300px;
+      text-align: center;
+      color: var(--s3d2-color-text-gray-900);
+      background: var(--s3d2-color-border-gray-200);
+      padding: var(--space-2);
+      white-space: wrap;
+      border-radius: var(--space-2);
+    }
+
+    &__triangle {
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      fill: var(--s3d2-color-border-gray-200) !important;
+
+      path {
+        fill: var(--s3d2-color-border-gray-200) !important;
+      }
+
+      @media screen and (max-width: 767px) {
+        left: 96%;
+        transform: translateX(-80%);
+      }
+    }
+  }
+}

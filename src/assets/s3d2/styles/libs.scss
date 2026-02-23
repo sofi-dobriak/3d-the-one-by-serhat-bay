@@ -1,0 +1,52 @@
+@use "assets/mixins";
+
+@use "sass:meta";
+
+@include meta.load-css('../../../../node_modules/ion-rangeslider/css/ion.rangeSlider.css');
+@include meta.load-css('../scripts/libs/magnific-popup/magnific-popup.css');
+@include meta.load-css('../scripts/libs/tippy/tippy.css');
+
+@include meta.load-css('../../../../node_modules/swiper/swiper');
+@include meta.load-css('../../../../node_modules/swiper/modules/effect-fade/effect-fade');
+@include meta.load-css('../../../../node_modules/toastify-js/src/toastify');
+@include meta.load-css('../../../../node_modules/driver.js/dist/driver');
+@include meta.load-css('../../../../node_modules/intl-tel-input/build/css/intlTelInput.min');
+@include meta.load-css('../../../../node_modules/c3/c3.min');
+@include meta.load-css('../../../../node_modules/@fancyapps/ui/dist/fancybox/fancybox');
+@include meta.load-css('../../../../node_modules/mapbox-gl/dist/mapbox-gl.css');
+@include meta.load-css('../../../../node_modules/nouislider/dist/nouislider.css');
+.toastify {
+  border-radius: var(--border-space-2);
+  @include mixins.font-default;
+  background: var(--s3d2-color-text-gray-900);
+  color: #ffffff;
+  background-color: var(--s3d2-color-surface-gray-900);
+  color: var(--s3d2-color-text-gray-200);
+}
+
+.iti {
+  width: 100%;
+  overscroll-behavior: contain;
+}
+.iti__flag {
+  background-image: url('../images/libs/flags.png');
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url('../images/libs/flags@2x.png');
+  }
+}
+
+.iti--allow-dropdown input.iti__tel-input,
+.iti--allow-dropdown input.iti__tel-input[type='tel'],
+.iti--allow-dropdown input.iti__tel-input[type='text'],
+.iti--separate-dial-code input.iti__tel-input,
+.iti--separate-dial-code input.iti__tel-input[type='tel'],
+.iti--separate-dial-code input.iti__tel-input[type='text'] {
+  padding-left: 60px;
+}
+
+.iti__selected-flag {
+  padding: 0 6px 0 20px;
+}

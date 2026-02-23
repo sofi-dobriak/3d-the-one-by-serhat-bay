@@ -1,0 +1,91 @@
+@media screen and (min-width: 1025px) {
+  .s3d-villa__floor-explication-screen-slider {
+    height: auto !important;
+  }
+  .s3d-villa__floor-explication-screen-slider
+    .swiper-slide
+    .s3d-villa__floor-explication-screen-slide
+    img {
+    height: auto !important;
+  }
+  .s3d-villa__floor {
+    padding-bottom: 0 !important;
+  }
+  .s3d-flat-new__apartments-list {
+    // padding-top: var(--space-16);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .s3d-villa__floor-explication-screen-slider
+    .swiper-slide
+    .s3d-villa__floor-explication-screen-slide {
+    aspect-ratio: auto;
+  }
+}
+
+// .FlybyController>*:not([for="data-hightlight-svg-elements"]) {
+//     display: none !important;
+// }
+
+.s3d-intro__content > div {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media screen and (min-width: 1025px) {
+  .s3d-intro__content button {
+    margin-top: 35vh !important;
+    width: 325px !important;
+  }
+}
+
+.s3d-filter__input-wrapper,
+    /* .s3d-villa__contact, */
+    .s3d-villa__navigation,
+    .s3d-flat-new__details,
+    /* .FlybyController, */
+    [data-hide-elements="genplan"],
+    // [data-s3d2-header-flyby-dropdown],
+    // [data-header-floor-plan-group],
+    [data-type="flyby"] .MenuMobileButton.js-s3d-ctr__filter,
+    // .MobileNavigationMenu .ButtonWithoutIcon.js-s3d-nav__btn[data-type="floor"],
+    .MobileFunctionsMenu>:nth-last-child(1),
+    .MobileFunctionsMenu>:nth-last-child(2),
+    .MobileFunctionsMenu .js-ctr-btn.s3d__choose--flat,
+    [data-type="intro"] .MobileFlybyController,
+    [data-type="undefined"] .MobileFlybyController,
+    [data-type="intro"] #quiz-open-icon,
+    [data-type="undefined"] #quiz-open-icon,
+    [data-type="undefined"] .s3d-ctr__audio,
+    [data-type="intro"] .s3d-ctr__audio,
+    [data-type="intro"] .header__right,
+    [data-type="undefined"] .header__right,
+    .s3d-villa__contact-screen,
+    .s3d-infoBox [data-href="null"],
+    .s3d-villa__contact-screen .s3d-villa__contact,
+    [data-show-flat-in-flyby]~[data-show-flat-in-flyby] {
+  display: none !important;
+}
+
+[data-s3d-share] svg {
+  // width: 18px !important;
+  // height: 18px !important;
+}
+
+.s3d-infoBox__flat .s3d-infoBox__close svg {
+  fill: white;
+}
+
+.SvgPin__icon-bg {
+  stroke: var(--color-brand-800) !important;
+}
+
+foreignObject[data-type='infrastructure'] {
+  // width: 120px;
+}
+
+.s3d-infoBox__infrastructure-description {
+  padding: 12px;
+  color: var(--s3d2-color-text-gray-900);
+}

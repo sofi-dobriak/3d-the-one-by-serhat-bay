@@ -1,0 +1,477 @@
+@use "../../../s3d/styles/assets/vars";
+
+@font-face {
+  font-family: 'Inter Display';
+  font-display: swap;
+  src: url('../../fonts/Inter/Inter-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-display: swap;
+  src: url('../../fonts/Inter/Inter-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-display: swap;
+  src: url('../../fonts/Inter/Inter-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-display: swap;
+  src: url('../../fonts/Inter/Inter-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-display: swap;
+  src: url('../../fonts/Inter/Inter-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Inter Display';
+  font-display: swap;
+  src: url('../../fonts/Inter/Inter-ExtraLight.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 200;
+}
+
+@mixin responsive-font-size($baseSize, $baseWidth) {
+  font-size: calc((#{$baseSize} / #{$baseWidth}) * 100vw);
+}
+
+@mixin text-style-3-d-fonts-1920-h-1() {
+  font-size: 32px;
+  font-family: vars.$default-font;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-1920-h-1-light() {
+  font-size: 32px;
+  font-family: vars.$default-font;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-1920-h-2-regular() {
+  font-size: 20px;
+  font-family: vars.$default-font;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-1920-h-2-semi-bold() {
+  font-size: 20px;
+  font-family: vars.$default-font;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-1920-h-2-bold() {
+  font-size: 20px;
+  font-family: vars.$default-font;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-1920-body-bold() {
+  font-size: 14px;
+  font-family: vars.$default-font;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-1920-body-medium() {
+  font-size: 14px;
+  font-family: vars.$default-font;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-1920-body-regular() {
+  font-family: vars.$default-font;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-1920-semi-tiny() {
+  font-size: 14px;
+  font-family: vars.$default-font;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 140%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-1920-tiny() {
+  font-size: 12px;
+  font-family: vars.$default-font;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 100%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-1920-super-tiny() {
+  font-size: 10px;
+  font-family: vars.$default-font;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 100%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-1360-h-1() {
+  font-size: 48px;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@mixin text-style-3-d-fonts-1360-h-2() {
+  font-size: 32px;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@mixin text-style-3-d-fonts-1360-h-3() {
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@mixin text-style-3-d-fonts-1360-h-4() {
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-360-h-1() {
+  font-size: 32px;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@mixin text-style-3-d-fonts-360-h-2() {
+  font-size: 28px;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@mixin text-style-3-d-fonts-360-h-3() {
+  font-size: 22px;
+  font-family: Inter;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-360-h-4() {
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.text-style-3-d-fonts-1920-h-1 {
+  @include text-style-3-d-fonts-1920-h-1;
+}
+
+.text-style-3-d-fonts-1920-h-2-regular {
+  @include text-style-3-d-fonts-1920-h-2-regular;
+}
+
+.text-style-3-d-fonts-1920-h-2-semi-bold {
+  @include text-style-3-d-fonts-1920-h-2-semi-bold;
+}
+
+.text-style-3-d-fonts-1920-h-2-bold {
+  @include text-style-3-d-fonts-1920-h-2-bold;
+}
+
+.text-style-3-d-fonts-1920-body-bold {
+  @include text-style-3-d-fonts-1920-body-bold;
+}
+
+.text-style-3-d-fonts-1920-body-medium {
+  @include text-style-3-d-fonts-1920-body-medium;
+}
+
+.text-style-3-d-fonts-1920-body-regular {
+  @include text-style-3-d-fonts-1920-body-regular;
+}
+
+.text-style-3-d-fonts-1920-super-tiny {
+  @include text-style-3-d-fonts-1920-super-tiny;
+}
+
+.text-style-3-d-fonts-1920-semi-tiny {
+  @include text-style-3-d-fonts-1920-semi-tiny;
+}
+
+.text-style-3-d-fonts-1360-h-1 {
+  @include text-style-3-d-fonts-1360-h-1;
+}
+
+.text-style-3-d-fonts-1360-h-2 {
+  @include text-style-3-d-fonts-1360-h-2;
+}
+
+.text-style-3-d-fonts-1360-h-3 {
+  @include text-style-3-d-fonts-1360-h-3;
+}
+
+.text-style-3-d-fonts-1360-h-4 {
+  @include text-style-3-d-fonts-1360-h-4;
+}
+
+.text-style-3-d-fonts-360-h-1 {
+  @include text-style-3-d-fonts-360-h-1;
+}
+
+.text-style-3-d-fonts-360-h-2 {
+  @include text-style-3-d-fonts-360-h-2;
+}
+
+.text-style-3-d-fonts-360-h-3 {
+  @include text-style-3-d-fonts-360-h-3;
+}
+
+.text-style-3-d-fonts-360-h-4 {
+  @include text-style-3-d-fonts-360-h-4;
+}
+
+@mixin text-style-3-d-fonts-h-1() {
+  font-size: 32px;
+  font-family: Inter Display;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-h-2-regular() {
+  font-size: 20px;
+  font-family: Inter Display;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-body-uppercase() {
+  font-size: 13px;
+  font-family: Inter Display;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@mixin text-style-3-d-fonts-body-regular() {
+  font-size: 13px;
+  font-family: Inter Display;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-body-strikeshrought() {
+  font-size: 13px;
+  font-family: Inter Display;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: line-through;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-tiny() {
+  font-size: 12px;
+  font-family: Inter Display;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 100%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-super-tiny() {
+  font-size: 10px;
+  font-family: Inter Display;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 100%;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@mixin text-style-3-d-fonts-super-tiny-strikeshrought() {
+  font-size: 10px;
+  font-family: Inter Display;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: line-through;
+  text-transform: none;
+}
+
+@mixin text-style-villas-375-h-2 {
+  font-family: 'Inter Display';
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 100%; /* 40px */
+  letter-spacing: -0.8px;
+}
+
+@mixin text-style-1366-h-3 {
+  font-family: 'Inter Display';
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%; /* 43.2px */
+  text-transform: uppercase;
+}
+
+@mixin text-style-villas-1920-buttons {
+  font-family: 'Inter Display';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 16.9px */
+}
+
+@mixin text-style-villas-1920-body {
+  font-family: 'Inter Display';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 19.6px */
+}
+
+@mixin text-style-villas-1920-h-3 {
+  font-family: 'Inter Display';
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%; /* 57.6px */
+  text-transform: uppercase;
+}
+
+@mixin text-style-villas-1366-h-2 {
+  font-family: 'Inter Display';
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 100%; /* 96px */
+  letter-spacing: -1.92px;
+}
+@mixin text-style-villas-1366-h-3 {
+  font-family: 'Inter Display';
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%; /* 43.2px */
+  text-transform: uppercase;
+}
+
+@mixin text-style-villas-1366-h-4 {
+  font-family: 'Inter Display';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%; /* 28.8px */
+}
+@mixin text-style-villas-1366-body {
+  font-family: 'Inter Display';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 19.6px */
+}
+
+@mixin text-style-villas-1366-button {
+  font-family: 'Inter Display';
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 14.3px */
+}
