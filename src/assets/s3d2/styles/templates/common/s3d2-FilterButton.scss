@@ -33,7 +33,7 @@
   }
 
   body.js-s3d-filter-open & {
-    left: var(--filter-width);
+    left: calc(var(--filter-width) + 4px);
 
     svg {
       transform: rotate(-90deg);

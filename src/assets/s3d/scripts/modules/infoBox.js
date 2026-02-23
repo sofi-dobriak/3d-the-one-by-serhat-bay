@@ -225,45 +225,6 @@ class InfoBox {
     this.infoBox = document.querySelector('[data-s3d-type="infoBox"]');
   }
 
-  // updatePosition(e) {
-  //   const target = e.target;
-  //   const currentPage = document.querySelector('.js-s3d-ctr').dataset.type;
-  //   if (target.dataset.type === 'flat') {
-  //     const offset = 10; // расстояние между полигоном и инфобоксом
-  //     const verticalOffset = 200;
-  //     const target = e.target;
-  //     const targetRect = target.getBoundingClientRect();
-  //     const infoBox = this.infoBox;
-
-  //     const infoBoxHeight = infoBox.offsetHeight;
-
-  //     // Базові координати (справа від полігону)
-  //     const left = targetRect.right + offset;
-  //     let top = targetRect.top;
-
-  //     // Ліміти по Y
-  //     const topLimit = verticalOffset;
-  //     const bottomLimit = window.innerHeight - infoBoxHeight - verticalOffset;
-
-  //     // Затискаємо top в межах екрану
-  //     top = Math.max(top, topLimit);
-  //     top = Math.min(top, bottomLimit);
-
-  //     infoBox.style.position = 'fixed';
-  //     infoBox.style.left = `${Math.min(left, window.innerWidth - infoBox.offsetWidth - offset)}px`;
-  //     infoBox.style.top = `${top}px`;
-
-  //     return;
-  //   }
-  //   // if (target.dataset.type == 'flat' && currentPage != 'flyby_1_outside') {
-  //   //   // передвигаем блок за мышкой
-  //   //   const { x, y } = placeElemInWrapperNearMouse(this.infoBox, document.documentElement, e, 20);
-  //   //   this.infoBox.style.top = `${y}px`;
-  //   //   this.infoBox.style.left = `${x}px`;
-  //   //   return;
-  //   // }
-  // }
-
   updatePosition(e) {
     const target = e.target;
 

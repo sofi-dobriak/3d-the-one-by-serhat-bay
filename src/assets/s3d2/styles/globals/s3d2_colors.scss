@@ -1,6 +1,6 @@
-@use "s3d2_theme_vars_brand.scss" as s3d2_theme_vars;
+// @use "s3d2_theme_vars_brand.scss" as s3d2_theme_vars;
 // @use "s3d2_theme_vars.scss" as s3d2_theme_vars;
-// @use "s3d2_theme_vars_light.scss" as s3d2_theme_vars;
+@use "s3d2_theme_vars_light.scss" as s3d2_theme_vars;
 @use 'sass:color';
 
 :root {
