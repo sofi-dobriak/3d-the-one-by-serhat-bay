@@ -923,10 +923,10 @@ class AppModel extends EventEmitter {
               case 'range':
                 const rangeInstance = filterConfig[filterName].elem;
 
-                if (rangeInstance.result.from !== rangeInstance.result.min) {
+                if (rangeInstance?.result.from !== rangeInstance?.result.min) {
                   acc[`${filterSearchParamsPrefix}${filterName}_min`] = value[1].min;
                 }
-                if (rangeInstance.result.to !== rangeInstance.result.max) {
+                if (rangeInstance?.result.to !== rangeInstance?.result.max) {
                   acc[`${filterSearchParamsPrefix}${filterName}_max`] = value[1].max;
                 }
                 break;
@@ -1455,7 +1455,7 @@ class AppModel extends EventEmitter {
     config.g_contact_advantaged_list = this.config.g_contact_advantaged_list;
     config.project_google_map_location = this.config.project_google_map_location;
     config.slider_scale_container_logo = this.config.slider_scale_container_logo;
-    config.map= this.config.map;
+    config.map = this.config.map;
     // config.constructionProgressItemById = this.constructionProgressItemById;
     config.show_prices = this.config.show_prices;
     config.floor_page_settings = this.config.floor;

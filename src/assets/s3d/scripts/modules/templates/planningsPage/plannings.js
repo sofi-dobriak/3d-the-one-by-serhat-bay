@@ -114,8 +114,8 @@ function Plannings(i18n) {
         </div>-->
         <div class="s3d-pl__list js-s3d-pl__list"></div>
       </div>
-      <div class="s3d-pl__filter-container" data-plannings-filter-container></div>
-      ${s3d2_FilterButton(i18n.t('ctr.menu.btn.filter'))}
+      <!--<div class="s3d-pl__filter-container" data-plannings-filter-container></div>-->
+      <!--${s3d2_FilterButton(i18n.t('ctr.menu.btn.filter'))}-->
       ${planningFilterMobBtn(i18n)}
     </div>
   </div>`;

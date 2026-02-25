@@ -102,7 +102,7 @@ export default function FlybyController(i18n) {
       'favourites',
     ])}>
     <!--  ${$compass(i18n)} -->
-    ${s3d2_FilterButton(i18n.t('ctr.menu.btn.filter'))}
+    <!--${s3d2_FilterButton(i18n.t('ctr.menu.btn.filter'))}-->
       <button type="button" hidden class="ButtonIconLeft ButtonIconLeft--filter js-ctr-btn js-s3d-ctr__filter FlybyControllerWrapper-filter-call-button">
         <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_875_775)">
@@ -132,9 +132,9 @@ export default function FlybyController(i18n) {
         <div class="theme-chooser-container" data-hide-elements="floor,flat,plannings,favourites">
           ${$s3d2_$dayNightSwitcher(i18n)}
           ${$s3d2_ToggleButton(i18n)}
-          ${ $s32d_flatFloorChooser(i18n)}
+          ${$s32d_flatFloorChooser(i18n)}
         </div>
-     
+
       <!--  ${ButtonWithoutIcon(
         'js-s3d-flat__3d-tour',
         `data-href="${config.project_google_map_location}" data-title="${i18n.t(

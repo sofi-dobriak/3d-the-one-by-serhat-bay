@@ -466,17 +466,17 @@ class FilterModel extends EventEmitter {
         val = +val.replace(/\s/g, '');
         if (key === 'from') {
           if (val < min) val = min;
-          else if (val > instance.result.to) val = instance.result.to;
+          else if (val > instance?.result.to) val = instance?.result.to;
         } else if (key === 'to') {
-          if (val < instance.result.from) val = instance.result.from;
+          if (val < instance?.result.from) val = instance?.result.from;
           else if (val > max) val = max;
         }
 
         instance.update(key === 'from' ? { from: val } : { to: val });
         $(this).prop('value', numberWithCommas(val));
         self.filterFlatStart({
-          min: instance.result.from,
-          max: instance.result.to,
+          min: instance?.result.from,
+          max: instance?.result.to,
           ...{ type: config.type },
         });
       }
@@ -505,7 +505,8 @@ class FilterModel extends EventEmitter {
     // this.emit('filteredPolygonRemoveClass');
 
     const mapping = {
-      range: param => param.elem.update({ from: param.elem.result.min, to: param.elem.result.max }),
+      range: param =>
+        param.elem.update({ from: param.elem?.result.min, to: param.elem?.result.max }),
       checkbox: param =>
         param.elem.forEach(el => {
           el.checked = el.checked ? false : '';
@@ -656,8 +657,8 @@ class FilterModel extends EventEmitter {
         case 'range':
           const rangeInstance = filterConfig[name].elem;
           return (
-            rangeInstance.result.min !== rangeInstance.result.from ||
-            rangeInstance.result.max !== rangeInstance.result.to
+            rangeInstance?.result.min !== rangeInstance?.result.from ||
+            rangeInstance?.result.max !== rangeInstance?.result.to
           );
         case 'checkbox':
           return value.value.length !== 0;
@@ -712,8 +713,8 @@ class FilterModel extends EventEmitter {
           break;
         case 'range':
           settings[key] = {};
-          settings[key]['min'] = filter[key].elem.result.from;
-          settings[key]['max'] = filter[key].elem.result.to;
+          settings[key]['min'] = filter[key].elem?.result.from;
+          settings[key]['max'] = filter[key].elem?.result.to;
           break;
         case 'option':
           settings[key] = {};
