@@ -17,8 +17,7 @@
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     padding: var(--space-10) 0 var(--space-5);
     border-radius: var(--space-2);
-    background-color: var(--s3d2-color-surface-gray-200-transparent-80);
-    backdrop-filter: blur(20px);
+    background-color: var(--s3d2-color-surface-gray-200);
 
     @media screen and (max-width: 768px) {
       padding: var(--space-4) 0;
