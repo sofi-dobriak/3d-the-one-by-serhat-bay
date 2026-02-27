@@ -97,15 +97,23 @@ export default function s3dDashboard(i18n, flat, $specifiedFlybysByGroup = '', s
                             ${flat.rooms}
                         </span>
                         <span class="fonts-3d-body">
-                            Beds
+                             ${i18n.t('Flat.rooms')}
                         </span>
                     </div>
                     <div class="s3d-flat-dashboard__info-details-item s3d-flat-dashboard__info-item--mobile-row">
                         <span class="fonts-3d-h1">
-                            ${flat.baths}
+                            ${flat.build}
                         </span>
                         <span class="fonts-3d-body">
-                            Baths
+                             ${i18n.t('Flat.build')}
+                        </span>
+                    </div>
+                    <div class="s3d-flat-dashboard__info-details-item s3d-flat-dashboard__info-item--mobile-row">
+                        <span class="fonts-3d-h1">
+                            ${flat.floor}
+                        </span>
+                        <span class="fonts-3d-body">
+                             ${i18n.t('Flat.floor')}
                         </span>
                     </div>
                     <div class="s3d-flat-dashboard__info-details-item s3d-flat-dashboard__info-item--mobile-row">

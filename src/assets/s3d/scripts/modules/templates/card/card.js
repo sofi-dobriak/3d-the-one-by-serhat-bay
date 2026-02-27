@@ -92,45 +92,63 @@ function Card(
 
   const $price = () => {
     if (!showPrices) return '';
+    if (!price) return '';
     if (currency.trim() == '$') {
       return `
-        <div class="s3d-card__price">
-          ${i18n.t('Flat.information.priceText')} ${numberWithCommas(price)}
-        </div>
+          <div class="s3d-card__price">
+            ${numberWithCommas(price)} ${i18n.t('Flat.information.priceText')}
+          </div>
+
       `;
     }
     return `
-      <div class="s3d-card__price">
-        ${numberWithCommas(price)} ${i18n.t('Flat.information.priceText')}
+      <div class="s3d-card__price total">
+        ${numberWithCommas(price)} ${i18n.t('currency_label')}
+      </div>
+    `;
+  };
+  const $priceM2 = () => {
+    if (!showPrices) return '';
+    if (!price_m2) return '';
+    if (currency.trim() == '$') {
+      return `
+          <div class="s3d-card__price">
+            ${numberWithCommas(price_m2)} ${i18n.t('currency_label_m2')}
+          </div>
+      `;
+    }
+    return `
+      <div class="s3d-card__price m2">
+        ${numberWithCommas(price_m2)} ${i18n.t('currency_label_m2')}
       </div>
     `;
   };
 
-  const $priceM2 = () => {
-    if (!showPrices) return '';
-    if (currency.trim() == '$') {
-      return `
-        <div class="s3d-card__row">
-          <div class="s3d-card__name">
-            ${i18n.t('Flat.information.priceText')}
-            ${price_m2}
-            ${i18n.t('Flat.information.per')}
-            ${i18n.t('Flat.information.area_unit')}
-          </div>
-        </div>
-      `;
-    }
-    return `
-      <div class="s3d-card__row">
-        <div class="s3d-card__name">
-          ${price_m2}
-          ${i18n.t('Flat.information.priceText')}
-          ${i18n.t('Flat.information.per')}
-          ${i18n.t('Flat.information.area_unit')}
-        </div>
-      </div>
-    `;
-  };
+  // const $priceM2 = () => {
+  //   if (!showPrices) return '';
+  //   if (currency.trim() == '$') {
+  //     return `
+  //       <div class="s3d-card__row">
+  //         <div class="s3d-card__name">
+  //           ${i18n.t('Flat.information.priceText')}
+  //           ${price_m2}
+  //           ${i18n.t('Flat.information.per')}
+  //           ${i18n.t('Flat.information.area_unit')}
+  //         </div>
+  //       </div>
+  //     `;
+  //   }
+  //   return `
+  //     <div class="s3d-card__row">
+  //       <div class="s3d-card__name">
+  //         ${price_m2}
+  //         ${i18n.t('Flat.information.priceText')}
+  //         ${i18n.t('Flat.information.per')}
+  //         ${i18n.t('Flat.information.area_unit')}
+  //       </div>
+  //     </div>
+  //   `;
+  // };
 
   const isFavourite = favouritesIds$.value.includes(id);
 
@@ -167,18 +185,26 @@ function Card(
       </div>
       <div class="s3d-card__image">
         ${$status(i18n, flat)}
-        ${$price()}
+        <div class="s3d-card__price-block">
+          ${$price()}
+          ${$priceM2()}
+        </div>
         <img src="${src ||
           imageDefault}" onerror="this.src='${imageDefault}'" data-key="src" loading="lazy">
       </div>
       <div class="s3d-card__info-wrapper">
         <div class="s3d-card__info-label-wrapper">
           <div class="s3d-card__info-label">
-            ${flat.rooms} Beds
+            ${i18n.t('Flat.rooms')}: ${flat.rooms}
           </div>
           <div class="s3d-card__info-label">
-           <!-- ${flat.parking_spots} Baths -->
-           ${baths} Baths
+            ${i18n.t('Flat.build')}: ${flat.build}
+          </div>
+          <div class="s3d-card__info-label">
+            ${i18n.t('Flat.floor')}: ${flat.floor}
+          </div>
+          <div class="s3d-card__info-label">
+            ${i18n.t('Flat.name')}: ${flat.number}
           </div>
         </div>
         <!-- <div class="s3d-card__buttons">

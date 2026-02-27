@@ -113,7 +113,7 @@ class Svg {
                 // );
                 this.mutateGenplanInfrastructure(
                   svgWrap,
-                  this.putFlatIdInFloorPolygon(svgWrap, svgAligned),
+                  this.putFlatIdInFldoorPolygon(svgWrap, svgAligned),
                 );
                 0;
                 resolve();
@@ -406,7 +406,16 @@ class Svg {
   }
 
   createImagePin(x, y, pinData, $pin, iconType = 'image_svg') {
-    const { iframe, type, img, description, title, filter_type, position, images_for_slider } = pinData;
+    const {
+      iframe,
+      type,
+      img,
+      description,
+      title,
+      filter_type,
+      position,
+      images_for_slider,
+    } = pinData;
 
     $pin.classList.add('js-s3d-flat__3d-tour');
     $pin.dataset.href = img;

@@ -160,16 +160,21 @@ export default function s3d2ApartmentPlanings(i18n, flat, floorList, socialMedia
                               ${numberWithCommas(flat.life_room)} ${i18n.t('area_unit')}
                           </div>
                       </div>
-                      <div class="s3d2-apartment__flat-explication-screen-info-row  ">
-                          <div class="s3d2-apartment__flat-explication-screen-info-row-title">
-                              ${i18n.t('Flat.information.exterior_area')}:
-                          </div>
-                          <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
-                          </div>
-                          <div class="s3d2-apartment__flat-explication-screen-info-row-value">
-                              ${numberWithCommas(flat.exterior_area)} ${i18n.t('area_unit')}
-                          </div>
-                      </div>
+                      ${
+                        flat.exterior_area
+                          ? `
+                            <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                              <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                                  ${i18n.t('Flat.information.exterior_area')}:
+                              </div>
+                              <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
+                              </div>
+                              <div class="s3d2-apartment__flat-explication-screen-info-row-value">
+                                  ${numberWithCommas(flat.exterior_area)} ${i18n.t('area_unit')}
+                              </div>
+                            </div>`
+                          : ''
+                      }
                   </div>
                   <div class="s3d2-apartment__flat-explication-screen-info" data-villa-explication-floor-properties-container>
                     <div class="s3d2-apartment__flat-explication-screen-info-row">

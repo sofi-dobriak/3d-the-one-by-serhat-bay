@@ -205,12 +205,17 @@
         }
       }
     }
-    &__price {
-      @include s3d2_fonts.fonts-3d-small-bold;
+    &__price-block {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
       position: absolute;
       z-index: 4;
       bottom: 0;
       right: 0;
+    }
+    &__price {
+      @include s3d2_fonts.fonts-3d-small-bold;
       border-radius: var(--border-space-2);
       color: var(--s3d2-color-gray-independent-200);
       padding: var(--space-05) var(--space-2);
@@ -275,7 +280,7 @@
       justify-content: flex-start;
       gap: 12px;
       row-gap: var(--space-1);
-      max-width: 70%;
+      max-width: 100%;
       // margin-top: 12px;
     }
 

@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import size from 'lodash/size';
 import debounce from 'lodash/debounce';
 import EventEmitter from '../eventEmitter/EventEmitter';
-import { preloader,  preloaderWithoutPercent } from '../general/General';
+import { preloader, preloaderWithoutPercent } from '../general/General';
 import Svg from '../Svg';
 import { AppNetworkError } from '../errors';
 import gsap from 'gsap';
@@ -22,7 +22,9 @@ import dispatchTrigger from '../helpers/triggers';
 import browserInfo from '../helpers/browserInfo';
 import PinchZoom from 'pinch-zoom-js';
 import { detect } from 'detect-browser';
-import getMobileScaleContainerTitle, { $mobileScaleSwitcher } from '../templates/slider/getMobileScaleContainerTitle';
+import getMobileScaleContainerTitle, {
+  $mobileScaleSwitcher,
+} from '../templates/slider/getMobileScaleContainerTitle';
 import device from 'current-device';
 import {
   isDesktop,
@@ -166,9 +168,7 @@ class SliderModel extends EventEmitter {
       this.wrapper[0]
         .querySelector('.js-s3d__wrapper__canvas')
         .classList.toggle('with-filter', isOpen);
-      document
-        .querySelector('.s3d-pl')
-        .classList.toggle('with-filter', isOpen);
+      document.querySelector('.s3d-pl').classList.toggle('with-filter', isOpen);
     });
   }
 
@@ -278,7 +278,8 @@ class SliderModel extends EventEmitter {
     if (
       type === 'flat' &&
       (id == '1081' || id == '1083') &&
-      this.settings.flyby == '1' && this.settings.side == 'outside'
+      this.settings.flyby == '1' &&
+      this.settings.side == 'outside'
     ) {
       let flyby = '1';
       let side = 'inside';
@@ -386,7 +387,7 @@ class SliderModel extends EventEmitter {
           <image href="${clonedImage.src}" width="100%" height="100%" fill="#d3d3d3" style="transform-origin: ${targetCenterX}px ${targetCenterY}px;" preserveAspectRatio="xMidYMid slice"/>
         </g>
       </svg>
-    
+
 
     `;
     // tempWrap.appendChild(clonedImage);
@@ -578,11 +579,27 @@ class SliderModel extends EventEmitter {
     }
     this.compass(this.currentCompassDeg);
     this.addToggleThemeButton();
+
+    console.log(this.flatList);
+
+    const flatWithThisFlyby = Object.values(this.flatList).find(flat => {
+      return flat.specifiedFlybys?.some(
+        flyby => flyby.flyby === String(this.settings.flyby) && flyby.side === this.settings.side,
+      );
+    });
+
+    console.log('flatWithThisFlyby', flatWithThisFlyby);
+
+    setTimeout(() => {
+      this.emit('create_link_to_flat_page', {
+        flat: flatWithThisFlyby,
+        flyby: this.settings.flyby,
+        side: this.settings.side,
+      });
+    }, 0);
   }
 
-
   async uploadPictures(hd) {
-      
     const now = new Date().getTime();
     this.isRotating$.next(true);
     this.ctx.canvas.width = this.width;
@@ -590,9 +607,9 @@ class SliderModel extends EventEmitter {
 
     this.preloader.turnOn();
     document.querySelector('[data-flyby-load-element]').classList.add('inLoad');
-    
+
     const self = this;
-    const imageSrc = (index) => {
+    const imageSrc = index => {
       if (window.status === 'local') {
         return 'images/flyby/masterplan/';
       }
@@ -600,10 +617,10 @@ class SliderModel extends EventEmitter {
         return self.imageUrlDark;
       }
       if (hd) {
-        return self.sd_imageUrl
+        return self.sd_imageUrl;
       }
       if (!self.sd_imageUrl) {
-        return self.imageUrl
+        return self.imageUrl;
       }
       if (self.controlPoint.includes(index)) {
         return self.imageUrl;
@@ -614,38 +631,39 @@ class SliderModel extends EventEmitter {
       if (self.sd_imageUrl && isMobile()) {
         return self.sd_imageUrl;
       }
-      return self.sd_imageUrl
-    }
-    const urlsOfImagesToLoad = [...Array(this.numberSlide.max+1).keys()].map((el, index) => {
+      return self.sd_imageUrl;
+    };
+    const urlsOfImagesToLoad = [...Array(this.numberSlide.max + 1).keys()].map((el, index) => {
       return `${defaultModulePath}/${imageSrc(index)}${index}.${self.image_format}`;
-    })
-
+    });
 
     this.preloader.miniOn();
 
-    this.loadSingleImage(`${defaultModulePath}/${imageSrc(this.activeElem)}${this.activeElem}.${self.image_format}`);
+    this.loadSingleImage(
+      `${defaultModulePath}/${imageSrc(this.activeElem)}${this.activeElem}.${self.image_format}`,
+    );
 
     let yOffset = 0;
 
+    this.arrayImages = await this.uploadNew(
+      urlsOfImagesToLoad,
+      document.querySelector('.fs-preloader-amount'),
+      image => {
+        this.ctx.clearRect(0, 0, this.width, this.height);
+        this.ctx.drawImage(image, 0, yOffset, this.width, this.height);
 
-    this.arrayImages = await this.uploadNew( urlsOfImagesToLoad,document.querySelector('.fs-preloader-amount'), (image) => {
-      this.ctx.clearRect(0, 0, this.width, this.height);
-      this.ctx.drawImage(image,0, yOffset, this.width, this.height );
-
-      this.changeSvgActive(this.activeElem);
-      this.emit('showActiveSvg');
-      this.infoBox.disable(false);
-    });
-    this.arrayBase64Images = [ ...this.arrayImages.map(el=>el.src)];
+        this.changeSvgActive(this.activeElem);
+        this.emit('showActiveSvg');
+        this.infoBox.disable(false);
+      },
+    );
+    this.arrayBase64Images = [...this.arrayImages.map(el => el.src)];
     if (!this.imagesStore[this.theme]) {
       this.imagesStore[this.theme] = [...this.arrayBase64Images];
     }
 
     // this
     this.loadVideoKeyframes();
-
-
-    
 
     this.ctx.clearRect(0, 0, this.width, this.height);
     // this.ctx.drawImage(this.arrayImages[this.activeElem], xOffset, yOffset, this.width, this.height, 0, 0, this.width, this.height);
@@ -670,7 +688,7 @@ class SliderModel extends EventEmitter {
 
     this.parent.emit('change_keyframe', {
       ...this.settings,
-      controlPoint: this.activeElem
+      controlPoint: this.activeElem,
     });
 
     setTimeout(() => {
@@ -691,7 +709,10 @@ class SliderModel extends EventEmitter {
     // this.infoBox.disable(false);
     this.isInited = true;
     if (this.sliderDataWithHistory.controlPoint) {
-      this.toControlPoint(this.sliderDataWithHistory.flatId || null, this.sliderDataWithHistory.controlPoint);
+      this.toControlPoint(
+        this.sliderDataWithHistory.flatId || null,
+        this.sliderDataWithHistory.controlPoint,
+      );
     }
     if (this.activeFlat) {
       this.emit('changeFlatActive', this.sliderDataWithHistory.flatId);
@@ -701,9 +722,6 @@ class SliderModel extends EventEmitter {
       this.initMobileContainerScale();
     }
   }
-
-
-
 
   enableFlatInfoBoxOnDestopTouchDevices(event) {
     document.querySelector('.js-s3d-infoBox').classList.add('desktop-touch');
@@ -1240,7 +1258,6 @@ class SliderModel extends EventEmitter {
 
   pinchZoomOnMobile() {
     // if (isMobile()) {
-
     //   const pzoom = new PinchZoom(this.wrapper[0], {
     //     lockDragAxis: true,
     //     use2d: false,
@@ -1370,8 +1387,8 @@ class SliderModel extends EventEmitter {
     this.isMobileContainerMinified$$ = new BehaviorSubject(null);
     const canvasDefaultWidth = this.wrapper[0].querySelector('canvas').width;
     this.wrapper[0].insertAdjacentHTML('beforeend', $mobileScaleSwitcher());
-    
-    const afterChange = (scale) => {
+
+    const afterChange = scale => {
       this.wrapper[0].style.touchAction = scale ? 'pan-x' : 'pan-x';
 
       const video = this.wrapper[0].querySelector('video');
@@ -1382,16 +1399,23 @@ class SliderModel extends EventEmitter {
       if (video) video.style.objectFit = scale ? 'contain' : 'cover';
 
       this.wrapper[0].querySelectorAll('svg[preserveAspectRatio]').forEach(svg => {
-        const [ align ] = svg.getAttribute('preserveAspectRatio').split(' ');
+        const [align] = svg.getAttribute('preserveAspectRatio').split(' ');
         svg.setAttributeNS(null, 'preserveAspectRatio', `${align} ${scale ? 'meet' : 'slice'}`);
       });
-      this.wrapper[0].querySelectorAll('[data-slider-mobile-scale-container]').forEach(el => el.remove())
+      this.wrapper[0]
+        .querySelectorAll('[data-slider-mobile-scale-container]')
+        .forEach(el => el.remove());
       if (scale) {
-         this.wrapper[0].insertAdjacentHTML('beforeend', getMobileScaleContainerTitle(this.i18n, this.slider_scale_container_logo));
+        this.wrapper[0].insertAdjacentHTML(
+          'beforeend',
+          getMobileScaleContainerTitle(this.i18n, this.slider_scale_container_logo),
+        );
       }
 
-      this.wrapper[0].querySelector('[data-slider-mobile-scale-switcher]').classList.toggle('zoom-in', scale);
-    }
+      this.wrapper[0]
+        .querySelector('[data-slider-mobile-scale-switcher]')
+        .classList.toggle('zoom-in', scale);
+    };
 
     this.isMobileContainerMinified$$.subscribe(scale => {
       if (scale === null) return;
@@ -1402,7 +1426,6 @@ class SliderModel extends EventEmitter {
           canvas.style.width = window.innerWidth + 'px';
           afterChange(scale);
         }, scale);
-        
       } else {
         this.onMobileContainerZoomOut(() => {
           canvas.style.width = canvasDefaultWidth + 'px';
@@ -1415,17 +1438,16 @@ class SliderModel extends EventEmitter {
     this.initMobileContainerScale_pinchEvents();
     this.initMobileContainerScale_rotationEvents();
 
-    this.wrapper[0].addEventListener('click', (event) => {
+    this.wrapper[0].addEventListener('click', event => {
       const target = event.target.closest('[data-slider-mobile-scale-switcher]');
       if (!target) return;
       if (this.isMobileContainerAnimating) return;
       this.isMobileContainerMinified$$.next(!this.isMobileContainerMinified$$.value);
-    })
+    });
 
     // setTimeout(() => {
     //   this.isMobileContainerMinified$$.next(true);
     // }, 500);
-
   }
 
   initMobileContainerScale_pinchEvents() {
@@ -1434,13 +1456,13 @@ class SliderModel extends EventEmitter {
     });
     hammer.get('pinch').set({ enable: true });
 
-    const pinchInFn = debounce((e) => {
+    const pinchInFn = debounce(e => {
       e.preventDefault();
       if (this.isMobileContainerAnimating) return;
       if (this.isMobileContainerMinified$$.value) return;
       this.isMobileContainerMinified$$.next(true);
     }, 100);
-    const pinchOutFn = debounce((e) => {
+    const pinchOutFn = debounce(e => {
       e.preventDefault();
       if (this.isMobileContainerAnimating) return;
       if (!this.isMobileContainerMinified$$.value) return;
@@ -1452,16 +1474,16 @@ class SliderModel extends EventEmitter {
   }
 
   initMobileContainerScale_rotationEvents() {
-    this.wrapper[0].addEventListener('touchstart', (e) => {
-        if (!this.isMobileContainerMinified$$.value) return;
-        this.sliderRotateStart(e);
-        this.emit('hideActiveSvg');
-      });
-      this.wrapper[0].addEventListener('touchmove', (e) => {
+    this.wrapper[0].addEventListener('touchstart', e => {
+      if (!this.isMobileContainerMinified$$.value) return;
+      this.sliderRotateStart(e);
+      this.emit('hideActiveSvg');
+    });
+    this.wrapper[0].addEventListener('touchmove', e => {
       if (!this.isMobileContainerMinified$$.value) return;
       this.checkMouseMovement.call(this, e);
     });
-    this.wrapper[0].addEventListener('touchend', (e) => {
+    this.wrapper[0].addEventListener('touchend', e => {
       if (!this.isMobileContainerMinified$$.value) return;
       this.sliderRotateEnd(e);
     });
@@ -1476,22 +1498,27 @@ class SliderModel extends EventEmitter {
     const imgCopy = this.wrapperSvg.cloneNode(true);
     const copyContainerForAnimation = document.createElement('div');
     copyContainerForAnimation.classList.add('s3d__flyby-mobile-scale-zoom-out-animation-container');
-    copyContainerForAnimation.style.width = (this.width * window.innerHeight / this.height) + 'px';
+    copyContainerForAnimation.style.width = (this.width * window.innerHeight) / this.height + 'px';
     copyContainerForAnimation.style.height = window.innerHeight + 'px';
     imgCopy.style.objectFit = 'cover';
     copyContainerForAnimation.appendChild(imgCopy);
     copyContainerForAnimation.appendChild(svgCopy);
     document.querySelector('.js-s3d__slideModule').appendChild(copyContainerForAnimation);
 
-    const scaleRatio = window.innerWidth / (this.width * window.innerHeight / this.height);
+    const scaleRatio = window.innerWidth / ((this.width * window.innerHeight) / this.height);
 
-    gsap.timeline()
+    gsap
+      .timeline()
 
       .add(onBeforeAnimElementDelete)
-      .to(copyContainerForAnimation, { duration: 1.25, ease: "power4.inOut", scale: scaleRatio, onComplete: () => {
-        document.querySelector('.js-s3d__slideModule').removeChild(copyContainerForAnimation);
-      } })
-
+      .to(copyContainerForAnimation, {
+        duration: 1.25,
+        ease: 'power4.inOut',
+        scale: scaleRatio,
+        onComplete: () => {
+          document.querySelector('.js-s3d__slideModule').removeChild(copyContainerForAnimation);
+        },
+      });
   }
   onMobileContainerZoomOut(onBeforeAnimElementDelete = () => {}) {
     const svgCopy = this.wrapper[0].querySelector('.s3d__svg__active').cloneNode(true);
@@ -1504,14 +1531,18 @@ class SliderModel extends EventEmitter {
     copyContainerForAnimation.appendChild(svgCopy);
     document.querySelector('.js-s3d__slideModule').appendChild(copyContainerForAnimation);
 
-    const ratio = (this.width * window.innerHeight / this.height) / window.innerWidth;
+    const ratio = (this.width * window.innerHeight) / this.height / window.innerWidth;
 
-    gsap.to(copyContainerForAnimation, { duration: 1.25, ease: "power4.inOut", scale: ratio, onComplete: () => {
-      onBeforeAnimElementDelete();
-      document.querySelector('.js-s3d__slideModule').removeChild(copyContainerForAnimation);
-    } });
+    gsap.to(copyContainerForAnimation, {
+      duration: 1.25,
+      ease: 'power4.inOut',
+      scale: ratio,
+      onComplete: () => {
+        onBeforeAnimElementDelete();
+        document.querySelector('.js-s3d__slideModule').removeChild(copyContainerForAnimation);
+      },
+    });
   }
-
 }
 
 export default SliderModel;

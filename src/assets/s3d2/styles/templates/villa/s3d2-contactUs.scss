@@ -460,11 +460,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: var(--space-32) var(--space-6) 0 var(--space-6);
+  padding: var(--space-32) var(--space-6) var(--space-32) var(--space-6);
   gap: var(--space-12);
 
   @media screen and (max-width: 768px) {
-    padding: var(--space-28) var(--space-3) 0;
+    padding: var(--space-28) var(--space-3) var(--space-28) var(--space-3);
   }
 
   &__content {

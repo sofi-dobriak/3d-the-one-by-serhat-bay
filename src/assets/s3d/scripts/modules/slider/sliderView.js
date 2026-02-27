@@ -71,7 +71,6 @@ class SliderView extends EventEmitter {
     model.on('create_link_to_flat_page', data => {
       if (!data.flat) return;
       this.createLinkToFlatPage(data.flat);
-      console.log('createLinkToFlatPage: ', createLinkToFlatPage);
     });
 
     // attach listeners to HTML controls
@@ -354,8 +353,10 @@ class SliderView extends EventEmitter {
     this.wrapper[0].insertAdjacentHTML(
       'beforeend',
       `
-      <button class="js-s3d-nav__btn s3d-flyby-custom-link s3d2-ButtonIconLeft s3d2-ButtonIconLeft--light"  data-type="flat" data-id="${flat.id}">
-        <span>Explore ${flat.number}</span>
+      <button class="js-s3d-nav__btn s3d-flyby-custom-link s3d2-ButtonIconLeft s3d2-ButtonIconLeft--light"  data-type="flat" data-id="${
+        flat.id
+      }">
+        <span>${this._model.i18n.t('infoBox.general.button_titles.villa')} ${flat.number}</span>
       </button>
     `,
     );
