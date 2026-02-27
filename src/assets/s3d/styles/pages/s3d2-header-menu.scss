@@ -106,7 +106,7 @@
     .s3d2-menu-dropdown .s3d2-menu-dropdown-content {
       position: absolute;
       top: 0;
-      left: -175px;
+      right: 100%;
       border-radius: var(--space-2);
       background-color: var(--s3d2-hover-color-to-menu-dropdown);
       display: flex;
@@ -117,6 +117,7 @@
       pointer-events: none;
       transition: all 0.25s ease-in-out;
       padding: 0;
+      width: max-content;
 
       &::after {
         display: none;

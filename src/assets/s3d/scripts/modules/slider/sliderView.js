@@ -68,6 +68,12 @@ class SliderView extends EventEmitter {
       this.changeContainerCursor(cursor);
     });
 
+    model.on('create_link_to_flat_page', data => {
+      if (!data.flat) return;
+      this.createLinkToFlatPage(data.flat);
+      console.log('createLinkToFlatPage: ', createLinkToFlatPage);
+    });
+
     // attach listeners to HTML controls
     this.wrapper.on('mouseleave', () => {
       if (window.matchMedia('(max-width: 1024px)').matches) return;
@@ -342,6 +348,17 @@ class SliderView extends EventEmitter {
           el.closest('svg').insertAdjacentHTML('beforeend', $tooltip);
         });
     });
+  }
+
+  createLinkToFlatPage(flat) {
+    this.wrapper[0].insertAdjacentHTML(
+      'beforeend',
+      `
+      <button class="js-s3d-nav__btn s3d-flyby-custom-link s3d2-ButtonIconLeft s3d2-ButtonIconLeft--light"  data-type="flat" data-id="${flat.id}">
+        <span>Explore ${flat.number}</span>
+      </button>
+    `,
+    );
   }
 }
 

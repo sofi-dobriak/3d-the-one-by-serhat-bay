@@ -657,3 +657,17 @@ sup {
     }
   }
 }
+
+.s3d-flyby-custom-link {
+  position: absolute !important;
+  z-index: 550000000000000000;
+  bottom: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 600px) {
+  .s3d-flyby-custom-link {
+    position: fixed !important;
+    bottom: 56px;
+  }
+}
