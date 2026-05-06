@@ -2,7 +2,7 @@
   "intro": {
     "id": "intro",
     "generalWrapId": ".js-s3d__slideModule",
-    "title_img": "/wp-content/themes/3d/assets/s3d/images/mansion-big-logo.png",
+    "title_img": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.jpeg",
     "bg_url": "https://3d-mension-on-fisher.smartorange.site/wp-content/themes/3d/assets/images-wp/poster.jpg",
     "video_url": "https://lev.vexos.app/wp-content/themes/3d/assets/images-wp/v1 - LEV landing page video.mp4",
     "faq": "Видалити цей об'єкт, якщо не потрібен інтро екран перед обльотом"
@@ -641,14 +641,14 @@
     }
   },
   "form": {
-    "logo": "/wp-content/themes/3d/assets/s3d/images/mansion-big-logo.png",
+    "logo": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.jpeg",
     "prefered_countries": [
       "us"
     ]
   },
   "flyby_finish_dates": {},
   "assotiated_flat_builds_with_flybys": {},
-  "project_google_map_location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17199.266200193822!2d-80.15217019576157!3d25.76005918764354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b4f8c789a303%3A0xeec2607c3852bfd7!2zRmlzaGVyIElzbGFuZCwg0KTQu9C-0YDQuNC00LAgMzMxMDksINCh0L_QvtC70YPRh9C10L3RliDQqNGC0LDRgtC4INCQ0LzQtdGA0LjQutC4!5e1!3m2!1suk!2sua!4v1761297774459!5m2!1suk!2sua",
+  "project_google_map_location": "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d2018.5438260754581!2d33.16363770162196!3d35.33572512710329!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzXCsDIwJzA2LjgiTiAzM8KwMDknNTEuMiJF!5e1!3m2!1suk!2sua!4v1778066864223!5m2!1suk!2sua",
   "infoBoxes": {
     "general_flyby_button_titles": {
       "faq": "Можливі підписи для кнопок у інфобоксі обльоту : queue ,villa, house",
@@ -656,11 +656,11 @@
     }
   },
   "header": {
-    "logo": "/wp-content/themes/3d/assets/s3d/images/mansion-big-logo-white.png",
+    "logo": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.jpeg",
     "menu_selector_default_FAQ": "data-open-menu // виставити це для дефолтного меню модуля, видалити",
     "menu_selector": "data-open-menu"
   },
-  "menu_top_img": "/wp-content/themes/3d/assets/s3d/images/mansion-big-logo.png",
+  "menu_top_img": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.jpeg",
   "menu_tours_list": [
     {
       "title": "Pool",
@@ -679,9 +679,9 @@
   "currency_value": "USD",
   "currency_list": [],
   "show_prices": true,
-  "slider_scale_container_logo": "/wp-content/themes/3d/assets/s3d/images/mansion-big-logo.png",
+  "slider_scale_container_logo": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.jpeg",
   "languages": "en",
-  "show_phoneNumber": "+1 415 555 0167",
+  "show_phoneNumber": "+90 533 162 70 62",
   "hideDocumentation": true,
   "hideExterior": true,
   "hideFinancialTerms": true,
@@ -693,16 +693,14 @@
   },
   "manager_info": {
     "tel": "+1 805 781 1978",
-    "email": "jmeier@icloud.com",
+    "email": "serhat.harman81@gmail.com",
     "name": {
-      "en": "Janet Meier",
-      "uk": "Janet Meier"
+      "en": "Serhat Harman"
     },
     "img": "/wp-content/themes/3d/assets/s3d/images/manager-img.png",
     "img_2": "/wp-content/themes/3d/assets/s3d/images/image-portrait.png",
     "position": {
-      "en": "Sales agent",
-      "uk": "Sales agent"
+      "en": "Contact Name"
     },
     "socials": {
       "telegram": "#",
@@ -716,18 +714,18 @@
     }
   },
   "g_contacts": {
-    "global_number": "+38 067 263 22 22",
-    "email": "Twins.vn.ua@gmail.com",
+    "global_number": "+90 533 162 70 62",
+    "email": "serhat.harman81@gmail.com",
     "construction_department": {
-      "google_maps_link": "https://maps.app.goo.gl/GbYpDbfWFtDfFgZU",
+      "google_maps_link": "https://maps.app.goo.gl/SFAqzUQgwY4Rmcwt9",
       "text": {
-        "en": "Vinnytsia, Keletska Street"
+        "en": "Lapta"
       }
     },
     "sales_department": {
-      "google_maps_link": "https://maps.app.goo.gl/GbYpDbfWFtDfFgZUA",
+      "google_maps_link": "https://maps.app.goo.gl/SFAqzUQgwY4Rmcwt9",
       "text": {
-        "en": "Vinnytsia, Magistratska Street, 82"
+        "en": "Lapta"
       }
     },
     "working_hours": {

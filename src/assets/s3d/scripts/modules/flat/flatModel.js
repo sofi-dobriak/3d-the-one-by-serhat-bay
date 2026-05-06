@@ -602,7 +602,7 @@ class FlatModel extends EventEmitter {
       const radioBtn = document.querySelector(
         `.js-s3d__radio-type[data-type=${this.imagesType}] input`,
       );
-      radioBtn.checked = true;
+      if (radioBtn) radioBtn.checked = true;
     }
 
     this.radioTypeHandler(this.imagesType);

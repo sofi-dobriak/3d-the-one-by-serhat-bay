@@ -563,6 +563,12 @@ sup {
   padding-top: calc(var(--s3d-header) + var(--space-8));
   padding-bottom: calc(var(--mobile-controller-height) * 2 + var(--space-8));
   pointer-events: none;
+
+  div {
+    img {
+      max-width: 250px;
+    }
+  }
 }
 
 .s3d__flyby-mobile-scale-zoom-out-animation-container {

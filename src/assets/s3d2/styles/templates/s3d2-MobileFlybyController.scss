@@ -1,7 +1,8 @@
 .s3d2-mobile-flyby {
   position: fixed;
   bottom: 8px;
-  left: 6px;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--s3d2-color-surface-gray-200-transparent-80);
   backdrop-filter: blur(20px);
   border-radius: var(--space-2);
