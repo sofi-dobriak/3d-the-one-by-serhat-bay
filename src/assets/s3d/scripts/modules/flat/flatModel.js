@@ -920,7 +920,13 @@ class FlatModel extends EventEmitter {
 
     if (type === 'floor') {
       // value тепер може бути 'without', 'without_3d', 'with', 're_planning'
-      const isPhotoType = ['without', 'without_3d', 'with', 're_planning'].includes(value);
+      const isPhotoType = [
+        'site_plan',
+        'first_floor',
+        'second_floor',
+        'roof_terrace',
+        'ground',
+      ].includes(value);
 
       if (isPhotoType) {
         newState.photoType = value;

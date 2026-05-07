@@ -254,10 +254,10 @@
     "scroll": "Scroll",
     "explication_data": {
       "floor_1": "Site plan",
-      "floor_2": "Basement",
-      "floor_3": "1st floor",
-      "floor_4": "2nd floor",
-      "floor_5": "Top floor",
+      "floor_2": "1st floor",
+      "floor_3": "2nd floor",
+      "floor_4": "Roof terrace",
+      "floor_5": "Ground floor",
       "open_full_plan": "VIEW AS PDF"
     },
     "floor_planning": "Floorplan & specs",

@@ -214,9 +214,13 @@ class FlatView extends EventEmitter {
 
       this._model.wrapper.querySelectorAll('[data-flat-explication-button="floor"]').forEach(el => {
         // Для нових кнопок з photoType порівнюємо по photoType, для старих — по floor
-        const isPhotoTypeButton = ['without', 'without_3d', 'with', 're_planning'].includes(
-          el.dataset.value,
-        );
+        const isPhotoTypeButton = [
+          'site_plan',
+          'first_floor',
+          'second_floor',
+          'roof_terrace',
+          'ground',
+        ].includes(el.dataset.value);
         if (isPhotoTypeButton) {
           el.classList.toggle('active', data.photoType === el.dataset.value);
         } else {
