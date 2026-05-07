@@ -79,6 +79,7 @@ class FlatModel extends EventEmitter {
     this.defaultExplicationState = {
       floor: 1,
       type: '2d',
+      photoType: 'without',
     };
     this.changeZoomButtonsState = this.changeZoomButtonsState.bind(this);
     this.debouncedChangeZoomButtonsState = debounce(this.changeZoomButtonsState, 300);
@@ -107,11 +108,20 @@ class FlatModel extends EventEmitter {
     this.explicationState$.subscribe(state => {
       this.emit('updateExplicationFloorTitle', state);
     });
+    // this.explicationState$.subscribe(state => {
+    //   const type = state.type === '2d' ? 'without' : 'with';
+    //   const image = get(
+    //     this.getFlat(this.activeFlat),
+    //     `flat_levels_photo[${state.floor}][${type}]`,
+    //     '',
+    //   );
+    //   this.emit('updateExplicationImage', image);
+    // });
     this.explicationState$.subscribe(state => {
-      const type = state.type === '2d' ? 'without' : 'with';
+      const photoKey = state.photoType ? state.photoType : state.type === '2d' ? 'without' : 'with';
       const image = get(
         this.getFlat(this.activeFlat),
-        `flat_levels_photo[${state.floor}][${type}]`,
+        `flat_levels_photo[${state.floor}][${photoKey}]`,
         '',
       );
       this.emit('updateExplicationImage', image);
@@ -896,12 +906,34 @@ class FlatModel extends EventEmitter {
     console.log('galleryConstructionSliderInit', 'no construction gallery slider container found');
   }
 
+  // changeFlatExplication(type, value) {
+  //   const newState = {
+  //     ...this.explicationState$.value,
+  //     [type]: value,
+  //   };
+  //   if (type === 'floor') newState.type = '2d';
+  //   this.explicationState$.next(newState);
+  // }
+
   changeFlatExplication(type, value) {
-    const newState = {
-      ...this.explicationState$.value,
-      [type]: value,
-    };
-    if (type === 'floor') newState.type = '2d';
+    const newState = { ...this.explicationState$.value };
+
+    if (type === 'floor') {
+      // value тепер може бути 'without', 'without_3d', 'with', 're_planning'
+      const isPhotoType = ['without', 'without_3d', 'with', 're_planning'].includes(value);
+
+      if (isPhotoType) {
+        newState.photoType = value;
+        newState.floor = 1;
+      } else {
+        newState.floor = value;
+        newState.photoType = 'without';
+      }
+      newState.type = '2d';
+    } else {
+      newState[type] = value;
+    }
+
     this.explicationState$.next(newState);
   }
 

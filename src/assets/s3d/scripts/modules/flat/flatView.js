@@ -195,14 +195,35 @@ class FlatView extends EventEmitter {
         });
     });
 
+    // model.on('updateExplicationFloorTitle', data => {
+    //   this._model.wrapper.querySelectorAll('[data-flat-explication-title]').forEach(el => {
+    //     el.textContent = this.i18n.t(`Flat.explication_data.floor_${data.floor}`);
+    //   });
+
+    //   this._model.wrapper.querySelectorAll('[data-flat-explication-button="floor"]').forEach(el => {
+    //     el.classList.toggle('active', data.floor == el.dataset.value);
+    //   });
+    //   this._model.wrapper.querySelectorAll('[data-flat-explication-button="type"]').forEach(el => {
+    //     el.classList.toggle('active', data.type == el.dataset.value);
+    //   });
+    // });
     model.on('updateExplicationFloorTitle', data => {
       this._model.wrapper.querySelectorAll('[data-flat-explication-title]').forEach(el => {
         el.textContent = this.i18n.t(`Flat.explication_data.floor_${data.floor}`);
       });
 
       this._model.wrapper.querySelectorAll('[data-flat-explication-button="floor"]').forEach(el => {
-        el.classList.toggle('active', data.floor == el.dataset.value);
+        // Для нових кнопок з photoType порівнюємо по photoType, для старих — по floor
+        const isPhotoTypeButton = ['without', 'without_3d', 'with', 're_planning'].includes(
+          el.dataset.value,
+        );
+        if (isPhotoTypeButton) {
+          el.classList.toggle('active', data.photoType === el.dataset.value);
+        } else {
+          el.classList.toggle('active', data.floor == el.dataset.value);
+        }
       });
+
       this._model.wrapper.querySelectorAll('[data-flat-explication-button="type"]').forEach(el => {
         el.classList.toggle('active', data.type == el.dataset.value);
       });

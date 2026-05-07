@@ -21,10 +21,26 @@ export default function s3d2ApartmentPlanings(i18n, flat, floorList, socialMedia
   const $email = get(contacts, 'email');
 
   const $floorButtons = () => {
-    //прибрати flat.level = 2
+    const levelPhotos = get(flat, 'flat_levels_photo.1', {});
+    const photoTypes = Object.keys(levelPhotos);
+
+    // Якщо один поверх але кілька типів фото — рендеримо кнопки по типах
     if (flat.level < 2) {
-      return '';
+      if (photoTypes.length <= 1) return '';
+
+      return photoTypes
+        .map((type, idx) => {
+          const buttonClass = idx === 0 ? 'active' : '';
+          return ButtonWithoutIcon(
+            buttonClass,
+            `data-flat-explication-button="floor" data-value="${type}" data-floor="1"`,
+            i18n.t(`Flat.explication_data.floor_${idx + 1}`),
+          );
+        })
+        .join('');
     }
+
+    // Оригінальна логіка для кількох поверхів
     const $buttons = [];
     for (let i = 1; i <= +flat.level; i++) {
       const buttonClass = i === 1 ? 'active' : '';
@@ -34,24 +50,27 @@ export default function s3d2ApartmentPlanings(i18n, flat, floorList, socialMedia
       }
       $buttons.push(
         ButtonWithoutIcon(
-          `${buttonClass}`,
+          buttonClass,
           `data-flat-explication-button="floor" data-value="${i}"`,
           i18n.t(`Flat.explication_data.floor_${i}`),
         ),
       );
     }
+
     const $buttonsFinal = $buttons.filter(el => el && el.length > 2);
-    return $buttons.filter(el => el && el.length > 2).length > 1 ? $buttonsFinal.join('') : '';
+    return $buttonsFinal.length > 1 ? $buttonsFinal.join('') : '';
   };
+
   const hasFlat2dAnd3dPlansOnLevel =
     flat.level !== 1 && Object.keys(get(flat, 'flat_levels_photo.1', {})).length > 1;
+
   return `
       <div class="s3d2-apartment__flat-explication-screen-wrap">
         <div class="s3d2-apartment__flat-explication-screen">
             <div class="s3d2-apartment__flat-explication-screen-slider swiper-container">
                 <div class="s3d2-apartment__flat-explication-screen-buttons--floor-wrap">
                   ${
-                    flat.level > 1
+                    flat.level > 1 || Object.keys(get(flat, 'flat_levels_photo.1', {})).length > 1
                       ? `
                         <div class="s3d2-apartment__flat-explication-screen-buttons--floor" data-switch-explication-floor="2">
                           ${$floorButtons()}
