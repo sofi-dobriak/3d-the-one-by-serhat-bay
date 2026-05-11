@@ -1,5 +1,5 @@
 {
-  "currency_label": "$",
+  "currency_label": "£",
   "currency_label_m2": "$t(currency_label) per $t(area_unit)",
   "area_unit": "sq ft",
   "unit_statuses": {

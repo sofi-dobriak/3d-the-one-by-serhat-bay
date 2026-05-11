@@ -675,8 +675,8 @@
       "url": "https://apartment-tours.smartorange.com.ua/wp-json/wp/v2/get-tour-v2?id=7812"
     }
   ],
-  "currency_label": "$",
-  "currency_value": "USD",
+  "currency_label": "£",
+  "currency_value": "GBP",
   "currency_list": [],
   "show_prices": true,
   "slider_scale_container_logo": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.jpeg",
