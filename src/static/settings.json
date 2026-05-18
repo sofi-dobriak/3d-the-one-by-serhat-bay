@@ -113,7 +113,88 @@
         "label": "Flat.information.number"
       }
     ],
-    "faq_questions": [],
+    "faq_questions": [
+      {
+        "question": {
+          "en": "Overview",
+          "tr":"Genel Bakış"
+        },
+        "answer": {
+          "en": "<p>A large-scale private residence positioned above Lapta, designed for privacy, elevation and uninterrupted Mediterranean views. A rare combination of architectural scale, outdoor living and lifestyle-driven spaces</p>",
+          "tr":"<p>Lapta'nın yukarısında konumlanmış, mahremiyet, yükseklik ve kesintisiz Akdeniz manzarası için tasarlanmış büyük ölçekli özel bir konut. Mimari ölçek, açık hava yaşamı ve yaşam tarzı odaklı alanların nadir bir kombinasyonu.</p>"
+        }
+      },
+      {
+        "question": {
+          "en": "Key Metrics",
+          "tr":"Temel Metrikler"
+        },
+        "answer": {
+          "en": "<ul><li>Land: ~2,510 m²</li><li>Built Area: ~750 m²</li><li>Terraces & Outdoor Living: ~500 m²</li><li>Swimming Pool: ~130 m² infinity pool</li><li>Jacuzzi: ~10 m² (12 persons)</li><li>Floors: 3 Levels</li><li>Bedrooms: 5 En-suite</li><li>Additional Spaces: Office · Gallery / Leisure</li></ul>",
+          "tr":"<ul><li>Arsa: ~2.510 m²</li><li>İnşa Alanı: ~750 m²</li><li>Teraslar ve Açık Yaşam: ~500 m²</li><li>Yüzme Havuzu: ~130 m² sonsuzluk havuzu</li><li>Jakuzi: ~10 m² (12 kişi)</li><li>Katlar: 3 Kat</li><li>Yatak Odası: 5 En-suite</li><li>Ek Alanlar: Ofis · Galeri / Eğlence</li></ul>"
+        }
+      },
+      {
+        "question": {
+          "en": "Architecture & Construction",
+          "tr":"Mimarlık ve İnşaat"
+        },
+        "answer": {
+          "en": "<ul><li>Reinforced concrete structural system</li><li>Steel and glass architectural elements</li><li>Large-span openings for maximum light penetration</li><li>Double-glazed systems</li><li>Suspended ceilings throughout</li><li>High-performance insulation layer</li></ul>",
+          "tr":"<ul><li>Betonarme yapı sistemi</li><li>Çelik ve cam mimari elemanlar</li><li>Maksimum ışık geçirgenliği için geniş açıklıklar</li><li>Çift camlı sistemler</li><li>Tüm alanlarda asma tavanlar</li><li>Yüksek performanslı yalıtım katmanı</li></ul>"
+        }
+      },
+      {
+        "question": {
+          "en": "Living & Interior Spaces",
+          "tr":"Yaşam ve İç Mekanlar"
+        },
+        "answer": {
+          "en": "<h3>Main Living Level</h3><ul><li>Double-volume living space with feature fireplace</li><li>Dedicated dining area with glass enclosure</li><li>Fully fitted kitchen with integrated layout</li><li>Direct access to terraces and outdoor zones</li></ul><h3>Upper Level</h3><ul><li>3 large en-suite bedrooms</li><li>Central gallery / leisure space</li><li>Open visual connection to lower level</li><li>Panoramic sea and mountain views</li></ul><h3>Lower Level</h3><ul><li>Multi-functional lower floor</li><li>Gym (~80 m²) with terrace access</li><li>Sauna and wellness zone</li><li>Guest bedroom + service spaces</li><li>Internal connection to garage</li></ul>",
+          "tr":"<h3>Ana Yaşam Alanı</h3><ul><li>Şömineli, çift katlı yaşam alanı</li><li>Cam bölmeli özel yemek alanı</li><li>Entegre yerleşimli tam donanımlı mutfak</li><li>Teraslara ve dış mekanlara doğrudan erişim</li></ul><h3>Üst Kat</h3><ul><li>3 büyük ebeveyn banyolu yatak odası</li><li>Merkezi galeri / dinlenme alanı</li><li>Alt kata açık görsel bağlantı</li><li>Panoramik deniz ve dağ manzarası</li></ul><h3>Alt Kat</h3><ul><li>Çok fonksiyonlu alt kat</li><li>Teras erişimli spor salonu (~80 m²)</li><li>Sauna ve sağlıklı yaşam alanı</li><li>Misafir yatak odası + servis alanları</li><li>Garaja içten bağlantı</li></ul>"
+        }
+      },
+      {
+        "question": {
+          "en": "Outdoor Living",
+          "tr":"Dış Mekan Yaşamı"
+        },
+        "answer": {
+          "en": "<ul><li>Infinity pool (130 m²) with full landscape integration</li><li>Jacuzzi (12 persons)</li><li>Large-scale terrace system (~300 m² main + extensions)</li><li>Outdoor kitchen & BBQ zone</li><li>Pool bar & entertainment setup</li><li>Projection-ready outdoor space</li><li>Multiple seating zones integrated into landscape</li></ul>",
+          "tr":"<ul><li>Tamamen peyzajla bütünleşmiş sonsuzluk havuzu (130 m²)</li><li>Jakuzi (12 kişilik)</li><li>Büyük ölçekli teras sistemi (~300 m² ana + uzantılar)</li><li>Açık hava mutfağı ve barbekü alanı</li><li>Havuz barı ve eğlence alanı</li><li>Projeksiyon için hazır açık alan</li><li>Peyzajla bütünleşmiş çoklu oturma alanları</li></ul>"
+        }
+      },
+      {
+        "question": {
+          "en": "Landscape & Site",
+          "tr":"Peyzaj ve Alan"
+        },
+        "answer": {
+          "en": "<ul><li>Fully landscaped gardens</li><li>Automatic irrigation system</li><li>Mature planting concept (Mediterranean vegetation)</li><li>Natural stone boundary walls</li><li>Private driveway & circulation</li><li>Capacity for 6 vehicles</li></ul>",
+          "tr":"<ul><li>Tamamen peyzajlı bahçeler</li><li>Otomatik sulama sistemi</li><li>Olgun bitki örtüsü konsepti (Akdeniz bitki örtüsü)</li><li>Doğal taş sınır duvarları</li><li>Özel giriş yolu ve dolaşım alanı</li><li>6 araçlık kapasite</li></ul>"
+        }
+      },
+      {
+        "question": {
+          "en": "Infrastructure & Systems",
+          "tr":"Altyapı ve Sistemler"
+        },
+        "answer": {
+          "en": "<ul><li>Central heating system</li><li>Full air-conditioning (heating & cooling)</li><li>Integrated sound system</li><li>Satellite & high-speed connectivity</li><li>40 KWA generator</li><li>Water well + ~25-ton underground storage</li></ul>",
+          "tr":"<ul><li>Merkezi ısıtma sistemi</li><li>Tam klima (ısıtma ve soğutma)</li><li>Entegre ses sistemi</li><li>Uydu ve yüksek hızlı bağlantı</li><li>40 KWA jeneratör</li><li>Su kuyusu + ~25 tonluk yer altı su deposu</li></ul>"
+        }
+      },
+      {
+        "question": {
+          "en": "Positioning",
+          "tr":"Konumlandırma"
+        },
+        "answer": {
+          "en": "<p>THE ONE is not a standard villa product. It is a private estate-level asset combining scale, location and architectural potential. Designed for end-user ownership, signature residence transformation and high-end lifestyle positioning.</p>",
+          "tr":"<p>THE ONE, standart bir villa ürünü değildir. Ölçek, konum ve mimari potansiyeli birleştiren özel bir gayrimenkul seviyesinde bir varlıktır. Son kullanıcı sahipliği, imza niteliğinde konut dönüşümü ve üst düzey yaşam tarzı konumlandırması için tasarlanmıştır.</p>"
+        }
+      }
+    ],
     "brands_list": [],
     "payment_list": [],
     "materials_list": [],
@@ -302,7 +383,7 @@
   },
   "flyby_finish_dates": {},
   "assotiated_flat_builds_with_flybys": {},
-  "project_google_map_location": "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d3379.680568407433!2d33.164120206223025!3d35.335259974651414!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzXCsDIwJzA2LjgiTiAzM8KwMDknNTEuMiJF!5e1!3m2!1sen!2sua!4v1779092075656!5m2!1sen!2sua",
+  "project_google_map_location": "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d344606.25482086785!2d33.10703230303029!3d35.2676730078389!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzXCsDIwJzA2LjgiTiAzM8KwMDknNTEuMiJF!5e1!3m2!1sen!2sua!4v1779104980752!5m2!1sen!2sua",
   "infoBoxes": {
     "general_flyby_button_titles": {
       "faq": "Можливі підписи для кнопок у інфобоксі обльоту : queue ,villa, house",
@@ -333,7 +414,7 @@
     "global_number": "+90 533 162 70 62",
     "email": "serhat.harman81@gmail.com",
     "construction_department": {
-      "google_maps_link": "https://maps.app.goo.gl/xSWe1qLxmKv8GsJp6",
+      "google_maps_link": "https://maps.app.goo.gl/tAiMs9EHqPNDZ11NA",
       "text": {
         "en": "Kyrenia District, Northern Cyprus",
         "tr":"Girne Bölgesi, Kuzey Kıbrıs"
@@ -342,8 +423,7 @@
     "sales_department": {
       "google_maps_link": "",
       "text": {
-        "en": "",
-        "tr":""
+        "en": ""
       }
     },
     "working_hours": {

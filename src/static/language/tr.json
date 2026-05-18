@@ -74,7 +74,7 @@
     "general": {
       "button_titles": {
         "queue": "Kuyruğu Keşfet",
-        "villa": "Villayı keşfet",
+        "villa": "Villa The One'ı keşfedin",
         "house": "Evi keşfet"
       }
     },
@@ -147,7 +147,7 @@
       "availability": "Müsaitlik",
       "fisher_island": "Fisher Island",
       "mansion": "Köşk",
-      "villa": "Villa"
+      "villa": "Villa The One"
     },
     "share": {
       "link-copied": "Bağlantı kopyalandı"

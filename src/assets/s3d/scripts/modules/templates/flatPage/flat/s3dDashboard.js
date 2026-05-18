@@ -73,7 +73,7 @@ export default function s3dDashboard(
             <div class="s3d-flat-dashboard__info">
                 <div class="s3d-flat-dashboard__info-item s3d-flat-dashboard__info-item--mobile-column s3d-flat-dashboard__info-item--mobile-head">
                     <span class="fonts-3d-h1">
-                        ${i18n.t('ctr.nav.villa')} ${flat.number}
+                        ${i18n.t('ctr.nav.villa')}
                     </span>
 
                     <span class="fonts-3d-body">
@@ -155,7 +155,7 @@ export default function s3dDashboard(
                         </svg>
                         <span>${i18n.t('Flat.buttons.pdf')}</span>
                     </button>
-                    <button class="s3d2-ButtonIconLeft js-s3d-add__favourite text-uppercase-important" data-id="${
+                    <!-- <button class="s3d2-ButtonIconLeft js-s3d-add__favourite text-uppercase-important" data-id="${
                       flat.id
                     }">
                         <input type="checkbox" data-key="checked"/>
@@ -168,7 +168,7 @@ export default function s3dDashboard(
                         <span title="Compare" data-not-in-fav="">${i18n.t(
                           'Flat.buttons.compare',
                         )}</span>
-                    </button>
+                    </button> -->
                     ${$specifiedFlybysByGroup}
                 </div>
             </div>

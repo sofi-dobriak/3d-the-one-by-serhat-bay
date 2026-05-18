@@ -74,7 +74,7 @@
     "general": {
       "button_titles": {
         "queue": "Explore the Queue",
-        "villa": "Explore villa",
+        "villa": "Explore Villa The One",
         "house": "Explore house"
       }
     },
@@ -147,7 +147,7 @@
       "availability": "Availability",
       "fisher_island": "Fisher Island",
       "mansion": "Mansion",
-      "villa": "Villa"
+      "villa": "Villa The One"
     },
     "share": {
       "link-copied": "Link copied"

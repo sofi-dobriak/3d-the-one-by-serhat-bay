@@ -356,7 +356,7 @@ class SliderView extends EventEmitter {
       <button class="js-s3d-nav__btn s3d-flyby-custom-link s3d2-ButtonIconLeft s3d2-ButtonIconLeft--light"  data-type="flat" data-id="${
         flat.id
       }">
-        <span>${this._model.i18n.t('infoBox.general.button_titles.villa')} ${flat.number}</span>
+        <span>${this._model.i18n.t('infoBox.general.button_titles.villa')}</span>
       </button>
     `,
     );

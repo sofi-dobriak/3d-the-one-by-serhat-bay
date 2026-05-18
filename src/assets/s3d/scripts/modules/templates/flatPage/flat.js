@@ -269,7 +269,7 @@ function Flat({
           : ''
       }
 
-      ${s3dApartmentsList(i18n, flat, favouritesIds$, showPrices, otherTypeFlats)}
+      <!-- ${s3dApartmentsList(i18n, flat, favouritesIds$, showPrices, otherTypeFlats)} -->
 
       ${VillaFinancialTermsScreen(i18n, financialTermsData)}
       ${FlatDocumentationScreen(i18n, projectDocs)}
