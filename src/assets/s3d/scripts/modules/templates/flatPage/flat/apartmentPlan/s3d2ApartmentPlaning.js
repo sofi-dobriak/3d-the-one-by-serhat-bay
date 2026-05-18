@@ -26,9 +26,17 @@ export default function s3d2ApartmentPlanings(i18n, flat, floorList, socialMedia
 
     // Якщо один поверх але кілька типів фото — рендеримо кнопки по типах
     if (flat.level < 2) {
-      if (photoTypes.length <= 1) return '';
+      const orderedTypes = [
+        'site_plan',
+        'ground',
+        'first_floor',
+        'second_floor',
+        'roof_terrace',
+      ].filter(type => levelPhotos[type]); // тільки ті, що є в даних
 
-      return photoTypes
+      if (orderedTypes.length <= 1) return '';
+
+      return orderedTypes
         .map((type, idx) => {
           const buttonClass = idx === 0 ? 'active' : '';
           return ButtonWithoutIcon(
@@ -129,13 +137,13 @@ export default function s3d2ApartmentPlanings(i18n, flat, floorList, socialMedia
                         )}
                       </div> -->
                   </div>
-                  <div class="s3d2-apartment__flat-explication-screen-buttons--floor" data-switch-explication-floor="1">
+                  <!--<div class="s3d2-apartment__flat-explication-screen-buttons--floor" data-switch-explication-floor="1">
                     ${ButtonWithoutIcon(
                       '',
                       'data-switch-explication-floor="1"',
                       i18n.t(`Flat.goToFloor`),
                     )}
-                  </div>
+                  </div>-->
                 </div>
 
 
@@ -153,11 +161,13 @@ export default function s3d2ApartmentPlanings(i18n, flat, floorList, socialMedia
             </div>
 
             <div class="s3d2-apartment__flat-explication-screen-table">
-              <span class="s3d2-apartment__flat-explication-screen-title">Layout</span>
+              <span class="s3d2-apartment__flat-explication-screen-title">${i18n.t(
+                'Flat.layout',
+              )}</span>
               <div class="s3d2-apartment__flat-explication-screen-table-inner">
                 <div class="s3d2-apartment__flat-explication-screen-table-content">
-                  <div class="s3d2-apartment__flat-explication-screen-table__title" data-flat-explication-title> Floor </div>
-                  <div class="s3d2-apartment__flat-explication-screen-info ">
+                  <div class="s3d2-apartment__flat-explication-screen-table__title"></div> <!-- data-flat-explication-title -->
+                  <!-- <div class="s3d2-apartment__flat-explication-screen-info">
                       <div class="s3d2-apartment__flat-explication-screen-info-row  ">
                           <div class="s3d2-apartment__flat-explication-screen-info-row-title">
                               ${i18n.t('Flat.information.allArea')}:
@@ -194,16 +204,127 @@ export default function s3d2ApartmentPlanings(i18n, flat, floorList, socialMedia
                             </div>`
                           : ''
                       }
-                  </div>
-                  <div class="s3d2-apartment__flat-explication-screen-info" data-villa-explication-floor-properties-container>
-                    <div class="s3d2-apartment__flat-explication-screen-info-row">
-                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">Living area:</div>
+                  </div> -->
+
+                  <div class="s3d2-apartment__flat-explication-screen-info">
+                    <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                            ${i18n.t('Flat.explication_list.land')}:
+                        </div>
                         <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
                         </div>
                         <div class="s3d2-apartment__flat-explication-screen-info-row-value">
-                            ${flat.life_room} ${i18n.t('area_unit')}
+                            ~2,510 ${i18n.t('area_unit')}
                         </div>
                     </div>
+                    <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                            ${i18n.t('Flat.explication_list.building_area')}:
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-value">
+                            ~890 ${i18n.t('area_unit')}
+                        </div>
+                    </div>
+                    <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                            ${i18n.t('Flat.explication_list.ground_floor')}:
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-value">
+                            327 ${i18n.t('area_unit')}
+                        </div>
+                    </div>
+                    <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                            ${i18n.t('Flat.explication_list.first_floor')}:
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-value">
+                            292 ${i18n.t('area_unit')}
+                        </div>
+                    </div>
+                    <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                            ${i18n.t('Flat.explication_list.second_floor')}:
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-value">
+                            252 ${i18n.t('area_unit')}
+                        </div>
+                    </div>
+                    <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                            ${i18n.t('Flat.explication_list.roof_terrace')}:
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-value">
+                            204 ${i18n.t('area_unit')}
+                        </div>
+                    </div>
+                    <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                            ${i18n.t('Flat.explication_list.terrace_outdoor')}:
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-value">
+                            500 ${i18n.t('area_unit')}
+                        </div>
+                    </div>
+                    <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                            ${i18n.t('Flat.explication_list.entrance_parking')}:
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-value">
+                            280 ${i18n.t('area_unit')}
+                        </div>
+                    </div>
+                    <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                            ${i18n.t('Flat.explication_list.swimming_pool')}:
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-value">
+                            ~130 ${i18n.t('area_unit')}
+                            ${i18n.t('Flat.explication_list.infinity_pool')}
+                        </div>
+                    </div>
+                    <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                            ${i18n.t('Flat.explication_list.jacuzzi')}:
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-value">
+                            ~10 ${i18n.t('area_unit')}
+                            (12 ${i18n.t('Flat.explication_list.persons')})
+                        </div>
+                    </div>
+                    <div class="s3d2-apartment__flat-explication-screen-info-row  ">
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-title">
+                            ${i18n.t('Flat.explication_list.additional_spaces')}:
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-blank">
+                        </div>
+                        <div class="s3d2-apartment__flat-explication-screen-info-row-value">
+                            ${i18n.t('Flat.explication_list.office')} ·
+                            ${i18n.t('Flat.explication_list.gallery')} /
+                            ${i18n.t('Flat.explication_list.leisure')}
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="s3d2-apartment__flat-explication-screen-info" data-villa-explication-floor-properties-container>
+                    <div class="s3d2-apartment__flat-explication-screen-info-row"></div>
                   </div>
                 </div>
 

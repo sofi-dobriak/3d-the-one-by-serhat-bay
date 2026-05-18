@@ -991,7 +991,8 @@
 }
 
 .theme-chooser-container {
-  display: flex;
+  // display: flex;
+  display: none;
   align-items: center;
   gap: 4px;
   position: fixed;

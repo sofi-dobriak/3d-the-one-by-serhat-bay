@@ -70,7 +70,7 @@ export default function s3d2_MobileFlybyController(i18n, config) {
           )}
           ${s3d2_Dropdown(
             dataForFlybyDropdown,
-            `${i18n.t('ctr.nav.flat')} 7 page`,
+            `${i18n.t('ctr.nav.villa')} 7 page`,
             'Tiny chevron right',
             FLYBY_DROPDOWN_ATTRIBUTES,
             'js-s3d-nav__btn',

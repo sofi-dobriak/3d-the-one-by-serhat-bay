@@ -142,7 +142,7 @@ export default class FormViewPage {
                     </div>
                     <div class="form-field disabled form-field-input" data-field-input="data-field-input" data-field-phone="data-field-phone" data-status="field--inactive">
                         <div class="s3d2__contact__form__title">
-                          ${i18next.t('YOUR PHONE')}:*
+                          ${i18next.t('Your phone')}*
                         </div>
                         ${TextInput({
                           text: '',
@@ -155,7 +155,7 @@ export default class FormViewPage {
                     </div>
                     <div class="form-field form-field-input" data-field-input="data-field-input" data-field-email="data-field-email" data-status="field--inactive">
                         <div class="s3d2__contact__form__title">
-                          ${i18next.t('YOUR EMAIL')}:
+                          ${i18next.t('Your email')}
                         </div>
                         ${TextInput({
                           text: i18next.t('Type your email'),

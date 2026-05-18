@@ -345,7 +345,7 @@ class FlatModel extends EventEmitter {
 
     if (flatButton) {
       flatButton.innerHTML = `
-        ${this.i18n.t('ctr.nav.flat')} ${this.getFlat(this.activeFlat).number}
+        ${this.i18n.t('ctr.nav.villa')} ${this.getFlat(this.activeFlat).number}
       `;
     }
 
@@ -922,10 +922,10 @@ class FlatModel extends EventEmitter {
       // value тепер може бути 'without', 'without_3d', 'with', 're_planning'
       const isPhotoType = [
         'site_plan',
+        'ground',
         'first_floor',
         'second_floor',
         'roof_terrace',
-        'ground',
       ].includes(value);
 
       if (isPhotoType) {

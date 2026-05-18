@@ -216,10 +216,10 @@ class FlatView extends EventEmitter {
         // Для нових кнопок з photoType порівнюємо по photoType, для старих — по floor
         const isPhotoTypeButton = [
           'site_plan',
+          'ground',
           'first_floor',
           'second_floor',
           'roof_terrace',
-          'ground',
         ].includes(el.dataset.value);
         if (isPhotoTypeButton) {
           el.classList.toggle('active', data.photoType === el.dataset.value);

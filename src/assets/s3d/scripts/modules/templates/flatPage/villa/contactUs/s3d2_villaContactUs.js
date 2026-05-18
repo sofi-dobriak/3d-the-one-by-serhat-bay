@@ -249,23 +249,23 @@ function s3d2_renderVillaContact_v2({
                 ${$globalPhoneNumber}
               </div>
 
-              <div  class="s3d2__contact--v2__content__social-list">
-              ${
-                $socialMediaList.length > 0
-                  ? `<h3 class="s3d2__contact--v2__content__social-list__title">${i18n.t(
-                      'Flat.contactUs.social',
-                    )}</h3>
+              <!-- <div  class="s3d2__contact--v2__content__social-list">
+               ${
+                 $socialMediaList.length > 0
+                   ? `<h3 class="s3d2__contact--v2__content__social-list__title">${i18n.t(
+                       'Flat.contactUs.social',
+                     )}</h3>
                       <div class="s3d2__contact--v2__content__social-list__list">
                         ${$socialMediaList}
                       </div>`
-                  : ``
-              }
-              </div>
+                   : ``
+               }
+              </div> -->
 
               ${$email}
               ${$salesDepartment}
               ${$workingHours}
-              ${$constructionDepartment}
+              <!-- ${$constructionDepartment} -->
           </div>
         </div>
 

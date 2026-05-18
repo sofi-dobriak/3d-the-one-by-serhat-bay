@@ -202,7 +202,7 @@ export default function s3d2_navBar(i18n, { logo }) {
         ${$logo}
       </a>
 
-      <div class="nav-container">
+      <!--<div class="nav-container">
         ${s3d2_ButtonWithoutIcon(
           'js-s3d-nav__btn',
           'data-type="plannings" data-s3d2-header-plannings',
@@ -213,25 +213,29 @@ export default function s3d2_navBar(i18n, { logo }) {
           `data-type="floor" ${FLOOR_PLAN_GROUP}`,
           i18n.t('ctr.nav.level'),
         )}
-      </div>
+      </div>-->
 
       <div class="nav-container">
         ${
           config.genplan
             ? `<button class="s3d2-header__nav-button js-s3d-nav__btn" data-type="flyby" data-flyby="1" data-side="outside">
-          ${i18n.t('ctr.nav.fisher_island')}
+          ${i18n.t('ctr.nav.genplan')}
           </button>`
             : ``
         }
-        ${dataForFlybyDropdown.length > 1 ? s3d2_Dropdown(
-          dataForFlybyDropdown,
-          `${i18n.t('ctr.nav.flat')}`,
-          'Chevron down',
-          FLYBY_DROPDOWN_ATTRIBUTES,
-          'chevron-down',
-        ) : ''}
+        ${
+          dataForFlybyDropdown.length > 1
+            ? s3d2_Dropdown(
+                dataForFlybyDropdown,
+                `${i18n.t('ctr.nav.villa')}`,
+                'Chevron down',
+                FLYBY_DROPDOWN_ATTRIBUTES,
+                'chevron-down',
+              )
+            : ''
+        }
         <button class="s3d2-header__nav-button js-s3d-nav__btn" data-type="flat" ${FLAT_PLAN_GROUP}>
-            ${i18n.t('ctr.nav.flat')}
+            ${i18n.t('ctr.nav.villa')}
         </button>
       </div>
       ${s3d2_BackButton()}

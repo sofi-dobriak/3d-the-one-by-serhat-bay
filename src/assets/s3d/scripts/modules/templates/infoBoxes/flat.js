@@ -159,7 +159,7 @@ function Flat(i18n, data) {
        ${$number(i18n, data)}
       </div>-->
       <div class="s3d-card__middle">
-        <div class="s3d-card__flat-title">${i18n.t('ctr.nav.flat')} ${number}</div>
+        <div class="s3d-card__flat-title">${i18n.t('ctr.nav.villa')} ${number}</div>
 
         <div class="s3d-card__flat-area">${area} ${i18n.t('Flat.information.area_unit')}</div>
         ${isDesktop() ? '' : $closeBtn()}

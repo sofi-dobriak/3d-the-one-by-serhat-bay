@@ -251,7 +251,7 @@ class InfoBox {
             <tr class="s3d-card__row">
               <td class="s3d-card__name">№ квартиры</td>
               <td class="s3d-card__value" data-s3d-event="update" data-s3d-update="number">${i18n.t(
-                'ctr.nav.flat',
+                'ctr.nav.villa',
               )} ${flat.number}</td>
             </tr>
             <tr class="s3d-card__row">

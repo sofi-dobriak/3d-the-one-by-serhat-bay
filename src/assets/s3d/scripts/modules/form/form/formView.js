@@ -216,7 +216,7 @@ export default class FormView {
                   <div class="form-overflow">
                     <div class="form-field form-field--s3d2 disabled form-field-input" data-field-input="data-field-input" data-field-name="data-field-name" data-status="field--inactive">
                         <div class="s3d2__contact__form__title">
-                          ${i18next.t('Your name')}*
+                          ${i18next.t('Your name')}
                         </div>
                         ${TextInput({
                           text: i18next.t('Type your name'),
@@ -229,7 +229,7 @@ export default class FormView {
                     </div>
                     <div class="form-field form-field--s3d2 disabled form-field-input" data-field-input="data-field-input" data-field-phone="data-field-phone" data-status="field--inactive">
                         <div class="s3d2__contact__form__title">
-                          ${i18next.t('YOUR PHONE')}:*
+                          ${i18next.t('Your phone')}
                         </div>
                         ${TextInput({
                           text: '',
@@ -242,7 +242,7 @@ export default class FormView {
                     </div>
                     <div class="form-field form-field--s3d2 form-field-input" data-field-input="data-field-input" data-field-email="data-field-email" data-status="field--inactive">
                         <div class="s3d2__contact__form__title">
-                          ${i18next.t('YOUR EMAIL')}:
+                          ${i18next.t('Your email')}
                         </div>
                         ${TextInput({
                           text: i18next.t('Type your Email'),

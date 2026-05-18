@@ -1,7 +1,7 @@
 {
   "currency_label": "£",
   "currency_label_m2": "$t(currency_label) per $t(area_unit)",
-  "area_unit": "sq ft",
+  "area_unit": "m²",
   "unit_statuses": {
     "0": "Sold",
     "1": "Available",
@@ -11,11 +11,15 @@
     "6": "Blocked",
     "1_tooltip": "Verified as of today. This status may change if another reservation is completed."
   },
+  "dashboard": {
+    "land": "Land",
+    "build_area": "Built Area"
+  },
   "calculator": {
     "outstanding_balance": "Outstanding balance",
     "title": "INSTALLMENT PLAN",
     "area": "Apartment area",
-    "price": "Base price per sq ft",
+    "price": "Base price per m²",
     "first": "Down payment",
     "first_title_amount": "Down payment amount",
     "term": "Installment period (months)",
@@ -77,7 +81,7 @@
     "freeObjects_short": "AVAIL."
   },
   "title": {
-    "genplan": "Eden",
+    "genplan": "Masterplan",
     "flyby_1_outside": "Build 1",
     "favourites": "Favourites",
     "plannings": "Plannings"
@@ -115,7 +119,7 @@
   "ctr": {
     "nav": {
       "title": "Menu 3D",
-      "genplan": "Eden",
+      "genplan": "Masterplan",
       "navigation": "Navigation",
       "tooltip_1": "Build 5",
       "tooltip_2": "Build 7",
@@ -142,7 +146,8 @@
       "360_orbit": "360 Orbit",
       "availability": "Availability",
       "fisher_island": "Fisher Island",
-      "mansion": "Mansion"
+      "mansion": "Mansion",
+      "villa": "Villa"
     },
     "share": {
       "link-copied": "Link copied"
@@ -243,21 +248,42 @@
     "construction_title": "Construction progress",
     "video": "Video presentation",
     "discount": "Discount",
-    "floor": "Floor",
+    "floor": "Levels",
     "rooms": "Rooms",
     "build": "Build",
+    "beds": "Beds",
     "bathroom": "bathroom",
     "bedrooms": "bedrooms",
     "garage": "garage",
     "pools": "pools",
     "from_window_view": "360 views",
     "scroll": "Scroll",
+    "see_all_photos": "See all {{count}} photos",
+    "layout": "Villa details",
+    "explication_list": {
+      "land": "Land",
+      "building_area": "Built Area",
+      "ground_floor": "Ground Floor",
+      "first_floor": "1st floor",
+      "second_floor": "2nd floor",
+      "roof_terrace": "Roof Terrace",
+      "terrace_outdoor": "Terraces & Outdoor Living",
+      "entrance_parking": "Entrance & Open Parking",
+      "swimming_pool": "Swimming Pool",
+      "jacuzzi": "Jacuzzi",
+      "additional_spaces": "Additional Spaces",
+      "infinity_pool": "infinity pool",
+      "persons": "persons",
+      "office": "Office",
+      "gallery": "Gallery",
+      "leisure": "Leisure"
+    },
     "explication_data": {
       "floor_1": "Site plan",
-      "floor_2": "1st floor",
-      "floor_3": "2nd floor",
-      "floor_4": "Roof terrace",
-      "floor_5": "Ground floor",
+      "floor_2": "Ground floor",
+      "floor_3": "1st floor",
+      "floor_4": "2nd floor",
+      "floor_5": "Roof terrace",
       "open_full_plan": "VIEW AS PDF"
     },
     "floor_planning": "Floorplan & specs",
@@ -480,7 +506,7 @@
   "card--link": "Read more",
   "card--add_to_compare": "Add to compare",
   "PopupFlyby": {
-    "title": "Residence",
+    "title": "Villa",
     "description": "Planning is in another building. To view it on a 3D model, you need to switch to another block.",
     "btn": "Change the angle"
   },

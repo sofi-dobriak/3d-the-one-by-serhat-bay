@@ -33,7 +33,7 @@ function s3d2_menu(i18n, config = {}) {
                 <span>${i18n.t('asideMenu.building_overview')}</span>
               </div>
             </li>
-            <li class="s3d2-menu-nav-link">
+            <!-- <li class="s3d2-menu-nav-link">
               <div class="js-s3d-nav__btn" data-type="plannings" data-title="${i18n.t(
                 'asideMenu.availability',
               )}" data-menu-close>
@@ -42,7 +42,7 @@ function s3d2_menu(i18n, config = {}) {
                 </svg>
                 <span>${i18n.t('asideMenu.availability')}</span>
               </div>
-            </li>
+            </li> -->
             <li class="s3d2-menu-nav-link s3d2-menu-dropdown" ${
               tours.length ? '' : 'style="display:none;"'
             }>

@@ -469,7 +469,8 @@
 
   &__content {
     display: flex;
-    align-items: center;
+    // align-items: center;
+    align-items: stretch;
     gap: var(--space-10);
 
     @media screen and (max-width: 1366px) {

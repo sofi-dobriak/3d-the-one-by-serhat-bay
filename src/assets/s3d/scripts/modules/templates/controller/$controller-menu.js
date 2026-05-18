@@ -1,4 +1,4 @@
-import { hideElementsAttribute } from "../../../features/hideElementsOnPages";
+import { hideElementsAttribute } from '../../../features/hideElementsOnPages';
 
 function ControllerMenu(i18n, data) {
   /**Выводит ссылки на облеты, которые указаны в settings.json */
@@ -38,12 +38,12 @@ function ControllerMenu(i18n, data) {
       document.querySelector(`[${attributeForThisContainer}]`).innerHTML = floorsArray
         .map(({ build, section, floor }) => {
           return `
-          <button 
-            class="s3d-nav__btn js-s3d-nav__btn" 
-            type="button" 
-            data-type="floor" 
-            data-build="${build}" 
-            data-floor="${floor}" 
+          <button
+            class="s3d-nav__btn js-s3d-nav__btn"
+            type="button"
+            data-type="floor"
+            data-build="${build}"
+            data-floor="${floor}"
             data-section="${section}"
           >
           ${i18n.t('floor_list.build', { build: build })} ${i18n.t('floor_list.section', {
@@ -109,7 +109,7 @@ function ControllerMenu(i18n, data) {
   const $flatButton = i18n => {
     return `
        <button class="s3d-nav__btn js-s3d-nav__btn" type="button" data-type="flat" disabled>${i18n.t(
-         'ctr.nav.flat',
+         'ctr.nav.villa',
        )}</button>
     `;
   };
@@ -123,7 +123,7 @@ function ControllerMenu(i18n, data) {
   };
 
   return `
-    <div class="s3d-ctr__nav" id="js-s3d-ctr__elem" ${hideElementsAttribute(['floor','flat'])}>
+    <div class="s3d-ctr__nav" id="js-s3d-ctr__elem" ${hideElementsAttribute(['floor', 'flat'])}>
       <div class="s3d-ctr__nav__title">${i18n.t('ctr.nav.title')}</div>
       ${$genplanButton(i18n)}
       <!--${$flybyButton(i18n)}-->

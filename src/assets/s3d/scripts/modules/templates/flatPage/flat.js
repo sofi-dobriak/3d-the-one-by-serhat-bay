@@ -185,7 +185,7 @@ function Flat({
           : ``
       }
       <div class="s3d-villa__container-bg"></div>
-      ${s3dDashboard(i18n, flat, $specifiedFlybysByGroup, showPrices)}
+      ${s3dDashboard(i18n, flat, $specifiedFlybysByGroup, contacts, showPrices)}
 
       <div class="s3d-villa__video-screen" style="padding-top: var(--space-5);     padding-left: var(--space-6);padding-right: var(--space-6);">
         <div class="s3d-villa-description-screen">
@@ -226,7 +226,7 @@ function Flat({
       ${s3d2FlatFloorPlan(i18n, flat, floorList, socialMediaLinks, contacts)}
       ${$additionalAmenities(flat)}
     <!--  ${$brandsList({ i18n, flat, brands: brands_list, faqs: faq_questions })} -->
-      ${s3d2_CalculatorScreen('', 'js-installment-calculator')}
+    <!--  ${s3d2_CalculatorScreen('', 'js-installment-calculator')} -->
       ${s3d2_featureMaterials({ i18n, materials: materials_list })}
       ${$s3d2_brandsList({ i18n, flat, brands: brands_list, faqs: faq_questions })}
       ${s3d2_paymentSection({ i18n, flat, payment_list })}

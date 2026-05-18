@@ -172,6 +172,10 @@
           }
         }
 
+        &__img {
+          margin-bottom: vw(--space-5);
+        }
+
         &__title {
           @include s3d2_fonts.fonts-3d-h1;
           color: var(--s3d2-color-text-gray-900);

@@ -4,8 +4,21 @@ import s3d2_ButtonIconLeft from '../../../../../../s3d2/scripts/templates/common
 import s3d2spriteIcon from '../../../../../../s3d2/scripts/templates/spriteIcon';
 import { numberWithCommas } from '../../../../../../s3d2/scripts/helpers/helpers_s3d2';
 
-export default function s3dDashboard(i18n, flat, $specifiedFlybysByGroup = '', showPrices = true) {
+export default function s3dDashboard(
+  i18n,
+  flat,
+  $specifiedFlybysByGroup = '',
+  contacts,
+  showPrices = true,
+) {
   const gallery = get(flat, 'gallery', []);
+  const lang = i18n.language;
+  const address = get(
+    contacts,
+    ['construction_department', 'text', lang],
+    contacts.construction_department.text.en,
+  );
+
   return `
         <div class="s3d-flat-dashboard">
             <div data-gallery-length="${gallery.length}" class="s3d-flat-dashboard__gallery ${
@@ -53,27 +66,22 @@ export default function s3dDashboard(i18n, flat, $specifiedFlybysByGroup = '', s
                 ${s3d2_ButtonIconLeft(
                   's3d-flat-dashboard__gallery-button',
                   `${FLAT_GALLERY_FANCYBOX}="${gallery.length >= 5 ? 5 : 0}"`,
-                  `See all ${gallery.length} photos`,
+                  i18n.t('Flat.see_all_photos', { count: gallery.length }),
                   'gallery',
                 )}
             </div>
             <div class="s3d-flat-dashboard__info">
                 <div class="s3d-flat-dashboard__info-item s3d-flat-dashboard__info-item--mobile-column s3d-flat-dashboard__info-item--mobile-head">
                     <span class="fonts-3d-h1">
-                        ${i18n.t('ctr.nav.flat')} ${flat.number}
+                        ${i18n.t('ctr.nav.villa')} ${flat.number}
                     </span>
 
-                    ${
-                      flat.adress
-                        ? `
                     <span class="fonts-3d-body">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M12 4C9.30033 4 6.90924 5.66034 6.90918 8.83008C6.90918 9.49423 7.26924 10.4656 7.44922 10.8682L12 20L16.5508 10.8682C16.7308 10.4656 17.0908 9.49423 17.0908 8.83008C17.0908 5.66036 14.6997 4.00002 12 4ZM12 7.09082C13.1045 7.09087 13.9999 7.98632 14 9.09082C14 10.1954 13.1045 11.0908 12 11.0908C10.8954 11.0908 10 10.1954 10 9.09082C10.0001 7.98629 10.8955 7.09082 12 7.09082Z" fill="none"/>
                         </svg>
-                        ${flat.adress}
-                    </span>`
-                        : ''
-                    }
+                       ${flat.adress ? flat.adress : address}
+                    </span>
                 </div>
             </div>
             <div class="s3d-flat-dashboard__info-details">
@@ -97,17 +105,17 @@ export default function s3dDashboard(i18n, flat, $specifiedFlybysByGroup = '', s
                             ${flat.rooms}
                         </span>
                         <span class="fonts-3d-body">
-                             ${i18n.t('Flat.rooms')}
+                             ${i18n.t('Flat.beds')}
                         </span>
                     </div>
-                    <div class="s3d-flat-dashboard__info-details-item s3d-flat-dashboard__info-item--mobile-row">
+                    <!--<div class="s3d-flat-dashboard__info-details-item s3d-flat-dashboard__info-item--mobile-row">
                         <span class="fonts-3d-h1">
                             ${flat.build}
                         </span>
                         <span class="fonts-3d-body">
                              ${i18n.t('Flat.build')}
                         </span>
-                    </div>
+                    </div>-->
                     <div class="s3d-flat-dashboard__info-details-item s3d-flat-dashboard__info-item--mobile-row">
                         <span class="fonts-3d-h1">
                             ${flat.floor}
@@ -118,10 +126,20 @@ export default function s3dDashboard(i18n, flat, $specifiedFlybysByGroup = '', s
                     </div>
                     <div class="s3d-flat-dashboard__info-details-item s3d-flat-dashboard__info-item--mobile-row">
                         <span class="fonts-3d-h1">
-                            ${numberWithCommas(flat.area)}
+                            ${numberWithCommas(flat.land ? flat.land : '2,510')} ${i18n.t(
+    'area_unit',
+  )}
                         </span>
                         <span class="fonts-3d-body">
-                            ${i18n.t('area_unit')}
+                            ${i18n.t('dashboard.land')}
+                        </span>
+                    </div>
+                    <div class="s3d-flat-dashboard__info-details-item s3d-flat-dashboard__info-item--mobile-row">
+                        <span class="fonts-3d-h1">
+                            ${numberWithCommas(flat.area)} ${i18n.t('area_unit')}
+                        </span>
+                        <span class="fonts-3d-body">
+                            ${i18n.t('dashboard.build_area')}
                         </span>
                     </div>
             </div>
@@ -144,8 +162,12 @@ export default function s3dDashboard(i18n, flat, $specifiedFlybysByGroup = '', s
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M15.665 18.5909H12.5801V6.65561C13.2351 7.02232 13.9613 7.36904 14.6885 7.64954C15.7069 8.04237 16.7696 8.32327 17.6562 8.32336H19.25C19.5261 8.32336 19.7499 8.09945 19.75 7.82336C19.75 7.54722 19.5261 7.32336 19.25 7.32336H17.6562C16.9498 7.32327 16.0207 7.0922 15.0479 6.71692C14.1775 6.38115 13.3063 5.943 12.5801 5.49769V4.75C12.5801 4.47386 12.3562 4.25 12.0801 4.25C11.8039 4.25 11.5801 4.47386 11.5801 4.75V5.49769C10.8538 5.943 9.98269 6.38115 9.1123 6.71692C8.13943 7.0922 7.21039 7.32327 6.50391 7.32336H4.91016C4.63401 7.32336 4.41016 7.54722 4.41016 7.82336C4.41022 8.09945 4.63405 8.32336 4.91016 8.32336H6.50391C7.39059 8.32327 8.45329 8.04237 9.47168 7.64954C10.1988 7.36904 10.9251 7.02231 11.5801 6.6556V18.5909H8.49512C8.21898 18.5909 7.99512 18.8148 7.99512 19.0909C7.99512 19.3671 8.21898 19.5909 8.49512 19.5909H15.665C15.9412 19.5909 16.165 19.3671 16.165 19.0909C16.165 18.8148 15.9412 18.5909 15.665 18.5909ZM16.8596 8.34766C17.0679 8.34769 17.2541 8.47691 17.3274 8.67188L19.718 15.0459C19.7959 15.2537 19.7275 15.4878 19.55 15.6211C18.774 16.2031 17.8296 16.5186 16.8596 16.5186C15.8897 16.5185 14.9462 16.203 14.1702 15.6211C13.9926 15.4879 13.9243 15.2538 14.0022 15.0459L16.3918 8.67188L16.4241 8.60254C16.5116 8.44691 16.6772 8.34767 16.8596 8.34766ZM15.0774 15.0244C15.6148 15.3449 16.2294 15.5185 16.8596 15.5186C17.4897 15.5186 18.1044 15.3447 18.6418 15.0244L16.8596 10.2705L15.0774 15.0244ZM7.2998 8.34766C7.50809 8.34769 7.69433 8.47691 7.76758 8.67188L10.1582 15.0459C10.2361 15.2537 10.1677 15.4878 9.99023 15.6211C9.21415 16.2031 8.26982 16.5186 7.2998 16.5186C6.3299 16.5185 5.38635 16.203 4.61035 15.6211C4.43279 15.4879 4.36445 15.2538 4.44238 15.0459L6.83203 8.67188L6.86426 8.60254C6.9518 8.44691 7.11734 8.34767 7.2998 8.34766ZM5.51758 15.0244C6.05502 15.3449 6.66963 15.5185 7.2998 15.5186C7.92991 15.5186 8.54461 15.3447 9.08203 15.0244L7.2998 10.2705L5.51758 15.0244Z" fill="none"/>
                         </svg>
-                        <span title="Added to compare" data-in-fav="">Added to compare</span>
-                        <span title="Compare" data-not-in-fav="">Compare</span>
+                        <span title="Added to compare" data-in-fav="">${i18n.t(
+                          'Flat.buttons.addedToCompare',
+                        )}</span>
+                        <span title="Compare" data-not-in-fav="">${i18n.t(
+                          'Flat.buttons.compare',
+                        )}</span>
                     </button>
                     ${$specifiedFlybysByGroup}
                 </div>

@@ -3,6 +3,7 @@ import en from './en.json';
 import he from './he.json';
 import uz from './uz.json';
 import zh from './zh.json';
+import tr from './tr.json';
 
 
-export default { uk, en, he, uz, zh };
+export default { uk, en, he, uz, zh, tr };
