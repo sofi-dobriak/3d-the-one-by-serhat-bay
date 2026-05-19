@@ -122,10 +122,10 @@ svg {
   polygon.preview,
   polygon.active,
   .polygon__flat-svg {
-    stroke: rgba(255, 255, 255, 1);
-    stroke-width: 6;
-    opacity: 1;
-    animation: stroke-pulsation 1.6s infinite cubic-bezier(0, 0, 0.12, 1.02);
+    // stroke: rgba(255, 255, 255, 1);
+    // stroke-width: 6;
+    // opacity: 1;
+    // animation: stroke-pulsation 1.6s infinite cubic-bezier(0, 0, 0.12, 1.02);
   }
 }
 

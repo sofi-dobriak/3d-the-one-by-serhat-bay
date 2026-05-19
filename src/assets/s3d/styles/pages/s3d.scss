@@ -665,7 +665,7 @@ sup {
 }
 
 .s3d-flyby-custom-link {
-  display: none;
+  display: none !important;
   position: absolute !important;
   z-index: 550000000000000000;
   bottom: 65px;

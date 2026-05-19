@@ -50,7 +50,7 @@
     "open_pdf": "Open PDF"
   },
   "floor_list": {
-    "build": "Build {{build}}",
+    "build": "Villa The One",
     "section": "Section {{section}}"
   },
   "infoBox": {
@@ -123,8 +123,8 @@
       "navigation": "Navigation",
       "tooltip_1": "Build 5",
       "tooltip_2": "Build 7",
-      "flyby": "Build",
-      "flyby_1_outside": "Build 1",
+      "flyby": "Villa The One",
+      "flyby_1_outside": "Villa The One",
       "flyby_2_outside": "Build 2",
       "flyby_1_inside": "Build 5",
       "flyby_2_inside": "Build 7",
@@ -339,7 +339,7 @@
     },
     "goToFloor": "Floor plan",
     "flatPlan": "Residence plan",
-    "goToFlat": "Explore property",
+    "goToFlat": "Explore Villa The One",
     "hero": {
       "title": "ATHOS",
       "subtitle": "Villa",

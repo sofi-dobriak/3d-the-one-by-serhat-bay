@@ -18,10 +18,10 @@ polygon[data-type='flyby'] {
 polygon[data-type='flat'],
 polygon[data-type='floor'] {
   &[data-sale='1'] {
-    stroke: var(--border-gray-200);
-    cursor: pointer;
-    fill: var(--color-surface-semantic-success);
-    fill-opacity: 0.45;
+    // stroke: var(--border-gray-200);
+    // cursor: pointer;
+    // fill: var(--color-surface-semantic-success);
+    // fill-opacity: 0.45;
   }
 
   &[data-sale='2'] {
@@ -42,9 +42,9 @@ polygon[data-type='floor'] {
   &.active,
   &.polygon__selected {
     // fill: var(--color-surface-semantic-success) !important;
-    fill: rgba(theme_vars.$color-semantic-success, 0.75) !important;
-    pointer-events: all;
-    stroke: rgb(255, 255, 255) !important;
+    // fill: rgba(theme_vars.$color-semantic-success, 0.75) !important;
+    // pointer-events: all;
+    // stroke: rgb(255, 255, 255) !important;
   }
   &.polygon__filter-deselect {
     fill: transparent;
@@ -85,10 +85,10 @@ polygon[data-type='floor'] {
     }
 
     &[data-sale='1'] {
-      fill: vars.$sale-1 !important;
-      fill-opacity: 0.75;
-      stroke: var(--border-gray-200) !important;
-      opacity: 1;
+      // fill: vars.$sale-1 !important;
+      // fill-opacity: 0.75;
+      // stroke: var(--border-gray-200) !important;
+      // opacity: 1;
     }
 
     &[data-sale='2'] {
@@ -115,9 +115,9 @@ polygon[data-type='floor'] {
 
 .s3d-villa__flyby {
   polygon[data-type='flat'].active {
-    fill: var(--color-surface-success-available-transparent-20);
-    animation: none;
-    stroke-width: 1;
+    // fill: var(--color-surface-success-available-transparent-20);
+    // animation: none;
+    // stroke-width: 1;
     &[data-sale='2'],
     &[data-sale='3'],
     &[data-sale='4'],
@@ -132,12 +132,12 @@ polygon[data-type='floor'] {
   }
 
   polygon[data-type='flat'].active-flat {
-    fill: rgba(theme_vars.$color-semantic-success, 0.75);
-    animation: stroke-pulsation 1.6s infinite cubic-bezier(0, 0, 0.12, 1.02);
+    // fill: rgba(theme_vars.$color-semantic-success, 0.75);
+    // animation: stroke-pulsation 1.6s infinite cubic-bezier(0, 0, 0.12, 1.02);
     &[data-sale='1'] {
-      fill: vars.$sale-1 !important;
-      fill-opacity: 0.55;
-      stroke: var(--border-gray-200) !important;
+      // fill: vars.$sale-1 !important;
+      // fill-opacity: 0.55;
+      // stroke: var(--border-gray-200) !important;
     }
     &[data-sale='0'] {
       fill: vars.$sale-0 !important;
@@ -146,9 +146,9 @@ polygon[data-type='floor'] {
     }
 
     &[data-sale='1'] {
-      fill: vars.$sale-1 !important;
-      fill-opacity: 0.55;
-      stroke: var(--border-gray-200) !important;
+      // fill: vars.$sale-1 !important;
+      // fill-opacity: 0.55;
+      // stroke: var(--border-gray-200) !important;
     }
 
     &[data-sale='2'] {

@@ -209,7 +209,7 @@ class FlatModel extends EventEmitter {
         } else {
           notfloorPlanBtnSwitch.classList.add('active');
         }
-        floorPlanBtnSwitch.classList.remove('active');
+        floorPlanBtnSwitch?.classList.remove('active');
         floorContainer.style.display = 'none';
         flatContainer.style.display = 'block';
       }
@@ -288,10 +288,10 @@ class FlatModel extends EventEmitter {
       center: this.mapInfo.default_coordinates,
       zoom: this.mapInfo.default_zoom,
       // Трансформуємо масив маркерів під формат, який очікує ваша функція
-      markers: this.mapInfo.markers.map(marker => ({
-        lng: marker.coordinates[0],
-        lat: marker.coordinates[1],
-        title: marker.popup_html, // Використовуємо HTML як заголовок/вміст
+      markers: this.mapInfo?.markers?.map(marker => ({
+        lng: marker?.coordinates[0],
+        lat: marker?.coordinates[1],
+        title: marker?.popup_html, // Використовуємо HTML як заголовок/вміст
       })),
     });
   }

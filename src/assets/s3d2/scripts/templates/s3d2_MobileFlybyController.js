@@ -27,14 +27,14 @@ export default function s3d2_MobileFlybyController(i18n, config) {
     <div class="s3d2-mobile-flyby">
       ${s3d2_IconButton(
         's3d2-mobile-flyby__button js-toggle-button',
-        i18n.t('ctr.nav.fisher_island'),
+        i18n.t('ctr.nav.villa'),
         'data-icon-open="Tiny chevron down" data-icon-closed="close" data-s3d2-update-content-btn',
         'Tiny chevron down',
       )}
 
       <div class="s3d2-mobile-flyby__content js-mobile-flyby-content">
 
-        <div class="s3d2-mobile-flyby__content__first-block">
+        <!-- <div class="s3d2-mobile-flyby__content__first-block">
           ${s3d2_IconButton(
             'js-s3d-nav__btn',
             i18n.t('ctr.nav.availability'),
@@ -47,7 +47,7 @@ export default function s3d2_MobileFlybyController(i18n, config) {
             'data-type="floor" data-header-floor-plan-group',
             '',
           )}
-        </div>
+        </div> -->
 
         <div class="s3d2-mobile-flyby__content__second-block">
           <!-- ${s3d2_IconButton(

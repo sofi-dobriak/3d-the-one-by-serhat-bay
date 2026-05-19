@@ -107,10 +107,10 @@ function Flat(i18n, data) {
     if (!show_prices) return '';
     if (currency.trim() == '$') {
       return `
-        <div class="s3d-card__row">
+        <div class="s3d-card__price">
           <div class="s3d-card__name">
             ${i18n.t('Flat.information.priceText')}
-            ${price_m2}
+            ${numberWithCommas(price_m2)}
             ${i18n.t('Flat.information.per')}
             ${i18n.t('Flat.information.area_unit')}
           </div>
@@ -118,7 +118,7 @@ function Flat(i18n, data) {
       `;
     }
     return `
-      <div class="s3d-card__row">
+      <div class="s3d-card__price">
         <div class="s3d-card__name">
           ${price_m2}
           ${i18n.t('Flat.information.priceText')}
@@ -128,7 +128,6 @@ function Flat(i18n, data) {
       </div>
     `;
   };
-
   return `
     ${
       isMobile() || isTablet()
@@ -159,7 +158,7 @@ function Flat(i18n, data) {
        ${$number(i18n, data)}
       </div>-->
       <div class="s3d-card__middle">
-        <div class="s3d-card__flat-title">${i18n.t('ctr.nav.villa')} ${number}</div>
+        <div class="s3d-card__flat-title">${i18n.t('ctr.nav.villa')}</div>
 
         <div class="s3d-card__flat-area">${area} ${i18n.t('Flat.information.area_unit')}</div>
         ${isDesktop() ? '' : $closeBtn()}
@@ -167,24 +166,35 @@ function Flat(i18n, data) {
       </div>
       <div class="s3d-card__image">
         ${$status(i18n, data)}
-        ${$price()}
+        <div class="s3d-card__price-block">
+          ${$price()}
+          ${$priceM2()}
+        </div>
         <img src="${src ||
           imageDefault}" onerror="this.src='${imageDefault}'" data-key="src" loading="lazy">
       </div>
       <div class="s3d-card__info-wrapper">
         <div class="s3d-card__info-label-wrapper">
           <div class="s3d-card__info-label">
-            ${rooms} Beds
+            ${rooms} ${i18n.t('Flat.beds')}
           </div>
           <div class="s3d-card__info-label">
-
-           ${baths} Baths
+            ${floor} ${i18n.t('Flat.floor')}
+          </div>
+          <div class="s3d-card__info-label">
+            2,510 ${i18n.t('area_unit')}  ${i18n.t('dashboard.land')}
           </div>
         </div>
-        <!-- <div class="s3d-card__buttons">
-            ${ButtonWithoutIcon('js-s3d-card__link', '', i18n.t('Flat.goToFlat'), 'secondary')}
-        </div> -->
+
         ${$vrButton}
+      </div>
+      <div class="s3d-card__buttons">
+          ${ButtonWithoutIcon(
+            'js-s3d-nav__btn',
+            `style="width: 100%;margin-top: var(--space-2);" data-s3d-event="closed" data-type="flat" data-id="${id}"`,
+            i18n.t('Flat.goToFlat'),
+            'secondary',
+          )}
       </div>
 
 
