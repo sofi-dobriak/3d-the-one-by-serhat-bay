@@ -142,7 +142,7 @@ function Villa(
             ${contactFormHtml2}
           </div>
         </div>
-        ${createFlybyVillaPage(flat)}
+         ${svgFlybyLink ? createFlybyVillaPage(flat) : ''}
         ${$villaUpArrow()}
       </div>
     `;

@@ -269,7 +269,6 @@ function Flat({
           : ''
       }
 
-      <!-- ${s3dApartmentsList(i18n, flat, favouritesIds$, showPrices, otherTypeFlats)} -->
 
       ${VillaFinancialTermsScreen(i18n, financialTermsData)}
       ${FlatDocumentationScreen(i18n, projectDocs)}
@@ -391,6 +390,7 @@ function renderFlatFlyby(link, flatId, flat, getFlat) {
     });
 
     svg.querySelectorAll(`[data-id="${flatId}"]`).forEach(el => el.classList.add('active-flat'));
+    container.querySelectorAll('svg').forEach(s => s.remove());
     container.insertAdjacentElement('beforeend', svg);
     const scrollEl = container.closest('.s3d-villa__flyby-wrapper');
     setTimeout(() => {

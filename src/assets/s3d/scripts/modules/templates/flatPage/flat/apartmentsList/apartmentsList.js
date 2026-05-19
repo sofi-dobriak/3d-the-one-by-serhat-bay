@@ -46,14 +46,7 @@ export default function s3dApartmentsList(i18n, flat, favouritesIds$, showPrices
               classNameNext: 'apartments-swiper-button-next',
             })}
 
-            <!--<div class="s3d-flat-new__apartments-list-swiper-nav-wrap">
-                    <div class="s3d-flat-new__apartments-list-swiper-button-prev swiper-button-prev">
-                        ${s3d2spriteIcon('Big arrow left')}
-                    </div>
-                    <div class="s3d-flat-new__apartments-list-swiper-button-next swiper-button-next">
-                        ${s3d2spriteIcon('Big arrow right')}
-                    </div>
-              </div>-->
+
           </div>
 
     </div>

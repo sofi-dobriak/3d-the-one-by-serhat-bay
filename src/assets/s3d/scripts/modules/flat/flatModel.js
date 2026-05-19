@@ -345,7 +345,7 @@ class FlatModel extends EventEmitter {
 
     if (flatButton) {
       flatButton.innerHTML = `
-        ${this.i18n.t('ctr.nav.villa')} ${this.getFlat(this.activeFlat).number}
+        ${this.i18n.t('ctr.nav.villa')}
       `;
     }
 

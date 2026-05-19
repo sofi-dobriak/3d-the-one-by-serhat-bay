@@ -582,21 +582,21 @@ class SliderModel extends EventEmitter {
 
     console.log(this.flatList);
 
-    const flatWithThisFlyby = Object.values(this.flatList).find(flat => {
-      return flat.specifiedFlybys?.some(
-        flyby => flyby.flyby === String(this.settings.flyby) && flyby.side === this.settings.side,
-      );
-    });
+    // const flatWithThisFlyby = Object.values(this.flatList).find(flat => {
+    //   return flat.specifiedFlybys?.some(
+    //     flyby => flyby.flyby === String(this.settings.flyby) && flyby.side === this.settings.side,
+    //   );
+    // });
 
-    console.log('flatWithThisFlyby', flatWithThisFlyby);
+    // console.log('flatWithThisFlyby', flatWithThisFlyby);
 
-    setTimeout(() => {
-      this.emit('create_link_to_flat_page', {
-        flat: flatWithThisFlyby,
-        flyby: this.settings.flyby,
-        side: this.settings.side,
-      });
-    }, 0);
+    // setTimeout(() => {
+    //   this.emit('create_link_to_flat_page', {
+    //     flat: flatWithThisFlyby,
+    //     flyby: this.settings.flyby,
+    //     side: this.settings.side,
+    //   });
+    // }, 0);
   }
 
   async uploadPictures(hd) {
