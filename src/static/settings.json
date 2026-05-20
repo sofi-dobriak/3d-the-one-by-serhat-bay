@@ -2,7 +2,7 @@
   "intro": {
     "id": "intro",
     "generalWrapId": ".js-s3d__slideModule",
-    "title_img": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.jpeg",
+    "title_img": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.png",
     "bg_url": "",
     "video_url": "/wp-content/themes/3d/assets/s3d/images/the-one-intro.mp4",
     "faq": "Видалити цей об'єкт, якщо не потрібен інтро екран перед обльотом"
@@ -198,7 +198,7 @@
     "brands_list": [],
     "payment_list": [],
     "materials_list": [],
-    "contact_block_variant": "2"
+    "contact_block_variant": ""
   },
   "plannings": {
     "id": "plannings",
@@ -376,7 +376,7 @@
     }
   },
   "form": {
-    "logo": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.jpeg",
+    "logo": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.png",
     "prefered_countries": [
       "us"
     ]
@@ -391,12 +391,20 @@
     }
   },
   "header": {
-    "logo": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.jpeg",
+    "logo": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.png",
     "menu_selector_default_FAQ": "data-open-menu // виставити це для дефолтного меню модуля, видалити",
     "menu_selector": "data-open-menu"
   },
   "menu_top_img": "/wp-content/themes/3d/assets/s3d/images/the-one-logo.jpeg",
-  "menu_tours_list": [],
+  "menu_tours_list": [
+    {
+      "title": {
+        "en": "Sphere 360",
+        "tr": "Küre 360"
+      },
+      "url": "https://apartment-tours.smartorange.com.ua/wp-json/wp/v2/get-tour-v2?id=9487"
+    }
+  ],
   "currency_label": "£",
   "currency_value": "GBP",
   "currency_list": [],

@@ -235,6 +235,27 @@
     "enterUnitNumber": "Birim numarası girin",
     "Search by number": "Numaraya göre ara"
   },
+  "discover_btn": "Keşfetmek",
+  "manifest": {
+    "label": "",
+    "lines": [
+      "Buraya bir şey inşa etmeye gelmedik.",
+      "Dinlemeye geldik.",
+      "Toprağı şekillendirmeden önce onu anlamaya.",
+      "Bu yer yüksek sesle var olmak için tasarlanmadı.",
+      "Sessizce, derinden, dürüstçe var olmak için yaratıldı.",
+      "Yapı doğayla buluştuğunda geri çekilir.",
+      "Ne kendini dayatır ne de çekilir — sadece var olur.",
+      "Bu yapının güç bildirisi yoktur. Sahne yoktur.",
+      "Yalnızca nazik bir varlık — neredeyse görünmez.",
+      "İzlenim bırakmak için değil, ait olmak için tasarlandı.",
+      "Bu bir varış noktası değil. Bir geçiştir.",
+      "Gürültüden sessizliğe.",
+      "Varlıktan öze.",
+      "Bu, The One.",
+      "Seni çağırmaz. Ama bekler."
+    ]
+  },
   "Flat": {
     "calculator": "Hesap makinesi",
     "name": "Daire",
@@ -395,6 +416,7 @@
         "2": "Vinnytsia, Keletska Caddesi"
       },
       "departmentAddressLink": "GOOGLE HARİTALARDA AÇ",
+
       "introTitle": "Bunu Kaçırmak İstemezsiniz!",
       "introDescription": "Özel sektör haberlerini doğrudan gelen kutunuza alın.",
       "contactManagerName": "Alex Smith",

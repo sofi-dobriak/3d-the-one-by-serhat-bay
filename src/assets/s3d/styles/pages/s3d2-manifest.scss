@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+$font-family: 'Cormorant Garamond', Georgia, serif;
+
+.manifesto-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 24, 16, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.manifesto-backdrop--in {
+  opacity: 1;
+}
+
+.manifesto-backdrop--out {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.manifesto-modal {
+  // background: #faf8f4;
+  // border-left: 3px solid #b5975a;
+  // max-width: 420px;
+  // max-height: 90vh;
+  // box-shadow: 0 12px 60px rgba(10, 8, 4, 0.35);
+  border-radius: 2px;
+  width: auto;
+  height: 100%;
+  overflow-y: auto;
+  padding: 2.5rem 2.5rem 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 600px) {
+    padding: 2.5rem 0rem 1rem;
+  }
+}
+
+.manifesto-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  padding: 0;
+}
+
+.manifesto-close:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.manifesto-label {
+  font-family: $font-family;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  color: #b5975a;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+}
+
+.manifesto-text {
+  font-family: $font-family;
+  // font-size: 18px;
+  // color: #2a2218;
+  font-size: 28px;
+  line-height: 1.2;
+  font-style: italic;
+  font-weight: 400;
+  color: #faf8f4;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 600px) {
+    gap: 8px;
+  }
+}
+
+.manifesto-text p {
+  margin: 0 0 0.15em;
+}
+
+.manifesto-text--strong {
+  font-weight: 700;
+}

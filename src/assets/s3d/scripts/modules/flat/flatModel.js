@@ -103,7 +103,7 @@ class FlatModel extends EventEmitter {
     this.brands_list = config.brands_list || [];
     this.payment_list = config.payment_list || [];
     this.materials_list = config.materials_list || [];
-    this.contact_block_variant = config.contact_block_variant || '1';
+    this.contact_block_variant = config.contact_block_variant;
     this.mapInfo = config.map;
     this.explicationState$.subscribe(state => {
       this.emit('updateExplicationFloorTitle', state);

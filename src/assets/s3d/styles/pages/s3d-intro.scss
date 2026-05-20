@@ -126,6 +126,7 @@
     height: 300px;
     border-radius: var(--space-2);
     overflow: hidden;
+    visibility: hidden;
     @media screen and (min-width: 1025px) {
       // width: 800px;
       // height: 800px;

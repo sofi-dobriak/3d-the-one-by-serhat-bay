@@ -902,14 +902,22 @@ class SmartoToursV3 extends SmartoTourV3Assets {
   handleVideoSphereOnChange(sceneId) {
     const currentScene = this.data.find(el => `#${el.tour_v2_premise_id}` === sceneId) || {};
     const videoSphere = this.$videoSphere;
+
     if (!currentScene.tour_v2_premise_video) {
       videoSphere.setAttribute('visible', false);
       this.showTextureHotspots();
-      if (videoSphere && videoSphere.components.material.data.src) {
-        videoSphere.components.material.data.src.pause();
+
+      const src = videoSphere.components?.material?.data?.src;
+      if (src instanceof HTMLVideoElement) {
+        src.pause();
       }
+
+      // if (videoSphere && videoSphere.components.material.data.src) {
+      //   videoSphere?.components?.material?.data?.src.pause();
+      // }
       return;
     }
+
     const videoAssetId = `video-${currentScene.tour_v2_premise_id}`;
     let videoAsset = this.$scene.querySelector(`#${videoAssetId}`);
     if (!videoAsset) {
@@ -918,32 +926,48 @@ class SmartoToursV3 extends SmartoTourV3Assets {
         `<video id="${videoAssetId}" autoplay loop="true" muted="true" crossorigin="anonymous" src="${currentScene.tour_v2_premise_video}"></video>`,
       );
       videoAsset = this.$scene.querySelector(`#${videoAssetId}`);
-      videoAsset.addEventListener('loadeddata', () => {
-        videoSphere.setAttribute('visible', true);
-        this.hideTextureHotspots();
-        this.playVideoSphere(videoAssetId);
-        console.warn(`[SmartoToursV3] texture switch is off for ${currentScene.tour_v2_premise_title} scene, because video is loaded`);
-      }, { once: true });
+      videoAsset.addEventListener(
+        'loadeddata',
+        () => {
+          videoSphere.setAttribute('visible', true);
+          this.hideTextureHotspots();
+          this.playVideoSphere(videoAssetId);
+          console.warn(
+            `[SmartoToursV3] texture switch is off for ${currentScene.tour_v2_premise_title} scene, because video is loaded`,
+          );
+        },
+        { once: true },
+      );
       return;
     }
     this.hideTextureHotspots();
     this.playVideoSphere(videoAssetId);
-    console.warn(`[SmartoToursV3] texture switch is off for ${currentScene.tour_v2_premise_title} scene, because video is loaded`);
+    console.warn(
+      `[SmartoToursV3] texture switch is off for ${currentScene.tour_v2_premise_title} scene, because video is loaded`,
+    );
   }
 
   showTextureHotspots() {
-    this.$container.querySelectorAll('[data-scene-id*="texture"], .s3d-smarto-tours__textures-toggle, [data-textures-buttons]').forEach(el => {
-      el.style.visibility = '';
-    });
+    this.$container
+      .querySelectorAll(
+        '[data-scene-id*="texture"], .s3d-smarto-tours__textures-toggle, [data-textures-buttons]',
+      )
+      .forEach(el => {
+        el.style.visibility = '';
+      });
     this.$container.querySelectorAll('.collidable-texture-group').forEach(el => {
       el.setAttribute('visible', true);
     });
   }
-  
+
   hideTextureHotspots() {
-    this.$container.querySelectorAll('[data-scene-id*="texture"], .s3d-smarto-tours__textures-toggle, [data-textures-buttons]').forEach(el => {
-      el.style.visibility = 'hidden';
-    });
+    this.$container
+      .querySelectorAll(
+        '[data-scene-id*="texture"], .s3d-smarto-tours__textures-toggle, [data-textures-buttons]',
+      )
+      .forEach(el => {
+        el.style.visibility = 'hidden';
+      });
     this.$container.querySelectorAll('.collidable-texture-group').forEach(el => {
       el.setAttribute('visible', false);
     });
@@ -951,12 +975,15 @@ class SmartoToursV3 extends SmartoTourV3Assets {
 
   playVideoSphere(videoAssetId) {
     const videoSphere = this.$videoSphere;
-    videoSphere.setAttribute('material', `shader: fade; src: #${videoAssetId}; side: back; progress: 0`);
+    videoSphere.setAttribute(
+      'material',
+      `shader: fade; src: #${videoAssetId}; side: back; progress: 0`,
+    );
     videoSphere.components.material.data.src.currentTime = 0;
     videoSphere.components.material.data.src.play();
     videoSphere.setAttribute('visible', true);
   }
-  
+
   startAutoRotation(speed) {
     const camera = this.$camera;
     const lookControl = camera.components['look-controls'];

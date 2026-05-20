@@ -36,6 +36,7 @@
   padding: var(--space-2);
   z-index: 3;
   transform: translateZ(1px);
+  visibility: hidden;
 }
 
 .s3d-smarto-tours__css-hotspots-wrapper {

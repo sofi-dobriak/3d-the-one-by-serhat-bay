@@ -235,6 +235,27 @@
     "enterUnitNumber": "Enter unit number",
     "Search by number": "Search by number"
   },
+  "discover_btn": "Discover",
+  "manifest": {
+    "label": "",
+    "lines": [
+      "We did not come here to build something.",
+      "We came to listen.",
+      "To understand the land before shaping it.",
+      "This place was not designed to exist loudly.",
+      "It was created to exist quietly, deeply, honestly.",
+      "Where the structure meets nature, it steps back.",
+      "It neither asserts itself, nor retreats — it simply is.",
+      "This structure has no power statement. No stage.",
+      "Only a gentle presence — almost invisible.",
+      "It was conceived not to impress, but to belong.",
+      "This is not a destination. It is a passage.",
+      "From noise to stillness.",
+      "From presence to essence.",
+      "This is The One.",
+      "It does not call to you. But it waits."
+    ]
+  },
   "Flat": {
     "calculator": "Calculator",
     "name": "Apartment",
@@ -395,6 +416,7 @@
         "2": "Vinnytsia, Keletska Street"
       },
       "departmentAddressLink": "OPEN ON GOOGLE MAPS",
+
       "introTitle": "You Don’t Want to Miss This!",
       "introDescription": "Get exclusive industry news delivered straight to your inbox.",
       "contactManagerName": "Alex Smith",
