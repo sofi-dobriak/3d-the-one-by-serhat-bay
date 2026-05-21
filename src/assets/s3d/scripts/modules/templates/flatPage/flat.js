@@ -167,26 +167,28 @@ function Flat({
       ${
         flat['3d_tour_v2']
           ? `
-        <div class="s3d-villa__gallery-wrap" style="padding-top: 0;">
+        <div class="s3d-villa__gallery-wrap">
           <div ${SMARTO_TOURS_CONTAINER_SELECTOR.replace(/\[|\]/g, '')}></div>
           ${s3d2_TourTitle(i18n)}
         </div>
       `
           : ``
       }
+
+      ${s3dDashboard(i18n, flat, $specifiedFlybysByGroup, contacts, showPrices)}
+      ${s3d2FlatFloorPlan(i18n, flat, floorList, socialMediaLinks, contacts)}
       ${
         flat['3d_tour_v3']
           ? `
-        <div class="s3d-villa__gallery-wrap" style="padding-top: 0;">
+        <div class="s3d-villa__gallery-wrap">
           <div ${SMARTO_TOURS_V3_CONTAINER_SELECTOR.replace(/\[|\]/g, '')}></div>
           ${s3d2_TourTitle(i18n)}
         </div>
       `
           : ``
       }
-      <div class="s3d-villa__container-bg"></div>
-      ${s3dDashboard(i18n, flat, $specifiedFlybysByGroup, contacts, showPrices)}
 
+      <div class="s3d-villa__container-bg"></div>
       <div class="s3d-villa__video-screen" style="padding-top: var(--space-5);     padding-left: var(--space-6);padding-right: var(--space-6);">
         <div class="s3d-villa-description-screen">
           <div class="s3d-villa-description-screen-item" ${
@@ -223,7 +225,7 @@ function Flat({
         </div>
 
       </div>
-      ${s3d2FlatFloorPlan(i18n, flat, floorList, socialMediaLinks, contacts)}
+
       ${$additionalAmenities(flat)}
     <!--  ${$brandsList({ i18n, flat, brands: brands_list, faqs: faq_questions })} -->
     <!--  ${s3d2_CalculatorScreen('', 'js-installment-calculator')} -->

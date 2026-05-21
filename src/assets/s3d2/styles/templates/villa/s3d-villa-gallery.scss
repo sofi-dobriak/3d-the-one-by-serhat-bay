@@ -7,11 +7,13 @@
     flex-direction: column;
     // background: url('/wp-content/themes/3d/assets/s3d/images/background-inside.jpg');
     gap: var(--space-16);
-    padding: var(--space-40) 0 0 0;
+    // padding: var(--space-40) 0 0 0;
+    padding: var(--space-28) 0 0 0;
     width: 100%;
 
     @media screen and (max-width: 1920px) {
-      padding: var(--space-32) 0 0 0;
+      // padding: var(--space-32) 0 0 0;
+
       gap: var(--space-5);
     }
     @media screen and (max-width: 768px) {
@@ -41,8 +43,8 @@
         gap: var(--space-2);
         margin-bottom: var(--space-2);
 
-        @media screen and (max-width: 540px) {
-          max-width: min-content;
+        @media screen and (max-width: 600px) {
+          max-width: max-content;
           text-align: center;
         }
       }
@@ -65,7 +67,7 @@
         color: var(--s3d2-color-text-gray-400);
         text-transform: none;
         text-align: center;
-        visibility: hidden;
+        display: none;
       }
     }
   }

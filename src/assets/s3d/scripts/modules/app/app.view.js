@@ -5,6 +5,7 @@ import { addAnimateBtnTabsInit } from '../animation';
 import Popup from '../popup/PopupView';
 import has from 'lodash/has';
 import get from 'lodash/get';
+import { openManifestoModal } from '../intro/ManifestModal';
 
 class AppView extends EventEmitter {
   constructor(model, elements) {
@@ -14,6 +15,12 @@ class AppView extends EventEmitter {
     this.$horizontalCompass = document.querySelector('[data-controller-compass]');
 
     document.body.addEventListener('click', event => {
+      const manifestTarget = delegateHandler('.js-manifest-menu-btn', event);
+      if (manifestTarget) {
+        openManifestoModal(this._model.i18n);
+        return;
+      }
+
       const target = delegateHandler('.js-s3d-nav__btn', event);
       if (!target) {
         return;
